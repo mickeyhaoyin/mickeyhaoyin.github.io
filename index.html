@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mickey Richie | Creative Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap');
+        :root { --bg: #030712; --accent: #38bdf8; }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: var(--bg); color: #f8fafc; overflow-x: hidden; }
+        
+        .glass-card {
+            background: rgba(255, 255, 255, 0.02);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .glass-card:hover { border-color: var(--accent); }
+
+        .gradient-text {
+            background: linear-gradient(135deg, #38bdf8 0%, #818cf8 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .timeline-border { border-left: 2px solid rgba(56, 189, 248, 0.2); }
+        .nav-link { position: relative; }
+        .nav-link::after {
+            content: ''; position: absolute; width: 0; height: 2px;
+            bottom: -4px; left: 0; background: var(--accent);
+            transition: width 0.3s;
+        }
+        .nav-link:hover::after { width: 100%; }
+        .portfolio-item.hidden { display: none; }
+    </style>
+</head>
+<body>
+
+    <nav class="fixed w-full z-50 py-6 px-6 md:px-12 flex justify-between items-center transition-all duration-300" id="navbar">
+        <a href="#" class="text-2xl font-extrabold tracking-tighter">M.<span class="gradient-text">RICHIE</span></a>
+        <div class="hidden md:flex gap-10 text-xs font-bold uppercase tracking-widest">
+            <a href="#about" class="nav-link">About</a>
+            <a href="#experience" class="nav-link">Experience</a>
+            <a href="#portfolio" class="nav-link">Portfolio</a>
+            <a href="#contact" class="nav-link">Contact</a>
+        </div>
+    </nav>
+
+    <section class="h-screen flex flex-col justify-center items-center text-center px-4 relative">
+        <div data-aos="zoom-in" data-aos-duration="1000">
+            <span class="text-sky-400 font-bold tracking-[0.3em] text-xs uppercase mb-4 block">Visual Storyteller</span>
+            <h1 class="text-6xl md:text-8xl font-extrabold mb-6 tracking-tight">Mickey <span class="gradient-text">Richie</span></h1>
+            <p class="text-gray-400 text-lg md:text-xl max-w-xl mx-auto leading-relaxed">
+                Turning ideas into high-impact <span class="text-white border-b-2 border-sky-500">Visual Experiences.</span>
+            </p>
+        </div>
+    </section>
+
+    <section id="about" class="py-32 px-6 md:px-24 max-w-7xl mx-auto">
+        <div class="grid md:grid-cols-2 gap-20">
+            <div data-aos="fade-right">
+                <h2 class="text-4xl font-extrabold mb-8 italic">01. <span class="gradient-text">Background</span></h2>
+                <p class="text-gray-400 leading-relaxed text-lg mb-8 text-sm">
+                    Lulusan multimedia dengan spesialisasi desain grafis, video editing, dan produksi konten digital. Memiliki pengalaman langsung di industri gaming, F&B, properti, dan media sosial. Terampil dalam menjalankan konsep kreatif dari tahap pra-produksi hingga pasca-produksi.
+                </p>
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="glass-card p-4 rounded-xl text-center">
+                        <i class="fa-solid fa-video text-sky-400 mb-2"></i>
+                        <h4 class="font-bold text-xs text-white">Video Production</h4>
+                    </div>
+                    <div class="glass-card p-4 rounded-xl text-center">
+                        <i class="fa-solid fa-bezier-curve text-sky-400 mb-2"></i>
+                        <h4 class="font-bold text-xs text-white">Visual Branding</h4>
+                    </div>
+                </div>
+            </div>
+
+            <div class="space-y-8" data-aos="fade-left">
+                <h2 class="text-3xl font-bold mb-6 italic text-gray-400">Education</h2>
+                <div class="glass-card p-6 rounded-2xl">
+                    <span class="text-sky-400 text-xs font-bold uppercase">2021 - 2024</span>
+                    <h4 class="text-lg font-bold">SMK Kristen Kanaan, Jakarta</h4>
+                    <p class="text-sm text-gray-400">Multimedia Major</p>
+                </div>
+                <div class="glass-card p-6 rounded-2xl border-l-4 border-sky-500">
+                    <span class="text-sky-400 text-xs font-bold uppercase">Professional Course</span>
+                    <h4 class="text-lg font-bold">ESDA 3D Learning</h4>
+                    <p class="text-sm text-gray-400">3D Modeling & Animation (3Ds Max, Maya, Blender)</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="experience" class="py-32 px-6 md:px-24 bg-[#050a18]">
+        <div class="max-w-4xl mx-auto text-center mb-20" data-aos="fade-up">
+            <h2 class="text-4xl font-extrabold italic mb-4">02. <span class="gradient-text">Experience</span></h2>
+            <p class="text-gray-500 uppercase tracking-widest text-xs">Full Career History</p>
+        </div>
+
+        <div class="max-w-4xl mx-auto timeline-border ml-4 md:ml-auto px-4">
+            
+            <div class="relative pl-10 mb-16" data-aos="fade-up">
+                <div class="absolute -left-[11px] top-0 w-5 h-5 rounded-full bg-sky-500 border-4 border-gray-900 shadow-[0_0_15px_#38bdf8]"></div>
+                <div class="flex flex-col md:flex-row md:justify-between items-start mb-2">
+                    <h3 class="text-xl font-bold text-white uppercase">Video Editor & TikTok Social Media Manager</h3>
+                    <span class="text-gray-500 text-[10px] font-black mt-1">NOV 2025 - JAN 2026</span>
+                </div>
+                <p class="text-sky-400 text-xs font-bold mb-4">PT. Eluckygame Technology Asia</p>
+                <ul class="text-gray-400 text-sm space-y-2 list-none">
+                    <li><i class="fa-solid fa-check text-sky-500 mr-2 text-[10px]"></i> Mengedit video promosi harian untuk pemasaran aplikasi game mobile.</li>
+                    <li><i class="fa-solid fa-check text-sky-500 mr-2 text-[10px]"></i> Mengelola strategi konten dan penjadwalan akun TikTok resmi perusahaan.</li>
+                    <li><i class="fa-solid fa-check text-sky-500 mr-2 text-[10px]"></i> Membuat video vertikal short-form yang dioptimalkan untuk engagement TikTok.</li>
+                    <li><i class="fa-solid fa-check text-sky-500 mr-2 text-[10px]"></i> Mengolah potongan livestream menjadi konten highlight promosi.</li>
+                    <li><i class="fa-solid fa-check text-sky-500 mr-2 text-[10px]"></i> Menambahkan motion graphics dan caption dinamis untuk retensi penonton.</li>
+                </ul>
+            </div>
+
+            <div class="relative pl-10 mb-16" data-aos="fade-up">
+                <div class="absolute -left-[11px] top-0 w-5 h-5 rounded-full bg-gray-700 border-4 border-gray-900"></div>
+                <div class="flex flex-col md:flex-row md:justify-between items-start mb-2">
+                    <h3 class="text-xl font-bold text-white uppercase">Content Creator & Graphic Designer (Freelance)</h3>
+                    <span class="text-gray-500 text-[10px] font-black mt-1">SEP 2025 - OCT 2025</span>
+                </div>
+                <p class="text-sky-400 text-xs font-bold mb-4">PT. Bingchun Food Management</p>
+                <ul class="text-gray-400 text-sm space-y-2 list-none">
+                    <li><i class="fa-solid fa-check text-sky-500 mr-2 text-[10px]"></i> Mendesain flyer, banner, dan visual promosi untuk kampanye F&B.</li>
+                    <li><i class="fa-solid fa-check text-sky-500 mr-2 text-[10px]"></i> Membuat materi promosi untuk grand opening dan event musiman.</li>
+                    <li><i class="fa-solid fa-check text-sky-500 mr-2 text-[10px]"></i> Memproduksi video iklan TikTok untuk promosi outlet.</li>
+                </ul>
+            </div>
+
+            <div class="relative pl-10 mb-16" data-aos="fade-up">
+                <div class="absolute -left-[11px] top-0 w-5 h-5 rounded-full bg-gray-700 border-4 border-gray-900"></div>
+                <div class="flex flex-col md:flex-row md:justify-between items-start mb-2">
+                    <h3 class="text-xl font-bold text-white uppercase">Head Video Editor & Graphic Designer (Intern)</h3>
+                    <span class="text-gray-500 text-[10px] font-black mt-1">APR 2025 - AUG 2025</span>
+                </div>
+                <p class="text-sky-400 text-xs font-bold mb-4">PT. Lentera Diri Indonesia</p>
+                <ul class="text-gray-400 text-sm space-y-2 list-none">
+                    <li><i class="fa-solid fa-check text-sky-500 mr-2 text-[10px]"></i> Memimpin tim editing video untuk kampanye edukasi kesehatan mental.</li>
+                    <li><i class="fa-solid fa-check text-sky-500 mr-2 text-[10px]"></i> Membangun dan mengembangkan sosial media perusahaan sejak tahap awal.</li>
+                    <li><i class="fa-solid fa-check text-sky-500 mr-2 text-[10px]"></i> Membimbing staff dalam workflow editing video dan desain grafis.</li>
+                </ul>
+            </div>
+
+            <div class="relative pl-10 mb-16" data-aos="fade-up">
+                <div class="absolute -left-[11px] top-0 w-5 h-5 rounded-full bg-gray-700 border-4 border-gray-900"></div>
+                <div class="flex flex-col md:flex-row md:justify-between items-start mb-2">
+                    <h3 class="text-xl font-bold text-white uppercase">Graphic Designer & Video Editor (Intern)</h3>
+                    <span class="text-gray-500 text-[10px] font-black mt-1">MAY 2025 - AUG 2025</span>
+                </div>
+                <p class="text-sky-400 text-xs font-bold mb-4">CV. Lentera Anak Bangsa</p>
+                <ul class="text-gray-400 text-sm space-y-2 list-none">
+                    <li><i class="fa-solid fa-check text-sky-500 mr-2 text-[10px]"></i> Mengedit video berita viral short-form untuk media sosial.</li>
+                    <li><i class="fa-solid fa-check text-sky-500 mr-2 text-[10px]"></i> Mengedit konten podcast untuk platform TikTok, YouTube, & Instagram.</li>
+                </ul>
+            </div>
+
+            <div class="relative pl-10 mb-16" data-aos="fade-up">
+                <div class="absolute -left-[11px] top-0 w-5 h-5 rounded-full bg-gray-700 border-4 border-gray-900"></div>
+                <div class="flex flex-col md:flex-row md:justify-between items-start mb-2">
+                    <h3 class="text-xl font-bold text-white uppercase">Photographer & Graphic Designer (Intern)</h3>
+                    <span class="text-gray-500 text-[10px] font-black mt-1">OCT 2023 - DEC 2023</span>
+                </div>
+                <p class="text-sky-400 text-xs font-bold mb-4">PT. Indo Shipping</p>
+                <ul class="text-gray-400 text-sm space-y-2 list-none">
+                    <li><i class="fa-solid fa-check text-sky-500 mr-2 text-[10px]"></i> Mengambil foto properti untuk kebutuhan penjualan.</li>
+                    <li><i class="fa-solid fa-check text-sky-500 mr-2 text-[10px]"></i> Mengedit visual marketing properti dan mendesain brosur promosi.</li>
+                </ul>
+            </div>
+
+            <div class="relative pl-10" data-aos="fade-up">
+                <div class="absolute -left-[11px] top-0 w-5 h-5 rounded-full bg-gray-700 border-4 border-gray-900"></div>
+                <div class="flex flex-col md:flex-row md:justify-between items-start mb-2">
+                    <h3 class="text-xl font-bold text-white uppercase">Content Creator (Intern)</h3>
+                    <span class="text-gray-500 text-[10px] font-black mt-1">JUL 2023 - AUG 2023</span>
+                </div>
+                <p class="text-sky-400 text-xs font-bold mb-4">PT. Sinar Raja</p>
+                <ul class="text-gray-400 text-sm space-y-2 list-none">
+                    <li><i class="fa-solid fa-check text-sky-500 mr-2 text-[10px]"></i> Membuat konten promosi perabotan rumah (foto produk & video marketing).</li>
+                    <li><i class="fa-solid fa-check text-sky-500 mr-2 text-[10px]"></i> Mendesain postingan media sosial untuk meningkatkan visibilitas produk.</li>
+                </ul>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="portfolio" class="py-32 px-6 md:px-24">
+        <div class="text-center mb-16" data-aos="fade-up">
+            <h2 class="text-4xl font-extrabold italic mb-8">03. <span class="gradient-text">Portfolio</span></h2>
+            <div class="flex flex-wrap justify-center gap-2">
+                <button class="filter-btn active glass-card px-6 py-2 rounded-full text-[10px] font-bold uppercase tracking-widest transition" onclick="filterPort('all')">All</button>
+                <button class="filter-btn glass-card px-6 py-2 rounded-full text-[10px] font-bold uppercase tracking-widest transition" onclick="filterPort('fotografi')">Fotografi</button>
+                <button class="filter-btn glass-card px-6 py-2 rounded-full text-[10px] font-bold uppercase tracking-widest transition" onclick="filterPort('video')">Videografi & Editing</button>
+                <button class="filter-btn glass-card px-6 py-2 rounded-full text-[10px] font-bold uppercase tracking-widest transition" onclick="filterPort('desain')">Desain Grafis</button>
+            </div>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8" id="portfolio-grid">
+            <div class="portfolio-item video glass-card rounded-3xl overflow-hidden group p-10 flex flex-col items-center justify-center" data-aos="zoom-in">
+                <i class="fa-solid fa-play text-5xl text-sky-400 mb-6 group-hover:scale-125 transition-all"></i>
+                <h4 class="font-bold">Video Showcase</h4>
+            </div>
+            <div class="portfolio-item desain glass-card rounded-3xl overflow-hidden group p-10 flex flex-col items-center justify-center" data-aos="zoom-in" data-aos-delay="100">
+                <i class="fa-solid fa-palette text-5xl text-sky-400 mb-6 group-hover:rotate-12 transition-all"></i>
+                <h4 class="font-bold">Design Works</h4>
+            </div>
+            <div class="portfolio-item fotografi glass-card rounded-3xl overflow-hidden group p-10 flex flex-col items-center justify-center" data-aos="zoom-in" data-aos-delay="200">
+                <i class="fa-solid fa-camera text-5xl text-sky-400 mb-6 group-hover:scale-110 transition-all"></i>
+                <h4 class="font-bold">Photography</h4>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-32 px-6">
+        <div class="max-w-5xl mx-auto glass-card rounded-[3rem] p-12 md:p-20 text-center relative overflow-hidden" data-aos="flip-up">
+            <h2 class="text-4xl md:text-5xl font-black mb-6">Ready to <br><span class="gradient-text">Collaborate?</span></h2>
+            <div class="flex flex-col md:flex-row justify-center gap-6 mt-10">
+                <a href="mailto:mickey.haoyin168@gmail.com" class="bg-white text-black px-10 py-4 rounded-full font-black text-xs uppercase hover:scale-105 transition">Email Me</a>
+                <a href="https://wa.me/6285776798680" target="_blank" class="glass-card px-10 py-4 rounded-full font-black text-xs uppercase hover:bg-white hover:text-black transition">WhatsApp</a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-10 text-center text-gray-600 text-[10px] uppercase tracking-[0.4em]">
+        Mickey Richie &bull; 2026
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({ once: true, duration: 800 });
+        window.onscroll = function() {
+            const nav = document.getElementById('navbar');
+            if (window.scrollY > 50) nav.classList.add('glass-card', 'py-4');
+            else nav.classList.remove('glass-card', 'py-4');
+        };
+        function filterPort(category) {
+            const btns = document.querySelectorAll('.filter-btn');
+            btns.forEach(b => b.classList.remove('active', 'bg-sky-500'));
+            event.target.classList.add('active', 'bg-sky-500');
+            const items = document.querySelectorAll('.portfolio-item');
+            items.forEach(item => {
+                if (category === 'all' || item.classList.contains(category)) item.classList.remove('hidden');
+                else item.classList.add('hidden');
+            });
+        }
+    </script>
+</body>
+</html>
