@@ -198,24 +198,35 @@
                 <button class="filter-btn glass-card px-6 py-2 rounded-full text-[10px] font-bold uppercase tracking-widest transition" onclick="filterPort('fotografi')">Fotografi</button>
                 <button class="filter-btn glass-card px-6 py-2 rounded-full text-[10px] font-bold uppercase tracking-widest transition" onclick="filterPort('video')">Videografi & Editing</button>
                 <button class="filter-btn glass-card px-6 py-2 rounded-full text-[10px] font-bold uppercase tracking-widest transition" onclick="filterPort('desain')">Desain Grafis</button>
+                <button class="filter-btn glass-card px-6 py-2 rounded-full text-[10px] font-bold uppercase tracking-widest transition" onclick="filterPort('projek')">Personal Project</button>
             </div>
         </div>
 
         <div class="grid md:grid-cols-3 gap-8" id="portfolio-grid">
             <a href="portfolio/video.html">
-                <div class="portfolio-item video glass-card rounded-3xl overflow-hidden group p-10 flex flex-col items-center justify-center" data-aos="zoom-in">
-                    <i class="fa-solid fa-play text-5xl text-sky-400 mb-6 group-hover:scale-125 transition-all"></i>
+                <div class="portfolio-item video glass-card rounded-3xl overflow-hidden group p-10 flex flex-col items-center justify-center" data-aos="zoom-in" data-aos-delay="200">
+                    <i class="fa-solid fa-clapperboard text-5xl text-sky-400 mb-6 group-hover:-rotate-12 transition-all"></i>
                     <h4 class="font-bold">Video Showcase</h4>
                 </div>
             </a>
-            <div class="portfolio-item desain glass-card rounded-3xl overflow-hidden group p-10 flex flex-col items-center justify-center" data-aos="zoom-in" data-aos-delay="100">
-                <i class="fa-solid fa-palette text-5xl text-sky-400 mb-6 group-hover:rotate-12 transition-all"></i>
-                <h4 class="font-bold">Design Works</h4>
-            </div>
-            <div class="portfolio-item fotografi glass-card rounded-3xl overflow-hidden group p-10 flex flex-col items-center justify-center" data-aos="zoom-in" data-aos-delay="200">
-                <i class="fa-solid fa-camera text-5xl text-sky-400 mb-6 group-hover:scale-110 transition-all"></i>
-                <h4 class="font-bold">Photography</h4>
-            </div>
+            <a href="portfolio/desain.html">
+                <div class="portfolio-item desain glass-card rounded-3xl overflow-hidden group p-10 flex flex-col items-center justify-center" data-aos="zoom-in" data-aos-delay="100">
+                    <i class="fa-solid fa-palette text-5xl text-sky-400 mb-6 group-hover:rotate-12 transition-all"></i>
+                    <h4 class="font-bold">Design Works</h4>
+                </div>
+            </a>
+            <a href="portfolio/foto.html">
+                <div class="portfolio-item fotografi glass-card rounded-3xl overflow-hidden group p-10 flex flex-col items-center justify-center" data-aos="zoom-in" data-aos-delay="200">
+                    <i class="fa-solid fa-camera text-5xl text-sky-400 mb-6 group-hover:scale-110 transition-all"></i>
+                    <h4 class="font-bold">Photography</h4>
+                </div>
+            </a>
+            <a href="portfolio/projek.html">
+                <div class="portfolio-item projek glass-card rounded-3xl overflow-hidden group p-10 flex flex-col items-center justify-center" data-aos="zoom-in" data-aos-delay="200">
+                    <i class="fa-solid fa-film text-5xl text-sky-400 mb-6 group-hover:scale-125 transition-all"></i>
+                    <h4 class="font-bold">Personal Project</h4>
+                </div>
+            </a>
         </div>
     </section>
 
