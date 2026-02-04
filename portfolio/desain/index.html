@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Design Portfolio | Mickey Richie 2.0</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="icon" type="image/png" href="../../assets/favicon.png">
+    <link rel="apple-touch-icon" href="../../assets/favicon.png">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap');
+        :root { --bg: #030712; --accent: #38bdf8; }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: var(--bg); color: #f8fafc; overflow-x: hidden; }
+        
+        .glass-card {
+            background: rgba(255, 255, 255, 0.02);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .glass-card:hover { border-color: var(--accent); transform: translateY(-5px); }
+
+        .gradient-text {
+            background: linear-gradient(135deg, #38bdf8 0%, #818cf8 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .img-container { width: 100%; overflow: hidden; border-radius: 12px; background: #0f172a; }
+        img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
+        .glass-card:hover img { transform: scale(1.05); }
+
+        .check-btn {
+            background: rgba(56, 189, 248, 0.1);
+            border: 1px solid rgba(56, 189, 248, 0.2);
+            transition: all 0.3s ease;
+        }
+        .check-btn:hover { background: var(--accent); color: #000; }
+
+        .back-btn:hover { color: var(--accent); transform: translateX(-5px); transition: all 0.3s; }
+    </style>
+</head>
+<body>
+
+    <nav class="py-8 px-6 md:px-12 flex justify-between items-center">
+        <a href="../../index.html" class="back-btn flex items-center gap-2 text-xs font-bold uppercase tracking-widest">
+            <i class="fa-solid fa-arrow-left"></i> Kembali
+        </a>
+        <h1 class="text-xl font-extrabold tracking-tighter italic">M.<span class="gradient-text">RICHIE</span></h1>
+    </nav>
+
+    <header class="py-12 px-6 text-center" data-aos="zoom-out">
+        <h1 class="text-5xl md:text-7xl font-black mb-4 italic uppercase tracking-tighter">Design <span class="gradient-text">Gallery</span></h1>
+        <p class="text-gray-500 text-xs uppercase tracking-[0.4em]">Visual Branding & Graphic Works</p>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-6 pb-32 space-y-32">
+
+        <section data-aos="fade-up">
+            <div class="mb-10">
+                <h2 class="text-2xl font-bold mb-4 uppercase tracking-tight italic">01. PT. Indoshipping</h2>
+                <div class="glass-card p-6 rounded-2xl border-l-4 border-sky-500 bg-white/5">
+                    <p class="text-gray-400 leading-relaxed text-sm">
+                        "Rangkaian desain aset visual untuk sektor properti ini dikembangkan menggunakan <strong>Canva</strong> dan <strong>Adobe Photoshop</strong>. Proses kreatif mencakup pengambilan foto unit secara langsung di lokasi (on-site) menggunakan kamera profesional DSLR dan Mirrorless untuk menghasilkan materi promosi yang autentik dan persuasif."
+                    </p>
+                </div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="glass-card p-2 rounded-2xl"><div class="img-wrapper ratio-2-3"><img src="../../assets/desain/indoshipping_1.jpg"></div></div>
+                <div class="glass-card p-2 rounded-2xl"><div class="img-wrapper ratio-2-3"><img src="../../assets/desain/indoshipping_2.jpeg"></div></div>
+                <div class="glass-card p-2 rounded-2xl"><div class="img-wrapper ratio-2-3"><img src="../../assets/desain/indoshipping_3.png"></div></div>
+            </div>
+        </section>
+
+        <section data-aos="fade-up">
+            <div class="mb-10">
+                <h2 class="text-2xl font-bold mb-4 uppercase tracking-tight italic">02. CV. Lentera Anak Bangsa</h2>
+                <div class="glass-card p-6 rounded-2xl border-l-4 border-sky-500 bg-white/5">
+                    <p class="text-gray-400 leading-relaxed text-sm">
+                        "Produksi konten visual berita dan kolaborasi sosial media yang dirancang menggunakan <strong>Canva</strong>. Fokus utama pada pengolahan aset gambar digital yang dikurasi secara profesional untuk meningkatkan engagement audiens di platform Instagram."
+                    </p>
+                </div>
+            </div>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                <div class="glass-card p-2 rounded-2xl flex flex-col">
+                    <div class="img-wrapper ratio-4-3 mb-4"><img src="../../assets/desain/fypmedia_1.png"></div>
+                    <a href="https://www.instagram.com/p/DJtPsKNSw6w/" target="_blank" class="check-btn w-full py-3 rounded-xl text-[10px] font-black uppercase tracking-widest text-center mt-auto">Check Content</a>
+                </div>
+                <div class="glass-card p-2 rounded-2xl flex flex-col">
+                    <div class="img-wrapper ratio-4-3 mb-4"><img src="../../assets/desain/fypmedia_2.png"></div>
+                    <a href="https://www.instagram.com/p/DKbYWaMS6hN/" target="_blank" class="check-btn w-full py-3 rounded-xl text-[10px] font-black uppercase tracking-widest text-center mt-auto">Check Content</a>
+                </div>
+                <div class="glass-card p-2 rounded-2xl flex flex-col">
+                    <div class="img-wrapper ratio-4-3 mb-4"><img src="../../assets/desain/fypmanage_1.png"></div>
+                    <a href="https://www.instagram.com/p/DLrodEZPlpv/" target="_blank" class="check-btn w-full py-3 rounded-xl text-[10px] font-black uppercase tracking-widest text-center mt-auto">Check Content</a>
+                </div>
+                <div class="glass-card p-2 rounded-2xl flex flex-col">
+                    <div class="img-wrapper ratio-4-3 mb-4"><img src="../../assets/desain/fypmanage_2.png"></div>
+                    <a href="https://www.instagram.com/p/DM962FhPLih/" target="_blank" class="check-btn w-full py-3 rounded-xl text-[10px] font-black uppercase tracking-widest text-center mt-auto">Check Content</a>
+                </div>
+            </div>
+        </section>
+
+        <section data-aos="fade-up">
+            <div class="mb-10">
+                <h2 class="text-2xl font-bold mb-4 uppercase tracking-tight italic">03. PT. Lentera Diri Indonesia</h2>
+                <div class="glass-card p-6 rounded-2xl border-l-4 border-sky-500 bg-white/5">
+                    <p class="text-gray-400 leading-relaxed text-sm">
+                        "Visual branding bertema kesehatan mental yang dikerjakan menggunakan <strong>Canva</strong>. Desain ini menggabungkan komposisi tipografi yang bersih dengan elemen visual yang dikurasi dari internet untuk menciptakan awareness yang kuat di Instagram."
+                    </p>
+                </div>
+            </div>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                <div class="glass-card p-2 rounded-2xl flex flex-col">
+                    <div class="img-wrapper ratio-4-3 mb-4"><img src="../../assets/desain/lenteradiri_1.png"></div>
+                    <a href="https://www.instagram.com/p/DMhYpemRoZV/" target="_blank" class="check-btn w-full py-3 rounded-xl text-[10px] font-black uppercase tracking-widest text-center mt-auto">Check Content</a>
+                </div>
+                <div class="glass-card p-2 rounded-2xl flex flex-col">
+                    <div class="img-wrapper ratio-4-3 mb-4"><img src="../../assets/desain/lenteradiri_2.png"></div>
+                    <a href="https://www.instagram.com/p/DMptqYbR5RS/" target="_blank" class="check-btn w-full py-3 rounded-xl text-[10px] font-black uppercase tracking-widest text-center mt-auto">Check Content</a>
+                </div>
+            </div>
+        </section>
+
+        <section data-aos="fade-up">
+            <div class="mb-10">
+                <h2 class="text-2xl font-bold mb-4 uppercase tracking-tight italic">04. PT. Bing Chun Food Management</h2>
+                <div class="glass-card p-6 rounded-2xl border-l-4 border-sky-500 bg-white/5">
+                    <p class="text-gray-400 leading-relaxed text-sm">
+                        "Pengembangan materi visual untuk kampanye event F&B yang dirancang secara presisi menggunakan kombinasi <strong>Canva</strong> dan <strong>Adobe Photoshop</strong> demi mencapai estetika desain yang modern dan menggugah selera."
+                    </p>
+                </div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+                <div class="md:col-span-12 glass-card p-2 rounded-2xl">
+                    <div class="img-container" style="aspect-ratio: 3.7 / 1;"><img src="../../assets/desain/bingchun_1.png"></div>
+                </div>
+                <div class="md:col-span-4 glass-card p-2 rounded-2xl">
+                    <div class="img-container aspect-square"><img src="../../assets/desain/bingchun_2.jpg"></div>
+                </div>
+                <div class="md:col-span-4 glass-card p-2 rounded-2xl">
+                    <div class="img-container aspect-square"><img src="../../assets/desain/bingchun_3.jpg"></div>
+                </div>
+                <div class="md:col-span-4 glass-card p-2 rounded-2xl">
+                    <div class="img-container" style="aspect-ratio: 2 / 3;"><img src="../../assets/desain/bingchun_4.png"></div>
+                </div>
+            </div>
+        </section>
+
+        <section data-aos="fade-up" class="pb-20">
+            <div class="mb-10">
+                <h2 class="text-2xl font-bold mb-4 uppercase tracking-tight italic">05. Kanaan School</h2>
+                <div class="glass-card p-6 rounded-2xl border-l-4 border-sky-500 bg-white/5">
+                    <p class="text-gray-400 leading-relaxed text-sm">
+                        "Proyek perancangan brosur Business Center yang mengintegrasikan berbagai elemen desain: logo berbasis vektor dari <strong>Adobe Illustrator</strong>, layouting di <strong>Adobe Photoshop</strong>, serta dokumentasi foto on-site area sekolah."
+                    </p>
+                </div>
+            </div>
+            <div class="glass-card p-2 rounded-2xl">
+                <div class="img-container" style="aspect-ratio: 1.85 / 1;"><img src="../../assets/desain/kanaan_1.png"></div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="py-10 text-center border-t border-white/5">
+        <p class="text-[10px] text-gray-600 uppercase tracking-[0.4em]">Mickey Richie &bull; 2026</p>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({ duration: 1000, once: true });
+    </script>
+</body>
+</html>
