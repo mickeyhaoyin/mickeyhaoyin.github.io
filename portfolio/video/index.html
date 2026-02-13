@@ -55,6 +55,8 @@
             -webkit-text-fill-color: transparent;
         }
 
+        .full-section { min-height: 100vh; width: 100%; display: flex; align-items: center; justify-content: center; padding: 4rem 2rem; position: relative; }
+
         .video-container {
             position: relative;
             padding-bottom: 177.77%; /* Aspect Ratio 9:16 untuk Short/Reels/TikTok */
@@ -427,7 +429,7 @@
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-        AOS.init({ duration: 1000, once: true });
+        AOS.init({ duration: 1000, once: false });
         document.querySelectorAll('.preview-wrap').forEach(card => {
             const video = card.querySelector('video');
 
@@ -448,6 +450,7 @@
                 card.classList.remove('playing');
             });
         });
+
     </script>
 </body>
 </html>
