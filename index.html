@@ -12,7 +12,7 @@
         <style>
             @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap');
             :root { --bg: #030712; --accent: #38bdf8; }
-            body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: var(--bg); color: #f8fafc; overflow-x: hidden; }
+            body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: var(--bg); color: #f8fafc; scroll-behavior: smooth; }
             
             .glass-card {
                 background: rgba(255, 255, 255, 0.02);
@@ -27,6 +27,8 @@
                 -webkit-background-clip: text;
                 -webkit-text-fill-color: transparent;
             }
+
+            .full-section { min-height: 100vh; width: 100%; display: flex; align-items: center; justify-content: center; padding: 4rem 2rem; position: relative; }
 
             .timeline-border { border-left: 2px solid rgba(56, 189, 248, 0.2); }
             .nav-link { position: relative; }
@@ -194,7 +196,7 @@
                     <div class="absolute -left-[11px] top-0 w-5 h-5 rounded-full bg-gray-700 border-4 border-gray-900"></div>
                     <div class="flex flex-col md:flex-row md:justify-between items-start mb-2">
                         <h3 class="text-xl font-bold text-white uppercase">Graphic Designer & Video Editor (Intern)</h3>
-                        <span class="text-gray-500 text-[10px] font-black mt-1">JAN 2025 - MAY 2025</span>
+                        <span class="text-gray-500 text-[10px] font-black mt-1">MAY 2025 - AUG 2025</span>
                     </div>
                     <p class="text-sky-400 text-xs font-bold mb-4">CV. Lentera Anak Bangsa</p>
                     <ul class="text-gray-400 text-sm space-y-2 list-none">
@@ -220,7 +222,7 @@
                     <div class="absolute -left-[11px] top-0 w-5 h-5 rounded-full bg-gray-700 border-4 border-gray-900"></div>
                     <div class="flex flex-col md:flex-row md:justify-between items-start mb-2">
                         <h3 class="text-xl font-bold text-white uppercase">Content Creator (Intern)</h3>
-                        <span class="text-gray-500 text-[10px] font-black mt-1">JUL 2023 - SEP 2023</span>
+                        <span class="text-gray-500 text-[10px] font-black mt-1">JUL 2023 - AUG 2023</span>
                     </div>
                     <p class="text-sky-400 text-xs font-bold mb-4">PT. Sinar Raja Indonesia</p>
                     <ul class="text-gray-400 text-sm space-y-2 list-none">
@@ -251,19 +253,19 @@
                         <h4 class="font-bold">Video Showcase</h4>
                     </div>
                 </a>
-                <a href="portfolio/desain">
+                <a href="portfolio/desain/index.html">
                     <div class="portfolio-item desain glass-card rounded-3xl overflow-hidden group p-10 flex flex-col items-center justify-center" data-aos="zoom-in" data-aos-delay="100">
                         <i class="fa-solid fa-palette text-5xl text-sky-400 mb-6 group-hover:rotate-12 transition-all"></i>
                         <h4 class="font-bold">Design Works</h4>
                     </div>
                 </a>
-                <a href="portfolio/fotografi">
+                <a href="portfolio/fotografi/index.html">
                     <div class="portfolio-item fotografi glass-card rounded-3xl overflow-hidden group p-10 flex flex-col items-center justify-center" data-aos="zoom-in" data-aos-delay="200">
                         <i class="fa-solid fa-camera text-5xl text-sky-400 mb-6 group-hover:scale-110 transition-all"></i>
                         <h4 class="font-bold">Photography</h4>
                     </div>
                 </a>
-                <a href="portfolio/projek">
+                <a href="portfolio/projek/index.html">
                     <div class="portfolio-item projek glass-card rounded-3xl overflow-hidden group p-10 flex flex-col items-center justify-center" data-aos="zoom-in" data-aos-delay="200">
                         <i class="fa-solid fa-film text-5xl text-sky-400 mb-6 group-hover:scale-125 transition-all"></i>
                         <h4 class="font-bold">Personal Project</h4>
@@ -303,6 +305,12 @@
                     else item.classList.add('hidden');
                 });
             }
+
+            AOS.init({
+                duration: 1000,
+                once: false
+            });
+
         </script>
     </body>
     </html>
