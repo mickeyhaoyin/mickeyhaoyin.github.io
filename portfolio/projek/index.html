@@ -42,16 +42,21 @@
         }
         .btn-social:hover { background: var(--accent); color: #000; transform: translateY(-3px); }
 
-        .back-nav { position: fixed; top: 2rem; left: 2rem; z-index: 100; }
+        .back-btn {
+            transition: all 0.3s ease;
+        }
+        .back-btn:hover { transform: translateX(-5px); color: var(--accent); }
     </style>
 </head>
 <body>
 
     <nav class="py-8 px-6 md:px-12 flex justify-between items-center">
-        <a href="../../" class="back-btn flex items-center gap-2 text-sm font-bold uppercase tracking-widest">
+        <a href="/" class="back-btn flex items-center gap-2 text-sm font-bold uppercase tracking-widest">
             <i class="fa-solid fa-arrow-left"></i> Kembali
         </a>
-        <h1 class="text-xl font-extrabold tracking-tighter">M.<span class="gradient-text">RICHIE</span></h1>
+        <a href="/">
+            <h1 class="text-xl font-extrabold tracking-tighter">M.<span class="gradient-text">RICHIE</span></h1>
+        </a> 
     </nav>
 
     <section class="full-section text-center">
