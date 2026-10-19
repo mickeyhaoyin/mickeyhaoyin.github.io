@@ -1,3 +1,5 @@
+<!-- PROJECT PAGE -->
+
 <!DOCTYPE html>
 <html lang="id">
 <head>
@@ -10,8 +12,29 @@
     <link rel="icon" type="image/png" href="../../assets/favicon.png">
     <link rel="apple-touch-icon" href="../../assets/favicon.png">
     <link rel="stylesheet" href="../../css/projek.css">
+    <!-- Loading Screen -->
+    <script>
+        document.documentElement.classList.add('page-loading');
+    </script>
 </head>
 <body>
+
+    <!-- PAGE TRANSITION -->
+    <div id="page-transition" aria-hidden="true">
+        <div class="transition-glow"></div>
+
+        <div class="transition-content">
+            <h2 class="transition-logo">
+                M.<span>RICHIE</span>
+            </h2>
+
+            <p class="transition-label">CREATIVE PORTFOLIO</p>
+
+            <div class="transition-loader">
+                <div class="transition-loader-bar"></div>
+            </div>
+        </div>
+    </div>
 
     <nav class="py-8 px-6 md:px-12 flex justify-between items-center">
         <a href="/" class="back-btn flex items-center gap-2 text-sm font-bold uppercase tracking-widest">
@@ -227,6 +250,65 @@
             });
 
         }
+        
+        // Page Transition
+        (() => {
+            const overlay = document.getElementById('page-transition');
+
+            if (!overlay) return;
+
+            // Buka layar ketika halaman baru siap ditampilkan
+            window.addEventListener('load', () => {
+                requestAnimationFrame(() => {
+                    document.documentElement.classList.remove('page-loading');
+                });
+            });
+
+            // Animasi ketika pengunjung berpindah halaman
+            document.addEventListener('click', (event) => {
+                const link = event.target.closest('a');
+
+                if (!link) return;
+
+                // Abaikan link eksternal, tab baru, dan link khusus
+                if (
+                    link.target === '_blank' ||
+                    link.hasAttribute('download') ||
+                    event.ctrlKey ||
+                    event.metaKey ||
+                    event.shiftKey ||
+                    event.altKey ||
+                    event.button !== 0
+                ) return;
+
+                const url = new URL(link.href, window.location.href);
+
+                if (
+                    url.origin !== window.location.origin ||
+                    url.pathname === window.location.pathname &&
+                    url.search === window.location.search &&
+                    url.hash
+                ) return;
+
+                // Jangan animasikan navigasi yang dibatalkan browser
+                if (event.defaultPrevented) return;
+
+                event.preventDefault();
+
+                overlay.classList.add('is-entering');
+
+                // Tunggu animasi menutup layar selesai
+                setTimeout(() => {
+                    window.location.href = url.href;
+                }, 800);
+            });
+
+            // Pulihkan halaman dari browser back/forward cache
+            window.addEventListener('pageshow', () => {
+                overlay.classList.remove('is-entering');
+                document.documentElement.classList.remove('page-loading');
+            });
+        })();
     </script>
 </body>
 </html>

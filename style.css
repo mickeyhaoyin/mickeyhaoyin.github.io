@@ -1,65 +1,487 @@
 /*Homepage */
 
-        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap');
-        
-            :root {
-                --bg: #030712;
-                --accent: #38bdf8; 
-            }
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap');
 
-            body {
-                font-family: 'Plus Jakarta Sans', sans-serif;
-                background-color: var(--bg);
-                color: #f8fafc;
-                scroll-behavior: smooth;
-            }
-            
-            .glass-card {
-                background: rgba(255, 255, 255, 0.02);
-                backdrop-filter: blur(12px);
-                border: 1px solid rgba(255, 255, 255, 0.05);
-                transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            }
-            .glass-card:hover {
-                border-color: var(--accent);
-            }
+    :root {
+        --bg: #030712;
+        --accent: #38bdf8; 
+    }
 
-            .gradient-text {
-                background: linear-gradient(135deg, #38bdf8 0%, #818cf8 100%);
-                -webkit-background-clip: text;
-                -webkit-text-fill-color: transparent;
-            }
+    body {
+        font-family: 'Plus Jakarta Sans', sans-serif;
+        background-color: var(--bg);
+        color: #f8fafc;
+        scroll-behavior: smooth;
+    }
+    
+    /* =====================================
+    M.RICHIE — CINEMATIC INTRO LOADER
+    ===================================== */
 
-            .full-section {
-                min-height: 100vh;
-                width: 100%;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                padding: 4rem 2rem;
-                position: relative;
-            }
+    #intro-loader {
+        position: fixed;
+        inset: 0;
+        z-index: 999999;
 
-            .timeline-border {
-                border-left: 2px solid rgba(56, 189, 248, 0.2);
-            }
+        display: flex;
+        align-items: center;
+        justify-content: center;
 
-            .nav-link {
-                position: relative;
-            }
+        overflow: hidden;
+        background: #030712;
 
-            .nav-link::after {
-                content: ''; position: absolute;
-                width: 0; height: 2px;
-                bottom: -4px; left: 0;
-                background: var(--accent);
-                transition: width 0.3s;
-            }
+        opacity: 1;
+        visibility: visible;
+        transition:
+            opacity 0.7s ease,
+            visibility 0.7s ease;
+    }
 
-            .nav-link:hover::after {
-                width: 100%;
-            }
+    #intro-loader.intro-hidden {
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+    }
 
-            .portfolio-item.hidden {
-                display: none;
-            }
+    /* Background Glow */
+    .intro-glow {
+        position: absolute;
+        width: 360px;
+        height: 360px;
+
+        background: radial-gradient(
+            circle,
+            rgba(56, 189, 248, 0.15) 0%,
+            rgba(129, 140, 248, 0.07) 40%,
+            transparent 70%
+        );
+
+        filter: blur(25px);
+        animation: intro-glow-pulse 3s ease-in-out infinite;
+        pointer-events: none;
+    }
+
+    /* Main Content */
+    .intro-content {
+        position: relative;
+        z-index: 2;
+
+        width: min(320px, 85vw);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        animation: intro-content-in 1s ease both;
+    }
+
+    /* Logo Circle */
+    .intro-logo-wrap {
+        width: 150px;
+        height: 150px;
+
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        margin-bottom: 24px;
+    }
+
+    /* Outer Animated Ring */
+    .intro-ring {
+        position: absolute;
+        inset: 8px;
+
+        border: 1px solid rgba(56, 189, 248, 0.15);
+        border-top: 2px solid #38bdf8;
+        border-right: 1px solid #818cf8;
+
+        border-radius: 50%;
+        animation: intro-spin 3s linear infinite;
+    }
+
+    /* Inner Ring */
+    .intro-ring-inner {
+        position: absolute;
+        inset: 18px;
+
+        border: 1px solid rgba(129, 140, 248, 0.18);
+        border-bottom: 2px solid #818cf8;
+
+        border-radius: 50%;
+        animation: intro-spin-reverse 5s linear infinite;
+    }
+
+    /* Logo Text */
+    .intro-logo {
+        font-family: 'Plus Jakarta Sans', sans-serif;
+        font-size: 39px;
+        font-weight: 800;
+        letter-spacing: -4px;
+
+        color: #f8fafc;
+        text-shadow: 0 0 30px rgba(56, 189, 248, 0.12);
+    }
+
+    .intro-logo span {
+        background: linear-gradient(
+            135deg,
+            #38bdf8 0%,
+            #818cf8 100%
+        );
+
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    /* Brand Name */
+    .intro-brand {
+        margin: 0;
+
+        font-family: 'Plus Jakarta Sans', sans-serif;
+        font-size: 25px;
+        font-weight: 800;
+        letter-spacing: 0.16em;
+
+        color: #f8fafc;
+    }
+
+    .intro-subtitle {
+        margin-top: 10px;
+
+        font-size: 9px;
+        font-weight: 700;
+        letter-spacing: 0.42em;
+
+        color: #64748b;
+        text-align: center;
+    }
+
+    /* Progress Track */
+    .intro-progress {
+        width: 150px;
+        height: 2px;
+
+        margin-top: 32px;
+        overflow: hidden;
+
+        background: rgba(255, 255, 255, 0.09);
+        border-radius: 10px;
+    }
+
+    #intro-progress-fill {
+        width: 0%;
+        height: 100%;
+
+        background: linear-gradient(
+            90deg,
+            #38bdf8,
+            #818cf8
+        );
+
+        box-shadow: 0 0 12px rgba(56, 189, 248, 0.65);
+        transition: width 0.12s linear;
+    }
+
+    /* Status + Percentage */
+    .intro-progress-info {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        gap: 12px;
+
+        margin-top: 12px;
+
+        font-family: 'Plus Jakarta Sans', sans-serif;
+        font-size: 8px;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+    }
+
+    #intro-status {
+        color: #64748b;
+    }
+
+    #intro-percent {
+        color: #38bdf8;
+        font-variant-numeric: tabular-nums;
+    }
+
+    /* Bottom Label */
+    .intro-footer {
+        position: absolute;
+        bottom: 32px;
+
+        font-family: 'Plus Jakarta Sans', sans-serif;
+        font-size: 8px;
+        font-weight: 700;
+        letter-spacing: 0.4em;
+
+        color: #334155;
+    }
+
+    /* Animations */
+    @keyframes intro-spin {
+        to { transform: rotate(360deg); }
+    }
+
+    @keyframes intro-spin-reverse {
+        to { transform: rotate(-360deg); }
+    }
+
+    @keyframes intro-glow-pulse {
+        0%, 100% {
+            transform: scale(0.9);
+            opacity: 0.65;
+        }
+
+        50% {
+            transform: scale(1.15);
+            opacity: 1;
+        }
+    }
+
+    @keyframes intro-content-in {
+        from {
+            opacity: 0;
+            transform: translateY(12px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    /* Mobile */
+    @media (max-width: 480px) {
+        .intro-logo-wrap {
+            width: 135px;
+            height: 135px;
+        }
+
+        .intro-brand {
+            font-size: 22px;
+        }
+
+        .intro-footer {
+            bottom: 24px;
+            font-size: 7px;
+        }
+    }
+
+    /* Accessibility */
+    @media (prefers-reduced-motion: reduce) {
+        .intro-ring,
+        .intro-ring-inner,
+        .intro-glow,
+        .intro-content {
+            animation: none;
+        }
+    }
+
+
+    /* =================================
+    M.RICHIE — PAGE TRANSITION
+    ================================= */
+
+    #page-transition {
+        position: fixed;
+        inset: 0;
+        z-index: 99999;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+
+        background: #030712;
+        transform: translateY(-101%);
+        transition: transform 0.8s cubic-bezier(0.77, 0, 0.175, 1);
+        pointer-events: none;
+    }
+
+    /* Tutup layar saat pindah halaman */
+    #page-transition.is-entering {
+        transform: translateY(0);
+        pointer-events: all;
+    }
+
+    /* Tutup layar sementara halaman baru dimuat */
+    html.page-loading #page-transition {
+        transform: translateY(0);
+    }
+
+    /* Cahaya biru di belakang logo */
+    .transition-glow {
+        position: absolute;
+        width: 320px;
+        height: 320px;
+        border-radius: 50%;
+
+        background: radial-gradient(
+            circle,
+            rgba(56, 189, 248, 0.16) 0%,
+            rgba(129, 140, 248, 0.08) 40%,
+            transparent 70%
+        );
+
+        filter: blur(35px);
+        animation: transition-pulse 2s ease-in-out infinite;
+    }
+
+    /* Konten logo */
+    .transition-content {
+        position: relative;
+        z-index: 1;
+        text-align: center;
+        padding: 24px;
+        animation: transition-content-in 0.7s ease both;
+    }
+
+    .transition-logo {
+        margin: 0;
+        font-family: 'Plus Jakarta Sans', sans-serif;
+        font-size: clamp(2rem, 5vw, 3.5rem);
+        font-weight: 800;
+        letter-spacing: -0.07em;
+        color: #f8fafc;
+    }
+
+    .transition-logo span {
+        background: linear-gradient(
+            135deg,
+            #38bdf8 0%,
+            #818cf8 100%
+        );
+
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    .transition-label {
+        margin-top: 12px;
+        font-size: 9px;
+        font-weight: 700;
+        letter-spacing: 0.45em;
+        color: #64748b;
+    }
+
+    /* Garis loading */
+    .transition-loader {
+        width: 150px;
+        height: 2px;
+        margin: 30px auto 0;
+        overflow: hidden;
+        background: rgba(255, 255, 255, 0.08);
+    }
+
+    .transition-loader-bar {
+        width: 40%;
+        height: 100%;
+        background: linear-gradient(
+            90deg,
+            #38bdf8,
+            #818cf8
+        );
+
+        animation: transition-progress 1.2s ease-in-out infinite;
+    }
+
+    /* Animasi cahaya */
+    @keyframes transition-pulse {
+        0%, 100% {
+            transform: scale(0.85);
+            opacity: 0.6;
+        }
+        50% {
+            transform: scale(1.15);
+            opacity: 1;
+        }
+    }
+
+    /* Logo masuk */
+    @keyframes transition-content-in {
+        from {
+            opacity: 0;
+            transform: translateY(15px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    /* Progress bergerak */
+    @keyframes transition-progress {
+        0% {
+            transform: translateX(-110%);
+        }
+        100% {
+            transform: translateX(380%);
+        }
+    }
+
+    /* Hormati preferensi reduce motion */
+    @media (prefers-reduced-motion: reduce) {
+        #page-transition {
+            transition-duration: 0.15s;
+        }
+
+        .transition-glow,
+        .transition-content,
+        .transition-loader-bar {
+            animation: none;
+        }
+    }
+
+    .glass-card {
+        background: rgba(255, 255, 255, 0.02);
+        backdrop-filter: blur(12px);
+        border: 1px solid rgba(255, 255, 255, 0.05);
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .glass-card:hover {
+        border-color: var(--accent);
+    }
+
+    .gradient-text {
+        background: linear-gradient(135deg, #38bdf8 0%, #818cf8 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    .full-section {
+        min-height: 100vh;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 4rem 2rem;
+        position: relative;
+    }
+
+    .timeline-border {
+        border-left: 2px solid rgba(56, 189, 248, 0.2);
+    }
+
+    .nav-link {
+        position: relative;
+    }
+
+    .nav-link::after {
+        content: ''; position: absolute;
+        width: 0; height: 2px;
+        bottom: -4px; left: 0;
+        background: var(--accent);
+        transition: width 0.3s;
+    }
+
+    .nav-link:hover::after {
+        width: 100%;
+    }
+
+    .portfolio-item.hidden {
+        display: none;
+    }
