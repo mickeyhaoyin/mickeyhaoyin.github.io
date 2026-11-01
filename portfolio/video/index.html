@@ -2,7 +2,7 @@
 <html lang="id">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Video Showcase | Mickey Richie Portfolio</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
@@ -15,480 +15,426 @@
         document.documentElement.classList.add('page-loading');
     </script>
 </head>
-<body>
+<body class="overflow-x-hidden bg-[#030712] text-slate-50 antialiased">
 
     <!-- PAGE TRANSITION -->
     <div id="page-transition" aria-hidden="true">
         <div class="transition-glow"></div>
-
         <div class="transition-content">
             <h2 class="transition-logo">
                 M.<span>RICHIE</span>
             </h2>
-
             <p class="transition-label">CREATIVE PORTFOLIO</p>
-
             <div class="transition-loader">
                 <div class="transition-loader-bar"></div>
             </div>
         </div>
     </div>
 
-    <nav class="py-8 px-6 md:px-12 flex justify-between items-center">
-        <a href="/" class="back-btn flex items-center gap-2 text-sm font-bold uppercase tracking-widest">
-            <i class="fa-solid fa-arrow-left"></i> Kembali
+    <!-- NAVBAR FIXED -->
+    <nav class="fixed w-full z-50 py-4 px-6 md:py-6 md:px-12 flex justify-between items-center bg-[#030712]/90 backdrop-blur-md border-b border-white/5 transition-all duration-300">
+        <a href="/" class="back-btn flex items-center gap-2 text-[10px] md:text-sm font-bold uppercase tracking-widest hover:text-sky-400 transition-colors">
+            <i class="fa-solid fa-arrow-left"></i> <span class="hidden sm:inline">Kembali</span>
         </a>
         <a href="/">
-            <h1 class="text-xl font-extrabold tracking-tighter">M.<span class="gradient-text">RICHIE</span></h1>
+            <h1 class="text-xl md:text-2xl font-extrabold tracking-tighter">M.<span class="gradient-text">RICHIE</span></h1>
         </a> 
     </nav>
 
-    <header class="py-12 px-6 text-center" data-aos="zoom-out">
-        <h1 class="text-5xl md:text-7xl font-black mb-4 italic uppercase tracking-tighter">Video <span class="gradient-text">Showcase</span></h1>
-        <p class="text-gray-500 text-sm uppercase tracking-[0.3em]">Selected Motion Works Portfolio</p>
+    <!-- HEADER: 1 FRAME LAYOUT MOBILE -->
+    <header class="h-[60dvh] md:h-auto pt-32 md:pt-40 pb-12 px-6 flex flex-col items-center justify-center text-center" data-aos="zoom-out">
+        <h1 class="text-4xl sm:text-5xl md:text-7xl font-black mb-3 md:mb-4 italic uppercase tracking-tighter leading-tight">
+            Video <br class="md:hidden" /><span class="gradient-text pr-2 md:pr-4">Showcase</span>
+        </h1>
+        <p class="text-gray-500 text-[10px] md:text-sm uppercase tracking-[0.2em] md:tracking-[0.3em]">Selected Motion Works Portfolio</p>
     </header>
 
-    <main class="max-w-7xl mx-auto px-6 pb-32 space-y-32">
+    <!-- MAIN CONTENT -->
+    <main class="max-w-7xl mx-auto px-6 pb-20 md:pb-32 space-y-20 md:space-y-32">
 
+        <!-- SECTION 1: Goland Indonesia -->
         <section data-aos="fade-up">
-            <div class="mb-10">
-                <h2 class="text-3xl font-bold mb-4">PT. Sinar Raja Indonesia</h2>
-                <div class="glass-card p-6 rounded-2xl border-l-4 border-sky-500">
-                    <p class="text-gray-400 leading-relaxed italic text-sm">
+            <div class="mb-8 md:mb-10 text-center md:text-left">
+                <h2 class="text-2xl md:text-3xl font-bold mb-4">PT. Sinar Raja Indonesia</h2>
+                <div class="glass-card p-5 md:p-6 rounded-2xl border-l-4 border-sky-500">
+                    <p class="text-gray-400 leading-relaxed italic text-xs md:text-sm text-justify md:text-left">
                         "Rangkaian konten promosi ini diproduksi menggunakan kamera DSLR dengan operasional teknis secara mandiri. Dalam proyek ini, saya berperan penuh mulai dari penulisan naskah, bertindak sebagai talent di depan layar, hingga proses editing akhir menggunakan software CapCut. Seluruh konten ini dipublikasikan melalui akun TikTok resmi Goland Indonesia."
                     </p>
                 </div>
             </div>
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
-                <div class="glass-card p-2 ratio-16-9 flex flex-col">
-                    <div class="img-container mb-3 preview-wrap" style="aspect-ratio: 9 / 16;">
-                        <img src="../../assets/video/goland_1.jpg" class="preview-thumb">
-                        <video class="preview-video" muted playsinline preload="metadata">
+            
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+                <!-- Video 1 -->
+                <div class="glass-card p-2 rounded-xl flex flex-col h-full">
+                    <div class="img-container mb-3 preview-wrap rounded-lg overflow-hidden" style="aspect-ratio: 9 / 16;">
+                        <img src="../../assets/video/goland_1.jpg" class="preview-thumb w-full h-full object-cover">
+                        <video class="preview-video w-full h-full object-cover" muted playsinline preload="metadata">
                             <source src="../../assets/video/goland_1.mp4" type="video/mp4">
                         </video>
                     </div>
-
-                    <a href="https://www.tiktok.com/@golandindonesia/video/7267859062404992261"
-                        target="_blank"
-                        class="check-btn w-full py-3 rounded-xl text-[10px] font-black uppercase tracking-widest text-center mt-auto">
+                    <a href="https://www.tiktok.com/@golandindonesia/video/7267859062404992261" target="_blank" class="check-btn w-full py-2.5 md:py-3 rounded-lg text-[9px] md:text-[10px] font-black uppercase tracking-widest text-center mt-auto bg-white/5 hover:bg-sky-500 transition-colors">
                         Play On TikTok
                     </a>
                 </div>
-                <div class="glass-card p-2 ratio-16-9 flex flex-col">
-                    <div class="img-container mb-3 preview-wrap" style="aspect-ratio: 9 / 16;">
-                        <img src="../../assets/video/goland_2.jpg" class="preview-thumb">
-                        <video class="preview-video" muted playsinline preload="metadata">
+                <!-- Video 2 -->
+                <div class="glass-card p-2 rounded-xl flex flex-col h-full">
+                    <div class="img-container mb-3 preview-wrap rounded-lg overflow-hidden" style="aspect-ratio: 9 / 16;">
+                        <img src="../../assets/video/goland_2.jpg" class="preview-thumb w-full h-full object-cover">
+                        <video class="preview-video w-full h-full object-cover" muted playsinline preload="metadata">
                             <source src="../../assets/video/goland_2.mp4" type="video/mp4">
                         </video>
                     </div>
-
-                    <a href="https://www.tiktok.com/@golandindonesia/video/7267044002577255685"
-                        target="_blank"
-                        class="check-btn w-full py-3 rounded-xl text-[10px] font-black uppercase tracking-widest text-center mt-auto">
+                    <a href="https://www.tiktok.com/@golandindonesia/video/7267044002577255685" target="_blank" class="check-btn w-full py-2.5 md:py-3 rounded-lg text-[9px] md:text-[10px] font-black uppercase tracking-widest text-center mt-auto bg-white/5 hover:bg-sky-500 transition-colors">
                         Play On TikTok
                     </a>
                 </div>
-                <div class="glass-card p-2 ratio-16-9 flex flex-col">
-                    <div class="img-container mb-3 preview-wrap" style="aspect-ratio: 9 / 16;">
-                        <img src="../../assets/video/goland_3.jpg" class="preview-thumb">
-                        <video class="preview-video" muted playsinline preload="metadata">
+                <!-- Video 3 -->
+                <div class="glass-card p-2 rounded-xl flex flex-col h-full">
+                    <div class="img-container mb-3 preview-wrap rounded-lg overflow-hidden" style="aspect-ratio: 9 / 16;">
+                        <img src="../../assets/video/goland_3.jpg" class="preview-thumb w-full h-full object-cover">
+                        <video class="preview-video w-full h-full object-cover" muted playsinline preload="metadata">
                             <source src="../../assets/video/goland_3.mp4" type="video/mp4">
                         </video>
                     </div>
-
-                    <a href="https://www.tiktok.com/@golandindonesia/video/7268601326689324293"
-                        target="_blank"
-                        class="check-btn w-full py-3 rounded-xl text-[10px] font-black uppercase tracking-widest text-center mt-auto">
+                    <a href="https://www.tiktok.com/@golandindonesia/video/7268601326689324293" target="_blank" class="check-btn w-full py-2.5 md:py-3 rounded-lg text-[9px] md:text-[10px] font-black uppercase tracking-widest text-center mt-auto bg-white/5 hover:bg-sky-500 transition-colors">
                         Play On TikTok
                     </a>
                 </div>
-                <div class="glass-card p-2 ratio-16-9 flex flex-col">
-                    <div class="img-container mb-3 preview-wrap" style="aspect-ratio: 9 / 16;">
-                        <img src="../../assets/video/goland_4.png" class="preview-thumb">
-                        <video class="preview-video" muted playsinline preload="metadata">
+                <!-- Video 4 -->
+                <div class="glass-card p-2 rounded-xl flex flex-col h-full">
+                    <div class="img-container mb-3 preview-wrap rounded-lg overflow-hidden" style="aspect-ratio: 9 / 16;">
+                        <img src="../../assets/video/goland_4.png" class="preview-thumb w-full h-full object-cover">
+                        <video class="preview-video w-full h-full object-cover" muted playsinline preload="metadata">
                             <source src="../../assets/video/goland_4.mp4" type="video/mp4">
                         </video>
                     </div>
-
-                    <a href="https://www.tiktok.com/@golandindonesia/video/7267799124064390406"
-                        target="_blank"
-                        class="check-btn w-full py-3 rounded-xl text-[10px] font-black uppercase tracking-widest text-center mt-auto">
+                    <a href="https://www.tiktok.com/@golandindonesia/video/7267799124064390406" target="_blank" class="check-btn w-full py-2.5 md:py-3 rounded-lg text-[9px] md:text-[10px] font-black uppercase tracking-widest text-center mt-auto bg-white/5 hover:bg-sky-500 transition-colors">
                         Play On TikTok
                     </a>
                 </div>
+            </div>
         </section>
 
+        <!-- SECTION 2: FYP Media & Agency -->
         <section>
-            <div class="mb-10" data-aos="fade-up">
-                <h2 class="text-3xl font-bold mb-4">CV. Lentera Anak Bangsa | FYP Media & Agency</h2>
-                <div class="glass-card p-6 rounded-2xl border-l-4 border-sky-500">
-                    <p class="text-gray-400 leading-relaxed italic text-sm">
+            <div class="mb-8 md:mb-10 text-center md:text-left" data-aos="fade-up">
+                <h2 class="text-2xl md:text-3xl font-bold mb-4">CV. Lentera Anak Bangsa</h2>
+                <div class="glass-card p-5 md:p-6 rounded-2xl border-l-4 border-sky-500">
+                    <p class="text-gray-400 leading-relaxed italic text-xs md:text-sm text-justify md:text-left">
                         "Koleksi video multimedia ini mencakup berbagai format sosial media yang direkam menggunakan standar kamera DSLR untuk kualitas visual maksimal. Proses editing diselesaikan secara efisien menggunakan CapCut untuk menghasilkan ritme konten yang dinamis dan relevan dengan audiens masa kini."
                     </p>
                 </div>
             </div>
 
-            <div class="space-y-12" data-aos="fade-up">
-                <div>
-                    <h3 class="text-sky-400 text-xs font-bold uppercase mb-4 tracking-widest">Youtube Podcast (FYP Media)</h3>
-                    <div class="youtube-container glass-card">
-                        <iframe src="https://www.youtube.com/embed/wBBL4eFUIeY" allowfullscreen></iframe>
+            <div class="space-y-12 md:space-y-16" data-aos="fade-up">
+                
+                <!-- Youtube Podcast (Trigger Pop-up) -->
+                <div data-aos="fade-up">
+                    <h3 class="text-sky-400 text-[10px] md:text-xs font-bold uppercase mb-4 tracking-widest text-center md:text-left">Youtube Podcast (FYP Media)</h3>
+                    <div id="yt-trigger" class="glass-card rounded-2xl overflow-hidden shadow-lg relative cursor-pointer group" style="padding-bottom: 56.25%; height: 0;">
+                        <!-- Thumbnail otomatis dari YouTube -->
+                        <img src="https://img.youtube.com/vi/wBBL4eFUIeY/maxresdefault.jpg" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="Thumbnail Podcast">
+                        
+                        <!-- Overlay Gelap & Ikon Play -->
+                        <div class="absolute inset-0 flex items-center justify-center bg-black/40 group-hover:bg-black/20 transition-colors">
+                            <i class="fa-brands fa-youtube text-6xl text-red-600 drop-shadow-xl group-hover:scale-110 transition-transform duration-300"></i>
+                        </div>
                     </div>
                 </div>
 
-                <div class="grid md:grid-cols-2 gap-12">
+                <!-- Grid Reels -->
+                <div class="grid md:grid-cols-2 gap-8 md:gap-12">
+                    
+                    <!-- Prof Raymond -->
                     <div data-aos="fade-up">
-                        <h3 class="text-sky-400 text-xs font-bold uppercase mb-4 tracking-widest">Instagram Reels (FYP Management x Prof. Raymond)</h3>
+                        <h3 class="text-sky-400 text-[10px] md:text-xs font-bold uppercase mb-4 tracking-widest text-center md:text-left">Instagram Reels (FYP Mgt x Prof. Raymond)</h3>
                         <div class="grid grid-cols-2 gap-4">
-                            <div class="glass-card p-2 rounded-2xl flex flex-col">
-                                <div class="img-container mb-3 preview-wrap" style="aspect-ratio: 9 / 16;">
-                                    <img src="../../assets/video/fypraymond_1.jpg" class="preview-thumb">
-                                    <video class="preview-video" muted playsinline preload="metadata">
+                            <!-- V1 -->
+                            <div class="glass-card p-2 rounded-xl flex flex-col h-full">
+                                <div class="img-container mb-3 preview-wrap rounded-lg overflow-hidden" style="aspect-ratio: 9 / 16;">
+                                    <img src="../../assets/video/fypraymond_1.jpg" class="preview-thumb w-full h-full object-cover">
+                                    <video class="preview-video w-full h-full object-cover" muted playsinline preload="metadata">
                                         <source src="../../assets/video/fypraymond_1.mp4" type="video/mp4">
                                     </video>
                                 </div>
-
-                                <a href="https://www.instagram.com/reel/DMKoQsFTHcb/?igsh=ejR5dW9hZWNlaGh4"
-                                    target="_blank"
-                                    class="check-btn w-full py-3 rounded-xl text-[10px] font-black uppercase tracking-widest text-center mt-auto">
+                                <a href="https://www.instagram.com/reel/DMKoQsFTHcb/?igsh=ejR5dW9hZWNlaGh4" target="_blank" class="check-btn w-full py-2.5 md:py-3 rounded-lg text-[9px] md:text-[10px] font-black uppercase tracking-widest text-center mt-auto bg-white/5 hover:bg-sky-500 transition-colors">
                                     Watch Reels
                                 </a>
                             </div>
-                            <div class="glass-card p-2 rounded-2xl flex flex-col">
-                                <div class="img-container mb-3 preview-wrap" style="aspect-ratio: 9 / 16;">
-                                    <img src="../../assets/video/fypraymond_2.jpg" class="preview-thumb">
-                                    <video class="preview-video" muted playsinline preload="metadata">
+                            <!-- V2 -->
+                            <div class="glass-card p-2 rounded-xl flex flex-col h-full">
+                                <div class="img-container mb-3 preview-wrap rounded-lg overflow-hidden" style="aspect-ratio: 9 / 16;">
+                                    <img src="../../assets/video/fypraymond_2.jpg" class="preview-thumb w-full h-full object-cover">
+                                    <video class="preview-video w-full h-full object-cover" muted playsinline preload="metadata">
                                         <source src="../../assets/video/fypraymond_2.mp4" type="video/mp4">
                                     </video>
                                 </div>
-
-                                <a href="https://www.instagram.com/reel/DLJf0Ngz_4k/?igsh=MXFtNDhkMmswbmtueQ=="
-                                    target="_blank"
-                                    class="check-btn w-full py-3 rounded-xl text-[10px] font-black uppercase tracking-widest text-center mt-auto">
+                                <a href="https://www.instagram.com/reel/DLJf0Ngz_4k/?igsh=MXFtNDhkMmswbmtueQ==" target="_blank" class="check-btn w-full py-2.5 md:py-3 rounded-lg text-[9px] md:text-[10px] font-black uppercase tracking-widest text-center mt-auto bg-white/5 hover:bg-sky-500 transition-colors">
                                     Watch Reels
                                 </a>
                             </div>
                         </div>
                     </div>
+
+                    <!-- Influencer -->
                     <div data-aos="fade-up">
-                        <h3 class="text-sky-400 text-xs font-bold uppercase mb-4 tracking-widest">Influencer Content (FYP Management x KOL Talent)</h3>
+                        <h3 class="text-sky-400 text-[10px] md:text-xs font-bold uppercase mb-4 tracking-widest text-center md:text-left">Influencer Content (FYP Mgt x KOL Talent)</h3>
                         <div class="grid grid-cols-2 gap-4">
-                            <div class="glass-card p-2 rounded-2xl flex flex-col">
-                                <div class="img-container mb-3 preview-wrap" style="aspect-ratio: 9 / 16;">
-                                    <img src="../../assets/video/fypmanage_1.jpg" class="preview-thumb">
-                                    <video class="preview-video" muted playsinline preload="metadata">
+                            <!-- V1 -->
+                            <div class="glass-card p-2 rounded-xl flex flex-col h-full">
+                                <div class="img-container mb-3 preview-wrap rounded-lg overflow-hidden" style="aspect-ratio: 9 / 16;">
+                                    <img src="../../assets/video/fypmanage_1.jpg" class="preview-thumb w-full h-full object-cover">
+                                    <video class="preview-video w-full h-full object-cover" muted playsinline preload="metadata">
                                         <source src="../../assets/video/fypmanage_1.mp4" type="video/mp4">
                                     </video>
                                 </div>
-
-                                <a href="https://www.instagram.com/reel/DOLmSpTj8Sx/?igsh=NWRrZTlscXNuajVx"
-                                    target="_blank"
-                                    class="check-btn w-full py-3 rounded-xl text-[10px] font-black uppercase tracking-widest text-center mt-auto">
+                                <a href="https://www.instagram.com/reel/DOLmSpTj8Sx/?igsh=NWRrZTlscXNuajVx" target="_blank" class="check-btn w-full py-2.5 md:py-3 rounded-lg text-[9px] md:text-[10px] font-black uppercase tracking-widest text-center mt-auto bg-white/5 hover:bg-sky-500 transition-colors">
                                     Watch Reels
                                 </a>
                             </div>
-                            <div class="glass-card p-2 rounded-2xl flex flex-col">
-                                <div class="img-container mb-3 preview-wrap" style="aspect-ratio: 9 / 16;">
-                                    <img src="../../assets/video/fypmanage_2.jpg" class="preview-thumb">
-                                    <video class="preview-video" muted playsinline preload="metadata">
+                            <!-- V2 -->
+                            <div class="glass-card p-2 rounded-xl flex flex-col h-full">
+                                <div class="img-container mb-3 preview-wrap rounded-lg overflow-hidden" style="aspect-ratio: 9 / 16;">
+                                    <img src="../../assets/video/fypmanage_2.jpg" class="preview-thumb w-full h-full object-cover">
+                                    <video class="preview-video w-full h-full object-cover" muted playsinline preload="metadata">
                                         <source src="../../assets/video/fypmanage_2.mp4" type="video/mp4">
                                     </video>
                                 </div>
-
-                                <a href="https://www.instagram.com/reel/DN9b1nsEhg_/?igsh=cW5pcTFneHpla3Z0"
-                                    target="_blank"
-                                    class="check-btn w-full py-3 rounded-xl text-[10px] font-black uppercase tracking-widest text-center mt-auto">
+                                <a href="https://www.instagram.com/reel/DN9b1nsEhg_/?igsh=cW5pcTFneHpla3Z0" target="_blank" class="check-btn w-full py-2.5 md:py-3 rounded-lg text-[9px] md:text-[10px] font-black uppercase tracking-widest text-center mt-auto bg-white/5 hover:bg-sky-500 transition-colors">
                                     Watch Reels
                                 </a>
                             </div>
                         </div>
                     </div>
+
                 </div>
 
+                <!-- Berita IG -->
                 <div data-aos="fade-up">
-                    <h3 class="text-sky-400 text-xs font-bold uppercase mb-4 tracking-widest">Berita Instagram (FYP Media)</h3>
+                    <h3 class="text-sky-400 text-[10px] md:text-xs font-bold uppercase mb-4 tracking-widest text-center md:text-left">Berita Instagram (FYP Media)</h3>
                     <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-                        <div class="glass-card p-2 rounded-2xl flex flex-col">
-                            <div class="img-container mb-3 preview-wrap" style="aspect-ratio: 9 / 16;">
-                                <img src="../../assets/video/fypmedia_1.jpg" class="preview-thumb">
-                                <video class="preview-video" muted playsinline preload="metadata">
+                        <!-- Vid 1-4 (Struktur diperbaiki agar sama tinggi dan rapi) -->
+                        <div class="glass-card p-2 rounded-xl flex flex-col h-full">
+                            <div class="img-container mb-3 preview-wrap rounded-lg overflow-hidden" style="aspect-ratio: 9 / 16;">
+                                <img src="../../assets/video/fypmedia_1.jpg" class="preview-thumb w-full h-full object-cover">
+                                <video class="preview-video w-full h-full object-cover" muted playsinline preload="metadata">
                                     <source src="../../assets/video/fypmedia_1.mp4" type="video/mp4">
                                 </video>
                             </div>
-
-                            <a href="https://www.instagram.com/reel/DLW7NspSi_j/?igsh=MW81NnNwbmU5NG42bw=="
-                                target="_blank"
-                                class="check-btn w-full py-3 rounded-xl text-[10px] font-black uppercase tracking-widest text-center mt-auto">
-                                Watch Reels
-                            </a>
+                            <a href="https://www.instagram.com/reel/DLW7NspSi_j/?igsh=MW81NnNwbmU5NG42bw==" target="_blank" class="check-btn w-full py-2.5 md:py-3 rounded-lg text-[9px] md:text-[10px] font-black uppercase tracking-widest text-center mt-auto bg-white/5 hover:bg-sky-500 transition-colors">Watch Reels</a>
                         </div>
-                        <div class="glass-card p-2 rounded-2xl flex flex-col">
-                            <div class="img-container mb-3 preview-wrap" style="aspect-ratio: 9 / 16;">
-                                <img src="../../assets/video/fypmedia_2.jpg" class="preview-thumb">
-                                <video class="preview-video" muted playsinline preload="metadata">
+                        <div class="glass-card p-2 rounded-xl flex flex-col h-full">
+                            <div class="img-container mb-3 preview-wrap rounded-lg overflow-hidden" style="aspect-ratio: 9 / 16;">
+                                <img src="../../assets/video/fypmedia_2.jpg" class="preview-thumb w-full h-full object-cover">
+                                <video class="preview-video w-full h-full object-cover" muted playsinline preload="metadata">
                                     <source src="../../assets/video/fypmedia_2.mp4" type="video/mp4">
                                 </video>
                             </div>
-
-                            <a href="https://www.instagram.com/reel/DKbDtr7SAcR/?igsh=azg1eThtaDgxcWps"
-                                target="_blank"
-                                class="check-btn w-full py-3 rounded-xl text-[10px] font-black uppercase tracking-widest text-center mt-auto">
-                                Watch Reels
-                            </a>
+                            <a href="https://www.instagram.com/reel/DKbDtr7SAcR/?igsh=azg1eThtaDgxcWps" target="_blank" class="check-btn w-full py-2.5 md:py-3 rounded-lg text-[9px] md:text-[10px] font-black uppercase tracking-widest text-center mt-auto bg-white/5 hover:bg-sky-500 transition-colors">Watch Reels</a>
                         </div>
-                        <div class="glass-card p-2 rounded-2xl flex flex-col">
-                            <div class="img-container mb-3 preview-wrap" style="aspect-ratio: 9 / 16;">
-                                <img src="../../assets/video/fypmedia_3.jpg" class="preview-thumb">
-                                <video class="preview-video" muted playsinline preload="metadata">
+                        <div class="glass-card p-2 rounded-xl flex flex-col h-full">
+                            <div class="img-container mb-3 preview-wrap rounded-lg overflow-hidden" style="aspect-ratio: 9 / 16;">
+                                <img src="../../assets/video/fypmedia_3.jpg" class="preview-thumb w-full h-full object-cover">
+                                <video class="preview-video w-full h-full object-cover" muted playsinline preload="metadata">
                                     <source src="../../assets/video/fypmedia_3.mp4" type="video/mp4">
                                 </video>
                             </div>
-
-                            <a href="https://www.instagram.com/reel/DFosalLSsDW/?igsh=eWZsYng1eXpjOGQy"
-                                target="_blank"
-                                class="check-btn w-full py-3 rounded-xl text-[10px] font-black uppercase tracking-widest text-center mt-auto">
-                                Watch Reels
-                            </a>
+                            <a href="https://www.instagram.com/reel/DFosalLSsDW/?igsh=eWZsYng1eXpjOGQy" target="_blank" class="check-btn w-full py-2.5 md:py-3 rounded-lg text-[9px] md:text-[10px] font-black uppercase tracking-widest text-center mt-auto bg-white/5 hover:bg-sky-500 transition-colors">Watch Reels</a>
                         </div>
-                        <div class="glass-card p-2 rounded-2xl flex flex-col">
-                            <div class="img-container mb-3 preview-wrap" style="aspect-ratio: 9 / 16;">
-                                <img src="../../assets/video/fypmedia_4.jpg" class="preview-thumb">
-                                <video class="preview-video" muted playsinline preload="metadata">
+                        <div class="glass-card p-2 rounded-xl flex flex-col h-full">
+                            <div class="img-container mb-3 preview-wrap rounded-lg overflow-hidden" style="aspect-ratio: 9 / 16;">
+                                <img src="../../assets/video/fypmedia_4.jpg" class="preview-thumb w-full h-full object-cover">
+                                <video class="preview-video w-full h-full object-cover" muted playsinline preload="metadata">
                                     <source src="../../assets/video/fypmedia_4.mp4" type="video/mp4">
                                 </video>
                             </div>
-
-                            <a href="https://www.instagram.com/reel/DOA3s5Skv2I/?igsh=NTI5ZWR0MTVzcndw"
-                                target="_blank"
-                                class="check-btn w-full py-3 rounded-xl text-[10px] font-black uppercase tracking-widest text-center mt-auto">
-                                Watch Reels
-                            </a>
+                            <a href="https://www.instagram.com/reel/DOA3s5Skv2I/?igsh=NTI5ZWR0MTVzcndw" target="_blank" class="check-btn w-full py-2.5 md:py-3 rounded-lg text-[9px] md:text-[10px] font-black uppercase tracking-widest text-center mt-auto bg-white/5 hover:bg-sky-500 transition-colors">Watch Reels</a>
                         </div>
                     </div>
                 </div>
+
+                <!-- Hiburan IG -->
                 <div data-aos="fade-up">
-                    <h3 class="text-sky-400 text-xs font-bold uppercase mb-4 tracking-widest">Konten Hiburan Instagram (FYP Agency)</h3>
+                    <h3 class="text-sky-400 text-[10px] md:text-xs font-bold uppercase mb-4 tracking-widest text-center md:text-left">Konten Hiburan Instagram (FYP Agency)</h3>
                     <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-                        <div class="glass-card p-2 rounded-2xl flex flex-col">
-                            <div class="img-container mb-3 preview-wrap" style="aspect-ratio: 9 / 16;">
-                                <img src="../../assets/video/fypagency_1.jpg" class="preview-thumb">
-                                <video class="preview-video" muted playsinline preload="metadata">
+                        <!-- Vid 1-4 -->
+                        <div class="glass-card p-2 rounded-xl flex flex-col h-full">
+                            <div class="img-container mb-3 preview-wrap rounded-lg overflow-hidden" style="aspect-ratio: 9 / 16;">
+                                <img src="../../assets/video/fypagency_1.jpg" class="preview-thumb w-full h-full object-cover">
+                                <video class="preview-video w-full h-full object-cover" muted playsinline preload="metadata">
                                     <source src="../../assets/video/fypagency_1.mp4" type="video/mp4">
                                 </video>
                             </div>
-
-                            <a href="https://www.instagram.com/reel/DFfmH08PB-g/?igsh=MWpnY2J3MzA2cWdtYg=="
-                                target="_blank"
-                                class="check-btn w-full py-3 rounded-xl text-[10px] font-black uppercase tracking-widest text-center mt-auto">
-                                Watch Reels
-                            </a>
+                            <a href="https://www.instagram.com/reel/DFfmH08PB-g/?igsh=MWpnY2J3MzA2cWdtYg==" target="_blank" class="check-btn w-full py-2.5 md:py-3 rounded-lg text-[9px] md:text-[10px] font-black uppercase tracking-widest text-center mt-auto bg-white/5 hover:bg-sky-500 transition-colors">Watch Reels</a>
                         </div>
-                        <div class="glass-card p-2 rounded-2xl flex flex-col">
-                            <div class="img-container mb-3 preview-wrap" style="aspect-ratio: 9 / 16;">
-                                <img src="../../assets/video/fypagency_2.jpg" class="preview-thumb">
-                                <video class="preview-video" muted playsinline preload="metadata">
+                        <div class="glass-card p-2 rounded-xl flex flex-col h-full">
+                            <div class="img-container mb-3 preview-wrap rounded-lg overflow-hidden" style="aspect-ratio: 9 / 16;">
+                                <img src="../../assets/video/fypagency_2.jpg" class="preview-thumb w-full h-full object-cover">
+                                <video class="preview-video w-full h-full object-cover" muted playsinline preload="metadata">
                                     <source src="../../assets/video/fypagency_2.mp4" type="video/mp4">
                                 </video>
                             </div>
-
-                            <a href="https://www.instagram.com/reel/DDt29c-vij_/?igsh=ZGFjZ2J0bWwzenFo"
-                                target="_blank"
-                                class="check-btn w-full py-3 rounded-xl text-[10px] font-black uppercase tracking-widest text-center mt-auto">
-                                Watch Reels
-                            </a>
+                            <a href="https://www.instagram.com/reel/DDt29c-vij_/?igsh=ZGFjZ2J0bWwzenFo" target="_blank" class="check-btn w-full py-2.5 md:py-3 rounded-lg text-[9px] md:text-[10px] font-black uppercase tracking-widest text-center mt-auto bg-white/5 hover:bg-sky-500 transition-colors">Watch Reels</a>
                         </div>
-                        <div class="glass-card p-2 rounded-2xl flex flex-col">
-                            <div class="img-container mb-3 preview-wrap" style="aspect-ratio: 9 / 16;">
-                                <img src="../../assets/video/fypagency_3.jpg" class="preview-thumb">
-                                <video class="preview-video" muted playsinline preload="metadata">
+                        <div class="glass-card p-2 rounded-xl flex flex-col h-full">
+                            <div class="img-container mb-3 preview-wrap rounded-lg overflow-hidden" style="aspect-ratio: 9 / 16;">
+                                <img src="../../assets/video/fypagency_3.jpg" class="preview-thumb w-full h-full object-cover">
+                                <video class="preview-video w-full h-full object-cover" muted playsinline preload="metadata">
                                     <source src="../../assets/video/fypagency_3.mp4" type="video/mp4">
                                 </video>
                             </div>
-
-                            <a href="https://www.instagram.com/reel/DDj4P9lPrjn/?igsh=aXppM2NuZnAzZ2I0"
-                                target="_blank"
-                                class="check-btn w-full py-3 rounded-xl text-[10px] font-black uppercase tracking-widest text-center mt-auto">
-                                Watch Reels
-                            </a>
+                            <a href="https://www.instagram.com/reel/DDj4P9lPrjn/?igsh=aXppM2NuZnAzZ2I0" target="_blank" class="check-btn w-full py-2.5 md:py-3 rounded-lg text-[9px] md:text-[10px] font-black uppercase tracking-widest text-center mt-auto bg-white/5 hover:bg-sky-500 transition-colors">Watch Reels</a>
                         </div>
-                        <div class="glass-card p-2 rounded-2xl flex flex-col">
-                            <div class="img-container mb-3 preview-wrap" style="aspect-ratio: 9 / 16;">
-                                <img src="../../assets/video/fypagency_4.jpg" class="preview-thumb">
-                                <video class="preview-video" muted playsinline preload="metadata">
+                        <div class="glass-card p-2 rounded-xl flex flex-col h-full">
+                            <div class="img-container mb-3 preview-wrap rounded-lg overflow-hidden" style="aspect-ratio: 9 / 16;">
+                                <img src="../../assets/video/fypagency_4.jpg" class="preview-thumb w-full h-full object-cover">
+                                <video class="preview-video w-full h-full object-cover" muted playsinline preload="metadata">
                                     <source src="../../assets/video/fypagency_4.mp4" type="video/mp4">
                                 </video>
                             </div>
-
-                            <a href="https://www.instagram.com/reel/DDmQ5W4P0QJ/?igsh=bTQ3cWlneXczYmFw"
-                                target="_blank"
-                                class="check-btn w-full py-3 rounded-xl text-[10px] font-black uppercase tracking-widest text-center mt-auto">
-                                Watch Reels
-                            </a>
+                            <a href="https://www.instagram.com/reel/DDmQ5W4P0QJ/?igsh=bTQ3cWlneXczYmFw" target="_blank" class="check-btn w-full py-2.5 md:py-3 rounded-lg text-[9px] md:text-[10px] font-black uppercase tracking-widest text-center mt-auto bg-white/5 hover:bg-sky-500 transition-colors">Watch Reels</a>
                         </div>
                     </div>
                 </div>
+
             </div>
         </section>
 
+        <!-- SECTION 3: Lentera Diri -->
        <section>
-            <div class="mb-10"  data-aos="fade-up">
-                <h2 class="text-3xl font-bold mb-4">PT. Lentera Diri Indonesia</h2>
-                <div class="glass-card p-6 rounded-2xl border-l-4 border-sky-500">
-                    <p class="text-gray-400 leading-relaxed italic text-sm">
+            <div class="mb-8 md:mb-10 text-center md:text-left"  data-aos="fade-up">
+                <h2 class="text-2xl md:text-3xl font-bold mb-4">PT. Lentera Diri Indonesia</h2>
+                <div class="glass-card p-5 md:p-6 rounded-2xl border-l-4 border-sky-500">
+                    <p class="text-gray-400 leading-relaxed italic text-xs md:text-sm text-justify md:text-left">
                         "Proyek video konten kesehatan mental ini difokuskan pada pengolahan konten kreatif yang diedit menggunakan software CapCut. Keseluruhan visual disusun menggunakan footage-footage yang dikurasi dari internet, kemudian diramu kembali untuk menciptakan narasi video yang menarik dan sesuai dengan identitas brand."
                     </p>
                 </div>
             </div>
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-6"  data-aos="fade-up">
-                <div class="glass-card p-2 rounded-2xl flex flex-col">
-                    <div class="img-container mb-3 preview-wrap" style="aspect-ratio: 9 / 16;">
-                        <img src="../../assets/video/lenteradiri_1.jpeg" class="preview-thumb">
-                            <video class="preview-video" muted playsinline preload="metadata">
-                                <source src="../../assets/video/lenteradiri_1.mp4" type="video/mp4">
-                            </video>
-                        </div>
-
-                        <a href="https://www.instagram.com/reel/DMrgJWJx74C/?igsh=MTk1cnZoaG52OXJoeg=="
-                            target="_blank"
-                            class="check-btn w-full py-3 rounded-xl text-[10px] font-black uppercase tracking-widest text-center mt-auto">
-                            Watch Reels
-                        </a>
+            
+            <!-- Karena hanya ada 2 video, kita atur col-span khusus atau gunakan grid-cols-2 -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6"  data-aos="fade-up">
+                <!-- V1 -->
+                <div class="glass-card p-2 rounded-xl flex flex-col h-full">
+                    <div class="img-container mb-3 preview-wrap rounded-lg overflow-hidden" style="aspect-ratio: 9 / 16;">
+                        <img src="../../assets/video/lenteradiri_1.jpeg" class="preview-thumb w-full h-full object-cover">
+                        <video class="preview-video w-full h-full object-cover" muted playsinline preload="metadata">
+                            <source src="../../assets/video/lenteradiri_1.mp4" type="video/mp4">
+                        </video>
                     </div>
-                <div class="glass-card p-2 rounded-2xl flex flex-col">
-                    <div class="img-container mb-3 preview-wrap" style="aspect-ratio: 9 / 16;">
-                        <img src="../../assets/video/lenteradiri_2.jpeg" class="preview-thumb">
-                            <video class="preview-video" muted playsinline preload="metadata">
-                                <source src="../../assets/video/lenteradiri_2.mp4" type="video/mp4">
-                            </video>
-                        </div>
-
-                        <a href="https://www.instagram.com/reel/DJtqizjBula/?igsh=ZTU2dmxldWhxbWoy"
-                            target="_blank"
-                            class="check-btn w-full py-3 rounded-xl text-[10px] font-black uppercase tracking-widest text-center mt-auto">
-                            Watch Reels
-                        </a>
+                    <a href="https://www.instagram.com/reel/DMrgJWJx74C/?igsh=MTk1cnZoaG52OXJoeg==" target="_blank" class="check-btn w-full py-2.5 md:py-3 rounded-lg text-[9px] md:text-[10px] font-black uppercase tracking-widest text-center mt-auto bg-white/5 hover:bg-sky-500 transition-colors">Watch Reels</a>
+                </div>
+                <!-- V2 -->
+                <div class="glass-card p-2 rounded-xl flex flex-col h-full">
+                    <div class="img-container mb-3 preview-wrap rounded-lg overflow-hidden" style="aspect-ratio: 9 / 16;">
+                        <img src="../../assets/video/lenteradiri_2.jpeg" class="preview-thumb w-full h-full object-cover">
+                        <video class="preview-video w-full h-full object-cover" muted playsinline preload="metadata">
+                            <source src="../../assets/video/lenteradiri_2.mp4" type="video/mp4">
+                        </video>
                     </div>
+                    <a href="https://www.instagram.com/reel/DJtqizjBula/?igsh=ZTU2dmxldWhxbWoy" target="_blank" class="check-btn w-full py-2.5 md:py-3 rounded-lg text-[9px] md:text-[10px] font-black uppercase tracking-widest text-center mt-auto bg-white/5 hover:bg-sky-500 transition-colors">Watch Reels</a>
                 </div>
             </div>
         </section>
 
+        <!-- SECTION 4: Bing Chun -->
         <section>
-            <div class="mb-10" data-aos="fade-up">
-                <h2 class="text-3xl font-bold mb-4">PT. Bing Chun Food Management</h2>
-                <div class="glass-card p-6 rounded-2xl border-l-4 border-sky-500">
-                    <p class="text-gray-400 leading-relaxed italic text-sm">
+            <div class="mb-8 md:mb-10 text-center md:text-left" data-aos="fade-up">
+                <h2 class="text-2xl md:text-3xl font-bold mb-4">PT. Bingchun Food Management</h2>
+                <div class="glass-card p-5 md:p-6 rounded-2xl border-l-4 border-sky-500">
+                    <p class="text-gray-400 leading-relaxed italic text-xs md:text-sm text-justify md:text-left">
                         "Produksi konten untuk sektor F&B ini dioptimalkan menggunakan perangkat Handphone untuk menangkap momen yang lebih organik dan cepat. Seluruh proses editing dilakukan melalui CapCut, memastikan konten tetap tajam, informatif, dan menggugah selera."
                     </p>
                 </div>
             </div>
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-6" data-aos="fade-up">
-                <div class="glass-card p-2 rounded-2xl flex flex-col">  
-                    <div class="img-container mb-3 preview-wrap" style="aspect-ratio: 9 / 16;">
-                        <img src="../../assets/video/bingchun_1.jpg" class="preview-thumb">
-                            <video class="preview-video" muted playsinline preload="metadata">
-                                <source src="../../assets/video/bingchun_1.mp4" type="video/mp4">
-                            </video>
-                        </div>
-
-                        <a href="https://www.tiktok.com/@bingchun.mabes/video/7559504424767343883"
-                            target="_blank"
-                            class="check-btn w-full py-3 rounded-xl text-[10px] font-black uppercase tracking-widest text-center mt-auto">
-                            Play On TikTok
-                        </a>
+            
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6" data-aos="fade-up">
+                <!-- V1 -->
+                <div class="glass-card p-2 rounded-xl flex flex-col h-full">  
+                    <div class="img-container mb-3 preview-wrap rounded-lg overflow-hidden" style="aspect-ratio: 9 / 16;">
+                        <img src="../../assets/video/bingchun_1.jpg" class="preview-thumb w-full h-full object-cover">
+                        <video class="preview-video w-full h-full object-cover" muted playsinline preload="metadata">
+                            <source src="../../assets/video/bingchun_1.mp4" type="video/mp4">
+                        </video>
                     </div>
-                <div class="glass-card p-2 rounded-2xl flex flex-col">  
-                    <div class="img-container mb-3 preview-wrap" style="aspect-ratio: 9 / 16;">
-                        <img src="../../assets/video/bingchun_2.jpg" class="preview-thumb">
-                            <video class="preview-video" muted playsinline preload="metadata">
-                                <source src="../../assets/video/bingchun_2.mp4" type="video/mp4">
-                            </video>
-                        </div>
-
-                        <a href="https://www.tiktok.com/@bingchun.mabes/video/7554733770037824780"
-                            target="_blank"
-                            class="check-btn w-full py-3 rounded-xl text-[10px] font-black uppercase tracking-widest text-center mt-auto">
-                            Play On TikTok
-                        </a>
+                    <a href="https://www.tiktok.com/@bingchun.mabes/video/7559504424767343883" target="_blank" class="check-btn w-full py-2.5 md:py-3 rounded-lg text-[9px] md:text-[10px] font-black uppercase tracking-widest text-center mt-auto bg-white/5 hover:bg-sky-500 transition-colors">Play On TikTok</a>
+                </div>
+                <!-- V2 -->
+                <div class="glass-card p-2 rounded-xl flex flex-col h-full">  
+                    <div class="img-container mb-3 preview-wrap rounded-lg overflow-hidden" style="aspect-ratio: 9 / 16;">
+                        <img src="../../assets/video/bingchun_2.jpg" class="preview-thumb w-full h-full object-cover">
+                        <video class="preview-video w-full h-full object-cover" muted playsinline preload="metadata">
+                            <source src="../../assets/video/bingchun_2.mp4" type="video/mp4">
+                        </video>
                     </div>
+                    <a href="https://www.tiktok.com/@bingchun.mabes/video/7554733770037824780" target="_blank" class="check-btn w-full py-2.5 md:py-3 rounded-lg text-[9px] md:text-[10px] font-black uppercase tracking-widest text-center mt-auto bg-white/5 hover:bg-sky-500 transition-colors">Play On TikTok</a>
                 </div>
             </div>
         </section>
 
+        <!-- SECTION 5: GEIS & Trueme -->
         <section>
-            <div class="mb-10" data-aos="fade-up">
-                <h2 class="text-3xl font-bold mb-4">PT. Pesona Anugerah Sukses & PT. Miliarder Sukses Bersama | GEIS & Trueme</h2>
-                <div class="glass-card p-6 rounded-2xl border-l-4 border-sky-500">
-                    <p class="text-gray-400 leading-relaxed italic text-sm">
+            <div class="mb-8 md:mb-10 text-center md:text-left" data-aos="fade-up">
+                <h2 class="text-2xl md:text-3xl font-bold mb-4">PT. Pesona Anugerah Sukses</h2>
+                <div class="glass-card p-5 md:p-6 rounded-2xl border-l-4 border-sky-500">
+                    <p class="text-gray-400 leading-relaxed italic text-xs md:text-sm text-justify md:text-left">
                         "Konten video ini dibuat dengan memanfaatkan teknologi AI untuk menghasilkan aset visual dan video produk, kemudian disempurnakan melalui editing di CapCut. Foto produk diambil sendiri menggunakan kamera smartphone, sedangkan elemen dekorasi, frame dan cover video dibuat secara mandiri menggunakan Canva."
                     </p>
                 </div>
             </div>
 
-            <div class="space-y-12" data-aos="fade-up">
-                <div class="grid md:grid-cols-2 gap-12">
+            <div class="space-y-12 md:space-y-16" data-aos="fade-up">
+                <div class="grid md:grid-cols-2 gap-8 md:gap-12">
+                    
+                    <!-- GEIS -->
                     <div data-aos="fade-up">
-                        <h3 class="text-sky-400 text-xs font-bold uppercase mb-4 tracking-widest">Instagram Reels (GEIS Healthy Spray & Healthy Milk)</h3>
+                        <h3 class="text-sky-400 text-[10px] md:text-xs font-bold uppercase mb-4 tracking-widest text-center md:text-left">Instagram Reels (GEIS Healthy)</h3>
                         <div class="grid grid-cols-2 gap-4">
-                            <div class="glass-card p-2 rounded-2xl flex flex-col">
-                                <div class="img-container mb-3 preview-wrap" style="aspect-ratio: 9 / 16;">
-                                    <img src="../../assets/video/pesona-geis_1.jpg" class="preview-thumb">
-                                    <video class="preview-video" muted playsinline preload="metadata">
+                            <!-- V1 -->
+                            <div class="glass-card p-2 rounded-xl flex flex-col h-full">
+                                <div class="img-container mb-3 preview-wrap rounded-lg overflow-hidden" style="aspect-ratio: 9 / 16;">
+                                    <img src="../../assets/video/pesona-geis_1.jpg" class="preview-thumb w-full h-full object-cover">
+                                    <video class="preview-video w-full h-full object-cover" muted playsinline preload="metadata">
                                         <source src="../../assets/video/pesona-geis_1.mp4" type="video/mp4">
                                     </video>
                                 </div>
-
-                                <a href="https://www.instagram.com/reel/DXniF9GgVy-/"
-                                    target="_blank"
-                                    class="check-btn w-full py-3 rounded-xl text-[10px] font-black uppercase tracking-widest text-center mt-auto">
-                                    Watch Reels
-                                </a>
+                                <a href="https://www.instagram.com/reel/DXniF9GgVy-/" target="_blank" class="check-btn w-full py-2.5 md:py-3 rounded-lg text-[9px] md:text-[10px] font-black uppercase tracking-widest text-center mt-auto bg-white/5 hover:bg-sky-500 transition-colors">Watch Reels</a>
                             </div>
-                            <div class="glass-card p-2 rounded-2xl flex flex-col">
-                                <div class="img-container mb-3 preview-wrap" style="aspect-ratio: 9 / 16;">
-                                    <img src="../../assets/video/pesona-geis_2.png" class="preview-thumb">
-                                    <video class="preview-video" muted playsinline preload="metadata">
+                            <!-- V2 -->
+                            <div class="glass-card p-2 rounded-xl flex flex-col h-full">
+                                <div class="img-container mb-3 preview-wrap rounded-lg overflow-hidden" style="aspect-ratio: 9 / 16;">
+                                    <img src="../../assets/video/pesona-geis_2.png" class="preview-thumb w-full h-full object-cover">
+                                    <video class="preview-video w-full h-full object-cover" muted playsinline preload="metadata">
                                         <source src="../../assets/video/pesona-geis_2.mp4" type="video/mp4">
                                     </video>
                                 </div>
-
-                                <a href="https://www.instagram.com/reel/DZEMurphY1o/"
-                                    target="_blank"
-                                    class="check-btn w-full py-3 rounded-xl text-[10px] font-black uppercase tracking-widest text-center mt-auto">
-                                    Watch Reels
-                                </a>
+                                <a href="https://www.instagram.com/reel/DZEMurphY1o/" target="_blank" class="check-btn w-full py-2.5 md:py-3 rounded-lg text-[9px] md:text-[10px] font-black uppercase tracking-widest text-center mt-auto bg-white/5 hover:bg-sky-500 transition-colors">Watch Reels</a>
                             </div>
                         </div>
                     </div>
+                    
+                    <!-- Trueme -->
                     <div data-aos="fade-up">
-                        <h3 class="text-sky-400 text-xs font-bold uppercase mb-4 tracking-widest">Instagram Reels (Trueme Official)</h3>
+                        <h3 class="text-sky-400 text-[10px] md:text-xs font-bold uppercase mb-4 tracking-widest text-center md:text-left">Instagram Reels (Trueme Official)</h3>
                         <div class="grid grid-cols-2 gap-4">
-                            <div class="glass-card p-2 rounded-2xl flex flex-col">
-                                <div class="img-container mb-3 preview-wrap" style="aspect-ratio: 9 / 16;">
-                                    <img src="../../assets/video/pesona-trueme_1.png" class="preview-thumb">
-                                    <video class="preview-video" muted playsinline preload="metadata">
+                            <!-- V1 -->
+                            <div class="glass-card p-2 rounded-xl flex flex-col h-full">
+                                <div class="img-container mb-3 preview-wrap rounded-lg overflow-hidden" style="aspect-ratio: 9 / 16;">
+                                    <img src="../../assets/video/pesona-trueme_1.png" class="preview-thumb w-full h-full object-cover">
+                                    <video class="preview-video w-full h-full object-cover" muted playsinline preload="metadata">
                                         <source src="../../assets/video/pesona-trueme_1.mp4" type="video/mp4">
                                     </video>
                                 </div>
-
-                                <a href="https://www.instagram.com/reel/DX5yVBDCj_O/"
-                                    target="_blank"
-                                    class="check-btn w-full py-3 rounded-xl text-[10px] font-black uppercase tracking-widest text-center mt-auto">
-                                    Watch Reels
-                                </a>
+                                <a href="https://www.instagram.com/reel/DX5yVBDCj_O/" target="_blank" class="check-btn w-full py-2.5 md:py-3 rounded-lg text-[9px] md:text-[10px] font-black uppercase tracking-widest text-center mt-auto bg-white/5 hover:bg-sky-500 transition-colors">Watch Reels</a>
                             </div>
-                            <div class="glass-card p-2 rounded-2xl flex flex-col">
-                                <div class="img-container mb-3 preview-wrap" style="aspect-ratio: 9 / 16;">
-                                    <img src="../../assets/video/pesona-trueme_2.png" class="preview-thumb">
-                                    <video class="preview-video" muted playsinline preload="metadata">
+                            <!-- V2 -->
+                            <div class="glass-card p-2 rounded-xl flex flex-col h-full">
+                                <div class="img-container mb-3 preview-wrap rounded-lg overflow-hidden" style="aspect-ratio: 9 / 16;">
+                                    <img src="../../assets/video/pesona-trueme_2.png" class="preview-thumb w-full h-full object-cover">
+                                    <video class="preview-video w-full h-full object-cover" muted playsinline preload="metadata">
                                         <source src="../../assets/video/pesona-trueme_2.mp4" type="video/mp4">
                                     </video>
                                 </div>
-
-                                <a href="https://www.instagram.com/reel/DZEfV9jAbVd/"
-                                    target="_blank"
-                                    class="check-btn w-full py-3 rounded-xl text-[10px] font-black uppercase tracking-widest text-center mt-auto">
-                                    Watch Reels
-                                </a>
+                                <a href="https://www.instagram.com/reel/DZEfV9jAbVd/" target="_blank" class="check-btn w-full py-2.5 md:py-3 rounded-lg text-[9px] md:text-[10px] font-black uppercase tracking-widest text-center mt-auto bg-white/5 hover:bg-sky-500 transition-colors">Watch Reels</a>
                             </div>
                         </div>
                     </div>
@@ -497,20 +443,67 @@
         </section>
     </main>
 
-    <footer class="py-20 text-center border-t border-white/5">
-        <p class="text-[10px] text-gray-600 uppercase tracking-[0.5em]">Mickey Richie Portfolio &bull; 2026</p>
+    <footer class="py-12 md:py-20 text-center border-t border-white/5 mt-10">
+        <p class="text-[9px] md:text-[10px] text-gray-600 uppercase tracking-[0.4em] md:tracking-[0.5em]">Mickey Richie Portfolio &bull; 2026</p>
     </footer>
+
+    <!-- ============================================== -->
+    <!-- YOUTUBE POP-UP MODAL (EXTRA LARGE DESKTOP) -->
+    <!-- ============================================== -->
+    <div id="yt-modal" class="fixed inset-0 z-[100] hidden flex items-center justify-center bg-black/80 backdrop-blur-md px-4 md:px-12 lg:px-20 transition-all duration-300 opacity-0 overflow-y-auto">
+        
+        <!-- Modal Box: max-w-7xl untuk layar super lebar -->
+        <div id="yt-modal-box" class="relative w-full max-w-7xl bg-[#090d16] rounded-[2rem] border-[3px] border-sky-500 p-6 md:p-12 lg:p-14 flex flex-col scale-95 transition-transform duration-300 my-8">
+            
+            <!-- Tombol Tutup -->
+            <button id="close-yt-modal" class="text-white flex items-center gap-2 text-sm md:text-lg font-bold mb-4 md:mb-8 hover:text-sky-400 w-fit transition-colors">
+                <i class="fa-solid fa-xmark text-lg md:text-3xl"></i> Tutup
+            </button>
+
+            <!-- Konten (Vertikal di Mobile, Horizontal di PC) -->
+            <div class="flex flex-col md:flex-row gap-6 md:gap-12 lg:gap-16 items-center">
+                
+                <!-- Atas/Kiri: Video Player (Porsi dibesarkan jadi 65%) -->
+                <div class="w-full md:w-[65%] rounded-xl md:rounded-3xl overflow-hidden bg-black relative shadow-2xl aspect-video"> 
+                    <iframe id="yt-iframe" class="absolute top-0 left-0 w-full h-full" src="" frameborder="0" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>
+                </div>
+
+                <!-- Bawah/Kanan: Teks Deskripsi (Porsi 35%) -->
+                <div class="w-full md:w-[35%] flex flex-col justify-center text-center md:text-left md:border-l border-sky-500/50 md:pl-10">
+                    
+                    <!-- Garis atas (Hanya muncul di Mobile) -->
+                    <div class="md:hidden w-3/4 mx-auto h-[1px] bg-gradient-to-r from-transparent via-sky-500 to-transparent mb-4"></div>
+
+                    <h2 class="text-2xl md:text-5xl lg:text-6xl font-extrabold text-white mb-1 md:mb-3 tracking-tight">FYP Podcast</h2>
+                    <h3 class="text-xs md:text-lg font-bold text-sky-400 mb-4 md:mb-8 tracking-wider uppercase">FYP Media</h3>
+                    
+                    <!-- Garis bawah (Hanya muncul di Mobile) -->
+                    <div class="md:hidden w-full h-[1px] bg-gradient-to-r from-transparent via-sky-500 to-transparent mb-4"></div>
+
+                    <p class="text-gray-400 text-[11px] md:text-base leading-relaxed text-justify md:text-left">
+                        Proses produksi podcast ini meliputi setup multi-kamera, pencahayaan studio, dan perekaman audio resolusi tinggi. Diedit dengan ritme dinamis untuk menjaga retensi audiens di platform YouTube.
+                    </p>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+    <!-- ============================================== -->
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-        AOS.init({ duration: 1000, once: false });
+        // Matikan animasi AOS di mobile khusus halaman video (mencegah patah-patah karena iframe/video berat)
+        AOS.init({ duration: 1000, once: false, disable: 'mobile' });
+        
+        // Fitur hover play video
         document.querySelectorAll('.preview-wrap').forEach(card => {
             const video = card.querySelector('video');
 
             card.addEventListener('mouseenter', () => {
                 card.classList.add('playing');
                 video.currentTime = 0;
-                video.play();
+                // Ditambahkan .catch untuk mencegah error DOMException di browser mobile modern
+                video.play().catch(e => console.log('Autoplay dicegah oleh browser.'));
             });
 
             card.addEventListener('mouseleave', () => {
@@ -525,59 +518,73 @@
             });
         });
 
+        // --- LOGIKA POP-UP YOUTUBE ---
+        const ytTrigger = document.getElementById('yt-trigger');
+        const ytModal = document.getElementById('yt-modal');
+        const ytModalBox = document.getElementById('yt-modal-box');
+        const closeYtBtn = document.getElementById('close-yt-modal');
+        const ytIframe = document.getElementById('yt-iframe');
+        const videoId = 'wBBL4eFUIeY'; // ID Video YouTube Anda
+
+        // Fungsi Buka Pop-up & Autoplay
+        ytTrigger.addEventListener('click', () => {
+            ytModal.classList.remove('hidden');
+            // Delay sedikit agar transisi CSS berjalan
+            setTimeout(() => {
+                ytModal.classList.remove('opacity-0');
+                ytModalBox.classList.remove('scale-95');
+                ytModalBox.classList.add('scale-100');
+            }, 10);
+            // Masukkan link dengan param autoplay
+            ytIframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1`;
+        });
+
+        // Fungsi Tutup Pop-up & Hentikan Video
+        function closeYtModal() {
+            ytModal.classList.add('opacity-0');
+            ytModalBox.classList.remove('scale-100');
+            ytModalBox.classList.add('scale-95');
+            setTimeout(() => {
+                ytModal.classList.add('hidden');
+                ytIframe.src = ''; // Hapus src agar video berhenti berbunyi
+            }, 300);
+        }
+
+        // Tutup lewat tombol "X Tutup"
+        closeYtBtn.addEventListener('click', closeYtModal);
+
+        // Tutup jika area gelap (luar box) diklik
+        ytModal.addEventListener('click', (e) => {
+            if (e.target === ytModal) {
+                closeYtModal();
+            }
+        });
+
         // Page Transition
         (() => {
             const overlay = document.getElementById('page-transition');
-
             if (!overlay) return;
 
-            // Buka layar ketika halaman baru siap ditampilkan
             window.addEventListener('load', () => {
                 requestAnimationFrame(() => {
                     document.documentElement.classList.remove('page-loading');
                 });
             });
 
-            // Animasi ketika pengunjung berpindah halaman
             document.addEventListener('click', (event) => {
                 const link = event.target.closest('a');
-
-                if (!link) return;
-
-                // Abaikan link eksternal, tab baru, dan link khusus
-                if (
-                    link.target === '_blank' ||
-                    link.hasAttribute('download') ||
-                    event.ctrlKey ||
-                    event.metaKey ||
-                    event.shiftKey ||
-                    event.altKey ||
-                    event.button !== 0
-                ) return;
+                if (!link || link.target === '_blank' || link.hasAttribute('download') || event.ctrlKey || event.metaKey) return;
 
                 const url = new URL(link.href, window.location.href);
-
-                if (
-                    url.origin !== window.location.origin ||
-                    url.pathname === window.location.pathname &&
-                    url.search === window.location.search &&
-                    url.hash
-                ) return;
-
-                // Jangan animasikan navigasi yang dibatalkan browser
+                if (url.origin !== window.location.origin || url.pathname === window.location.pathname && url.search === window.location.search && url.hash) return;
+                
                 if (event.defaultPrevented) return;
-
                 event.preventDefault();
 
                 overlay.classList.add('is-entering');
-
-                // Tunggu animasi menutup layar selesai
-                setTimeout(() => {
-                    window.location.href = url.href;
-                }, 800);
+                setTimeout(() => window.location.href = url.href, 800);
             });
 
-            // Pulihkan halaman dari browser back/forward cache
             window.addEventListener('pageshow', () => {
                 overlay.classList.remove('is-entering');
                 document.documentElement.classList.remove('page-loading');

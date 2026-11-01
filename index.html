@@ -81,37 +81,46 @@
         </div>
     </div>
 
-    <!-- HERO SECTION (FIXED: 1 Frame Layout, 100dvh) -->
-    <section id="home" class="relative h-[100dvh] w-full flex flex-col justify-center overflow-hidden px-6 md:px-16 pt-16 md:pt-0">
+    <!-- ========================================== -->
+    <!-- HERO SECTION (PERBAIKAN JARAK MOBILE) -->
+    <!-- ========================================== -->
+    <section id="home" class="relative h-[100dvh] w-full flex flex-col justify-center overflow-hidden px-6 md:px-16">
         
-        <!-- GAMBAR HERO (Posisi Bawah di Mobile) -->
-        <div class="absolute inset-0 w-full h-full pointer-events-none flex items-end justify-center md:justify-end opacity-60 md:opacity-90 z-0">
-            <img src="assets/hero-me.png" alt="Mickey Richie" class="w-full md:w-1/2 h-[65%] md:h-full object-contain object-bottom md:object-right-bottom" data-aos="fade-up" data-aos-duration="1200" />
-            <!-- Gradasi untuk memuluskan bagian bawah -->
-            <div class="absolute bottom-0 left-0 w-full h-[40%] bg-gradient-to-t from-[#030712] via-[#030712]/60 to-transparent"></div>
-        </div>
+        <!-- WRAPPER UTAMA -->
+        <div class="relative w-full max-w-6xl mx-auto h-full flex flex-col md:flex-row items-center pt-24 md:pt-0">
+            
+            <!-- 1. GAMBAR HERO (Kiri di Desktop, Atas di Mobile) -->
+            <!-- Porsi 50% dan gambar dipaksa rapat ke bawah (items-end) -->
+            <div class="relative z-10 w-full md:w-1/2 h-[50%] md:h-full flex items-end justify-center md:justify-start opacity-80 md:opacity-100 pointer-events-none" data-aos="fade-right" data-aos-duration="1200">
+                <img src="assets/hero-me.png" alt="Mickey Richie" class="w-full h-full object-contain object-bottom md:object-left-bottom" />
+            </div>
 
-        <!-- TEKS HERO (Berada di atas, proporsional) -->
-        <div class="relative z-10 w-full max-w-6xl mx-auto flex flex-col md:flex-row items-center mt-[-10vh] md:mt-0">
-            <div class="w-full text-center md:text-left md:w-1/2" data-aos="fade-right" data-aos-delay="300" data-aos-duration="1000">
-                <span class="text-sky-400 font-bold tracking-[0.15em] md:tracking-[0.3em] text-xs md:text-sm uppercase mb-3 block">
+            <!-- 2. TEKS HERO (Kanan di Desktop, Bawah di Mobile) -->
+            <!-- Porsi 50%. Diubah ke justify-start agar teks rapat ke atas (mendekati gambar) dengan sedikit padding pt-4 -->
+            <div class="relative z-30 w-full md:w-1/2 flex flex-col justify-start md:justify-center text-center md:text-left h-[50%] md:h-full md:pl-10 lg:pl-16 pt-4 md:pt-0" data-aos="fade-left" data-aos-delay="300" data-aos-duration="1000">
+                <span class="text-sky-400 font-bold tracking-[0.15em] md:tracking-[0.3em] text-[11px] md:text-sm uppercase mb-3 block">
                     Professional Content Creator
                 </span>
 
-                <h1 class="text-5xl md:text-7xl lg:text-8xl font-extrabold mb-4 tracking-tight leading-[1.1]">
+                <h1 class="text-5xl md:text-7xl lg:text-8xl font-extrabold mb-3 md:mb-4 tracking-tight leading-[1.1]">
                     Mickey <br class="hidden md:block" />
                     <span class="gradient-text">Richie</span>
                 </h1>
 
-                <p class="text-gray-300 md:text-gray-400 text-sm md:text-lg max-w-md mx-auto md:mx-0 leading-relaxed">
+                <p class="text-gray-300 md:text-gray-400 text-xs md:text-lg max-w-md mx-auto md:mx-0 leading-relaxed">
                     Made Ideas Into High <span class="text-white border-b-2 border-sky-500">Visual Experiences.</span> 
                     Collaborated with AI + Human Society, turning impossible to <span class="text-white border-b-2 border-sky-500">possible.</span>
                 </p>
             </div>
-        </div>
-    </section>
 
-    <!-- ABOUT SECTION (Teks diperbesar ke ukuran ideal) -->
+        </div>
+
+        <!-- GRADIENT OVERLAY (Ada di tengah z-20 agar menghaluskan gambar tapi tak tutup teks) -->
+        <div class="absolute bottom-0 left-0 w-full h-[40%] md:h-[30%] bg-gradient-to-t from-[#030712] via-[#030712]/80 to-transparent z-20 pointer-events-none"></div>
+    </section>
+    <!-- ========================================== -->
+
+    <!-- ABOUT SECTION -->
     <section id="about" class="py-20 md:py-32 px-6 md:px-24 max-w-7xl mx-auto">
         <div class="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20">
             <div data-aos="fade-right">
@@ -150,7 +159,7 @@
         </div>
     </section>
 
-    <!-- EXPERIENCE SECTION (Timeline Fixed) -->
+    <!-- EXPERIENCE SECTION -->
     <section id="experience" class="py-20 md:py-32 px-6 md:px-24 bg-[#050a18]">
         <div class="max-w-4xl mx-auto text-center mb-12 md:mb-20" data-aos="fade-up">
             <h2 class="text-3xl md:text-4xl font-extrabold italic mb-3">02. <span class="gradient-text">Experience</span></h2>
@@ -160,7 +169,6 @@
         <div class="max-w-4xl mx-auto timeline-border ml-4 md:ml-auto">
             
             <div class="relative pl-8 md:pl-10 mb-12 md:mb-16" data-aos="fade-up">
-                <!-- Dot presisi dengan garis 2px (-left-[7px] menengahkan dot 16px) -->
                 <div class="absolute -left-[7px] top-1 w-4 h-4 rounded-full bg-gray-700 border-2 md:border-4 border-gray-900"></div>
                 <div class="flex flex-col md:flex-row md:justify-between items-start mb-1 md:mb-2">
                     <h3 class="text-lg md:text-xl font-bold text-white uppercase leading-snug">Admin Marketing & Content Creator</h3>
