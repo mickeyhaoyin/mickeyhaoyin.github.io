@@ -1,191 +1,416 @@
-/*Graphic-Design */
+/* Design Works Portfolio Styles — Fluid Mobile UI & Modern Web Guidance */
 
-    @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap');
-    :root { --bg: #030712; --accent: #38bdf8; }
-    body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: var(--bg); color: #f8fafc; overflow-x: hidden; }
-    
-    /* =================================
-    M.RICHIE — PAGE TRANSITION
-    ================================= */
+:root {
+    --bg: #030712;
+    --accent: #38bdf8;
+    --accent-secondary: #818cf8;
+}
 
+html {
+    background-color: var(--bg);
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+    overflow-x: hidden;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+}
+
+body {
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background-color: var(--bg);
+    color: #f8fafc;
+    overflow-x: hidden;
+    min-height: 100dvh;
+}
+
+.safe-top {
+    padding-top: max(0.75rem, env(safe-area-inset-top));
+}
+
+.safe-bottom {
+    padding-bottom: max(2.5rem, env(safe-area-inset-bottom));
+}
+
+/* =================================
+   M.RICHIE — PAGE TRANSITION
+   (Durasi tetap 0.8s)
+   ================================= */
+
+#page-transition {
+    position: fixed;
+    inset: 0;
+    z-index: 99999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+
+    background: var(--bg);
+    transform: translateY(-101%);
+    will-change: transform;
+    transition: transform 0.8s cubic-bezier(0.77, 0, 0.175, 1);
+    pointer-events: none;
+}
+
+#page-transition.is-entering {
+    transform: translateY(0);
+    pointer-events: all;
+}
+
+html.page-loading #page-transition {
+    transform: translateY(0);
+}
+
+.transition-glow {
+    position: absolute;
+    width: 320px;
+    height: 320px;
+    border-radius: 50%;
+
+    background: radial-gradient(
+        circle,
+        rgba(56, 189, 248, 0.16) 0%,
+        rgba(129, 140, 248, 0.08) 40%,
+        transparent 70%
+    );
+
+    filter: blur(35px);
+    animation: transition-pulse 2s ease-in-out infinite;
+}
+
+.transition-content {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    padding: 24px;
+    animation: transition-content-in 0.7s ease both;
+}
+
+.transition-logo {
+    margin: 0;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: 800;
+    letter-spacing: -0.07em;
+    color: #f8fafc;
+}
+
+.transition-logo span {
+    background: linear-gradient(
+        135deg,
+        var(--accent) 0%,
+        var(--accent-secondary) 100%
+    );
+
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.transition-label {
+    margin-top: 12px;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 0.45em;
+    color: #64748b;
+}
+
+.transition-loader {
+    width: 150px;
+    height: 2px;
+    margin: 30px auto 0;
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.transition-loader-bar {
+    width: 40%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        var(--accent),
+        var(--accent-secondary)
+    );
+
+    will-change: transform;
+    animation: transition-progress 1.2s ease-in-out infinite;
+}
+
+@keyframes transition-pulse {
+    0%, 100% {
+        transform: scale(0.85);
+        opacity: 0.6;
+    }
+    50% {
+        transform: scale(1.15);
+        opacity: 1;
+    }
+}
+
+@keyframes transition-content-in {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes transition-progress {
+    0% {
+        transform: translateX(-110%);
+    }
+    100% {
+        transform: translateX(380%);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
     #page-transition {
-        position: fixed;
-        inset: 0;
-        z-index: 99999;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        overflow: hidden;
-
-        background: #030712;
-        transform: translateY(-101%);
-        transition: transform 0.8s cubic-bezier(0.77, 0, 0.175, 1);
-        pointer-events: none;
+        transition-duration: 0.15s;
     }
 
-    /* Tutup layar saat pindah halaman */
-    #page-transition.is-entering {
-        transform: translateY(0);
-        pointer-events: all;
-    }
-
-    /* Tutup layar sementara halaman baru dimuat */
-    html.page-loading #page-transition {
-        transform: translateY(0);
-    }
-
-    /* Cahaya biru di belakang logo */
-    .transition-glow {
-        position: absolute;
-        width: 320px;
-        height: 320px;
-        border-radius: 50%;
-
-        background: radial-gradient(
-            circle,
-            rgba(56, 189, 248, 0.16) 0%,
-            rgba(129, 140, 248, 0.08) 40%,
-            transparent 70%
-        );
-
-        filter: blur(35px);
-        animation: transition-pulse 2s ease-in-out infinite;
-    }
-
-    /* Konten logo */
-    .transition-content {
-        position: relative;
-        z-index: 1;
-        text-align: center;
-        padding: 24px;
-        animation: transition-content-in 0.7s ease both;
-    }
-
-    .transition-logo {
-        margin: 0;
-        font-family: 'Plus Jakarta Sans', sans-serif;
-        font-size: clamp(2rem, 5vw, 3.5rem);
-        font-weight: 800;
-        letter-spacing: -0.07em;
-        color: #f8fafc;
-    }
-
-    .transition-logo span {
-        background: linear-gradient(
-            135deg,
-            #38bdf8 0%,
-            #818cf8 100%
-        );
-
-        -webkit-background-clip: text;
-        background-clip: text;
-        -webkit-text-fill-color: transparent;
-    }
-
-    .transition-label {
-        margin-top: 12px;
-        font-size: 9px;
-        font-weight: 700;
-        letter-spacing: 0.45em;
-        color: #64748b;
-    }
-
-    /* Garis loading */
-    .transition-loader {
-        width: 150px;
-        height: 2px;
-        margin: 30px auto 0;
-        overflow: hidden;
-        background: rgba(255, 255, 255, 0.08);
-    }
-
+    .transition-glow,
+    .transition-content,
     .transition-loader-bar {
-        width: 40%;
-        height: 100%;
-        background: linear-gradient(
-            90deg,
-            #38bdf8,
-            #818cf8
-        );
+        animation: none;
+    }
+}
 
-        animation: transition-progress 1.2s ease-in-out infinite;
+/* =================================
+   HERO, CARDS & GRADIENT TEXT
+   ================================= */
+
+.hero-title {
+    font-size: clamp(2.45rem, 9vw, 4.75rem);
+}
+
+.glass-card {
+    background: rgba(255, 255, 255, 0.02);
+    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    transition: border-color 0.35s ease, transform 0.35s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.35s ease;
+}
+
+.glass-card:not(.static-card):hover {
+    border-color: rgba(56, 189, 248, 0.45);
+    transform: translateY(-4px);
+    box-shadow: 0 18px 36px rgba(0, 0, 0, 0.4);
+}
+
+/* Fix Italic Gradient Clipping */
+.gradient-text {
+    display: inline-block;
+    padding-right: 0.25em;
+    margin-right: -0.15em;
+    background: linear-gradient(135deg, var(--accent) 0%, var(--accent-secondary) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* =================================
+   DESIGN IMAGE CONTAINER & LIGHTBOX
+   ================================= */
+
+.img-container {
+    position: relative;
+    display: block;
+    width: 100%;
+    padding: 0;
+    overflow: hidden;
+    border-radius: 0.75rem;
+    background: #0f172a;
+    cursor: zoom-in;
+}
+
+.img-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.55s cubic-bezier(0.22, 1, 0.36, 1);
+    will-change: transform;
+}
+
+@media (hover: hover) {
+    .glass-card:hover .img-container img {
+        transform: scale(1.04);
+    }
+}
+
+.img-zoom-badge {
+    position: absolute;
+    right: 0.6rem;
+    bottom: 0.6rem;
+    width: 1.85rem;
+    height: 1.85rem;
+    border-radius: 999px;
+    background: rgba(3, 7, 18, 0.72);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    color: #f8fafc;
+    font-size: 0.65rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.85;
+    transition: opacity 0.25s ease, background-color 0.25s ease, color 0.25s ease;
+    pointer-events: none;
+}
+
+@media (hover: hover) {
+    .img-zoom-badge {
+        opacity: 0;
     }
 
-    /* Animasi cahaya */
-    @keyframes transition-pulse {
-        0%, 100% {
-            transform: scale(0.85);
-            opacity: 0.6;
-        }
-        50% {
-            transform: scale(1.15);
-            opacity: 1;
-        }
+    .img-container:hover .img-zoom-badge {
+        opacity: 1;
+        background: var(--accent);
+        color: #030712;
+        border-color: var(--accent);
+    }
+}
+
+/* =================================
+   BUTTONS & DECORATION
+   ================================= */
+
+.check-btn {
+    background: rgba(56, 189, 248, 0.1);
+    border: 1px solid rgba(56, 189, 248, 0.22);
+    transition: background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease;
+}
+
+.check-btn:hover,
+.check-btn:focus-visible {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: #030712;
+}
+
+.back-btn {
+    transition: transform 0.25s ease, color 0.25s ease;
+}
+
+.back-btn:hover {
+    transform: translateX(-5px);
+    color: var(--accent);
+}
+
+.blur-spot {
+    position: absolute;
+    width: 320px;
+    height: 320px;
+    background: radial-gradient(circle, rgba(56, 189, 248, 0.07) 0%, rgba(0, 0, 0, 0) 70%);
+    z-index: -1;
+    filter: blur(55px);
+    pointer-events: none;
+}
+
+/* =================================
+   OTHER PORTFOLIO — ANIMATED SVG ICONS
+   ================================= */
+
+/* 1. Video Showcase: Clapperboard Open */
+.clapper-icon .clapper-top {
+    transform-origin: 28px 160px;
+    transition: transform 0.45s cubic-bezier(0.34, 1.56, 0.64, 1);
+    will-change: transform;
+}
+
+.portfolio-card.video:hover .clapper-icon .clapper-top,
+.portfolio-card.video:focus-visible .clapper-icon .clapper-top {
+    transform: rotate(-26deg);
+}
+
+/* 2. Photography: Camera Iris Shutter Spin */
+.camera-icon .iris-wheel {
+    transform-origin: 256px 288px;
+    will-change: transform;
+}
+
+.camera-icon .iris-blade {
+    transform-origin: 256px 194px;
+    transform: rotate(-42deg);
+    will-change: transform;
+}
+
+.portfolio-card.foto:hover .camera-icon .iris-wheel,
+.portfolio-card.foto:focus-visible .camera-icon .iris-wheel {
+    animation: iris-wheel-spin 0.75s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.portfolio-card.foto:hover .camera-icon .iris-blade,
+.portfolio-card.foto:focus-visible .camera-icon .iris-blade {
+    animation: iris-blade-close 0.75s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+@keyframes iris-wheel-spin {
+    0% { transform: rotate(0deg); }
+    48%, 56% { transform: rotate(65deg); }
+    100% { transform: rotate(0deg); }
+}
+
+@keyframes iris-blade-close {
+    0% { transform: rotate(-42deg); }
+    48%, 56% { transform: rotate(22deg); }
+    100% { transform: rotate(-42deg); }
+}
+
+/* 3. Personal Project: Rocket Launch & Sky Thruster */
+.rocket-icon .rocket-ship {
+    transition: transform 0.45s cubic-bezier(0.34, 1.56, 0.64, 1);
+    will-change: transform;
+}
+
+.rocket-icon .rocket-thruster {
+    transform-origin: 132px 360px;
+    transform: scale(0);
+    opacity: 0;
+    transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.25s ease;
+    will-change: transform, opacity;
+}
+
+.portfolio-card.projek:hover .rocket-icon .rocket-ship,
+.portfolio-card.projek:focus-visible .rocket-icon .rocket-ship {
+    transform: translate(22px, -22px);
+}
+
+.portfolio-card.projek:hover .rocket-icon .rocket-thruster,
+.portfolio-card.projek:focus-visible .rocket-icon .rocket-thruster {
+    opacity: 1;
+    animation: thruster-flicker 0.28s ease-in-out infinite alternate;
+}
+
+@keyframes thruster-flicker {
+    0% { transform: scale(0.92); }
+    100% { transform: scale(1.16); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .clapper-icon .clapper-top,
+    .rocket-icon .rocket-ship,
+    .rocket-icon .rocket-thruster {
+        transition: none;
+        animation: none;
     }
 
-    /* Logo masuk */
-    @keyframes transition-content-in {
-        from {
-            opacity: 0;
-            transform: translateY(15px);
-        }
-        to {
-            opacity: 1;
-            transform: translateY(0);
-        }
+    .portfolio-card.foto:hover .camera-icon .iris-wheel,
+    .portfolio-card.foto:focus-visible .camera-icon .iris-wheel,
+    .portfolio-card.foto:hover .camera-icon .iris-blade,
+    .portfolio-card.foto:focus-visible .camera-icon .iris-blade {
+        animation: none;
     }
+}
 
-    /* Progress bergerak */
-    @keyframes transition-progress {
-        0% {
-            transform: translateX(-110%);
-        }
-        100% {
-            transform: translateX(380%);
-        }
-    }
-
-    /* Hormati preferensi reduce motion */
-    @media (prefers-reduced-motion: reduce) {
-        #page-transition {
-            transition-duration: 0.15s;
-        }
-
-        .transition-glow,
-        .transition-content,
-        .transition-loader-bar {
-            animation: none;
-        }
-    }
-
-    .glass-card {
-        background: rgba(255, 255, 255, 0.02);
-        backdrop-filter: blur(12px);
-        border: 1px solid rgba(255, 255, 255, 0.05);
-        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    }
-    .glass-card:hover { border-color: var(--accent); transform: translateY(-5px); }
-
-    .gradient-text {
-        background: linear-gradient(135deg, #38bdf8 0%, #818cf8 100%);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-    }
-
-    .full-section { min-height: 100vh; width: 100%; display: flex; align-items: center; justify-content: center; padding: 4rem 2rem; position: relative; }
-
-    .img-container { width: 100%; overflow: hidden; border-radius: 12px; background: #0f172a; }
-    img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
-    .glass-card:hover img { transform: scale(1.05); }
-
-    .check-btn {
-        background: rgba(56, 189, 248, 0.1);
-        border: 1px solid rgba(56, 189, 248, 0.2);
-        transition: all 0.3s ease;
-    }
-    .check-btn:hover { background: var(--accent); color: #000; }
-
-    .back-btn {
-        transition: all 0.3s ease;
-    }
-    .back-btn:hover { transform: translateX(-5px); color: var(--accent); }
+a, button {
+    touch-action: manipulation;
+}

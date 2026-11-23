@@ -1,246 +1,464 @@
-/*Video-Editing */
+/* Video Showcase Styles — Modern Web Guidance Optimized */
 
-    @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap');
-    :root { --bg: #030712; --accent: #38bdf8; }
-    body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: var(--bg); color: #f8fafc; overflow-x: hidden; }
-    
-    /* =================================
-    M.RICHIE — PAGE TRANSITION
-    ================================= */
+:root {
+    --bg: #030712;
+    --accent: #38bdf8;
+    --accent-secondary: #818cf8;
+}
 
-    #page-transition {
-        position: fixed;
-        inset: 0;
-        z-index: 99999;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        overflow: hidden;
+html {
+    background-color: var(--bg);
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+}
 
-        background: #030712;
-        transform: translateY(-101%);
-        transition: transform 0.8s cubic-bezier(0.77, 0, 0.175, 1);
-        pointer-events: none;
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
     }
+}
 
-    /* Tutup layar saat pindah halaman */
-    #page-transition.is-entering {
-        transform: translateY(0);
-        pointer-events: all;
+body {
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background-color: var(--bg);
+    color: #f8fafc;
+    overflow-x: hidden;
+    min-height: 100dvh;
+}
+
+.safe-top {
+    padding-top: max(1rem, env(safe-area-inset-top));
+}
+
+.safe-bottom {
+    padding-bottom: max(3rem, env(safe-area-inset-bottom));
+}
+
+/* =================================
+   M.RICHIE — PAGE TRANSITION
+   (Durasi tetap 0.8s)
+   ================================= */
+
+#page-transition {
+    position: fixed;
+    inset: 0;
+    z-index: 99999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+
+    background: var(--bg);
+    transform: translateY(-101%);
+    will-change: transform;
+    transition: transform 0.8s cubic-bezier(0.77, 0, 0.175, 1);
+    pointer-events: none;
+}
+
+#page-transition.is-entering {
+    transform: translateY(0);
+    pointer-events: all;
+}
+
+html.page-loading #page-transition {
+    transform: translateY(0);
+}
+
+.transition-glow {
+    position: absolute;
+    width: 320px;
+    height: 320px;
+    border-radius: 50%;
+
+    background: radial-gradient(
+        circle,
+        rgba(56, 189, 248, 0.16) 0%,
+        rgba(129, 140, 248, 0.08) 40%,
+        transparent 70%
+    );
+
+    filter: blur(35px);
+    animation: transition-pulse 2s ease-in-out infinite;
+}
+
+.transition-content {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    padding: 24px;
+    animation: transition-content-in 0.7s ease both;
+}
+
+.transition-logo {
+    margin: 0;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: 800;
+    letter-spacing: -0.07em;
+    color: #f8fafc;
+}
+
+.transition-logo span {
+    background: linear-gradient(
+        135deg,
+        var(--accent) 0%,
+        var(--accent-secondary) 100%
+    );
+
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.transition-label {
+    margin-top: 12px;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 0.45em;
+    color: #64748b;
+}
+
+.transition-loader {
+    width: 150px;
+    height: 2px;
+    margin: 30px auto 0;
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.transition-loader-bar {
+    width: 40%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        var(--accent),
+        var(--accent-secondary)
+    );
+
+    will-change: transform;
+    animation: transition-progress 1.2s ease-in-out infinite;
+}
+
+@keyframes transition-pulse {
+    0%, 100% {
+        transform: scale(0.85);
+        opacity: 0.6;
     }
-
-    /* Tutup layar sementara halaman baru dimuat */
-    html.page-loading #page-transition {
-        transform: translateY(0);
-    }
-
-    /* Cahaya biru di belakang logo */
-    .transition-glow {
-        position: absolute;
-        width: 320px;
-        height: 320px;
-        border-radius: 50%;
-
-        background: radial-gradient(
-            circle,
-            rgba(56, 189, 248, 0.16) 0%,
-            rgba(129, 140, 248, 0.08) 40%,
-            transparent 70%
-        );
-
-        filter: blur(35px);
-        animation: transition-pulse 2s ease-in-out infinite;
-    }
-
-    /* Konten logo */
-    .transition-content {
-        position: relative;
-        z-index: 1;
-        text-align: center;
-        padding: 24px;
-        animation: transition-content-in 0.7s ease both;
-    }
-
-    .transition-logo {
-        margin: 0;
-        font-family: 'Plus Jakarta Sans', sans-serif;
-        font-size: clamp(2rem, 5vw, 3.5rem);
-        font-weight: 800;
-        letter-spacing: -0.07em;
-        color: #f8fafc;
-    }
-
-    .transition-logo span {
-        background: linear-gradient(
-            135deg,
-            #38bdf8 0%,
-            #818cf8 100%
-        );
-
-        -webkit-background-clip: text;
-        background-clip: text;
-        -webkit-text-fill-color: transparent;
-    }
-
-    .transition-label {
-        margin-top: 12px;
-        font-size: 9px;
-        font-weight: 700;
-        letter-spacing: 0.45em;
-        color: #64748b;
-    }
-
-    /* Garis loading */
-    .transition-loader {
-        width: 150px;
-        height: 2px;
-        margin: 30px auto 0;
-        overflow: hidden;
-        background: rgba(255, 255, 255, 0.08);
-    }
-
-    .transition-loader-bar {
-        width: 40%;
-        height: 100%;
-        background: linear-gradient(
-            90deg,
-            #38bdf8,
-            #818cf8
-        );
-
-        animation: transition-progress 1.2s ease-in-out infinite;
-    }
-
-    /* Animasi cahaya */
-    @keyframes transition-pulse {
-        0%, 100% {
-            transform: scale(0.85);
-            opacity: 0.6;
-        }
-        50% {
-            transform: scale(1.15);
-            opacity: 1;
-        }
-    }
-
-    /* Logo masuk */
-    @keyframes transition-content-in {
-        from {
-            opacity: 0;
-            transform: translateY(15px);
-        }
-        to {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    }
-
-    /* Progress bergerak */
-    @keyframes transition-progress {
-        0% {
-            transform: translateX(-110%);
-        }
-        100% {
-            transform: translateX(380%);
-        }
-    }
-
-    /* Hormati preferensi reduce motion */
-    @media (prefers-reduced-motion: reduce) {
-        #page-transition {
-            transition-duration: 0.15s;
-        }
-
-        .transition-glow,
-        .transition-content,
-        .transition-loader-bar {
-            animation: none;
-        }
-    }
-
-    .preview-wrap {
-        position: relative;
-    }
-
-    .preview-video {
-        position: absolute;
-        inset: 0;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        opacity: 0;
-        transition: opacity .25s ease;
-    }
-
-    .preview-thumb {
-        transition: opacity .25s ease;
-    }
-
-        /* STATE AKTIF */
-    .preview-wrap.playing .preview-video {
+    50% {
+        transform: scale(1.15);
         opacity: 1;
     }
+}
 
-    .preview-wrap.playing .preview-thumb {
+@keyframes transition-content-in {
+    from {
         opacity: 0;
+        transform: translateY(15px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes transition-progress {
+    0% {
+        transform: translateX(-110%);
+    }
+    100% {
+        transform: translateX(380%);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    #page-transition {
+        transition-duration: 0.15s;
     }
 
-    .glass-card {
-        background: rgba(255, 255, 255, 0.02);
-        backdrop-filter: blur(12px);
-        border: 1px solid rgba(255, 255, 255, 0.05);
-        transition: all 0.4s ease;
+    .transition-glow,
+    .transition-content,
+    .transition-loader-bar {
+        animation: none;
     }
-    .glass-card:hover { border-color: var(--accent); }
+}
 
-    .gradient-text {
-        background: linear-gradient(135deg, #38bdf8 0%, #818cf8 100%);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
+/* =================================
+   VIDEO PREVIEW & CARDS
+   ================================= */
+
+.preview-wrap {
+    position: relative;
+    cursor: pointer;
+}
+
+.preview-video {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 0.25s ease;
+    pointer-events: none;
+}
+
+.preview-thumb {
+    transition: opacity 0.25s ease, transform 0.5s ease;
+}
+
+.preview-wrap.playing .preview-video {
+    opacity: 1;
+}
+
+.preview-wrap.playing .preview-thumb {
+    opacity: 0;
+}
+
+.glass-card {
+    background: rgba(255, 255, 255, 0.02);
+    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+
+@media (hover: hover) {
+    .glass-card:hover {
+        border-color: var(--accent);
     }
 
-    .full-section { min-height: 100vh; width: 100%; display: flex; align-items: center; justify-content: center; padding: 4rem 2rem; position: relative; }
-
-    .video-container {
-        position: relative;
-        padding-bottom: 177.77%; /* Aspect Ratio 9:16 untuk Short/Reels/TikTok */
-        height: 0;
-        overflow: hidden;
-        border-radius: 1rem;
-        background: #0f172a;
+    .glass-card:hover .preview-thumb {
+        transform: scale(1.05);
     }
+}
 
-    .video-container iframe {
-        position: absolute;
-        top: 0; left: 0; width: 100%; height: 100%;
-        border: none;
+/* Fix Italic Gradient Clipping */
+.gradient-text {
+    display: inline-block;
+    padding-right: 0.25em;
+    margin-right: -0.15em;
+    background: linear-gradient(135deg, var(--accent) 0%, var(--accent-secondary) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.img-container {
+    width: 100%;
+    overflow: hidden;
+    border-radius: 12px;
+    background: #0f172a;
+}
+
+.check-btn {
+    background: rgba(56, 189, 248, 0.1);
+    border: 1px solid rgba(56, 189, 248, 0.2);
+    transition: background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease;
+}
+
+.check-btn:hover,
+.check-btn:focus-visible {
+    background: var(--accent);
+    color: #030712;
+}
+
+.back-btn {
+    transition: transform 0.25s ease, color 0.25s ease;
+}
+
+.back-btn:hover {
+    transform: translateX(-5px);
+    color: var(--accent);
+}
+
+a, button {
+    touch-action: manipulation;
+}
+
+/* =================================
+   CAMERA IRIS SHUTTER ROTATION
+   ================================= */
+
+.camera-icon .iris-wheel {
+    transform-origin: 256px 288px;
+    will-change: transform;
+}
+
+.camera-icon .iris-blade {
+    /* Titik engsel masing-masing bilah di tepi ring lensa */
+    transform-origin: 256px 194px;
+    /* Posisi istirahat: bilah terbuka lebar di pinggir ring lensa */
+    transform: rotate(-42deg);
+    will-change: transform;
+}
+
+.portfolio-card.foto:hover .camera-icon .iris-wheel,
+.portfolio-card.foto:focus-visible .camera-icon .iris-wheel {
+    animation: iris-wheel-spin 0.75s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.portfolio-card.foto:hover .camera-icon .iris-blade,
+.portfolio-card.foto:focus-visible .camera-icon .iris-blade {
+    animation: iris-blade-close 0.75s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+/* Ring diafragma ikut berputar saat menutup & membuka */
+@keyframes iris-wheel-spin {
+    0% {
+        transform: rotate(0deg);
     }
-
-    .youtube-container {
-        position: relative;
-        padding-bottom: 56.25%; /* 16:9 */
-        height: 0;
-        border-radius: 1rem;
-        overflow: hidden;
+    48% {
+        transform: rotate(65deg);
     }
-
-    .youtube-container iframe {
-        position: absolute;
-        top: 0; left: 0; width: 100%; height: 100%;
+    56% {
+        transform: rotate(65deg);
     }
-
-    .img-container { width: 100%; overflow: hidden; border-radius: 12px; background: #0f172a; }
-    img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
-    .glass-card:hover img { transform: scale(1.05); }
-
-    .check-btn {
-        background: rgba(56, 189, 248, 0.1);
-        border: 1px solid rgba(56, 189, 248, 0.2);
-        transition: all 0.3s ease;
+    100% {
+        transform: rotate(0deg);
     }
-    .check-btn:hover { background: var(--accent); color: #000; }
+}
 
-    .back-btn {
-        transition: all 0.3s ease;
+/* 6 Bilah berayun masuk menutup lubang segi enam di tengah lalu membuka lagi */
+@keyframes iris-blade-close {
+    0% {
+        transform: rotate(-42deg);
     }
-    .back-btn:hover { transform: translateX(-5px); color: var(--accent); }
+    48% {
+        transform: rotate(22deg);
+    }
+    56% {
+        transform: rotate(22deg);
+    }
+    100% {
+        transform: rotate(-42deg);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .portfolio-card.foto:hover .camera-icon .iris-wheel,
+    .portfolio-card.foto:focus-visible .camera-icon .iris-wheel,
+    .portfolio-card.foto:hover .camera-icon .iris-blade,
+    .portfolio-card.foto:focus-visible .camera-icon .iris-blade {
+        animation: none;
+    }
+}
+
+/* =================================
+   DESIGN PALETTE & PAINTBRUSH ANIMATION
+   ================================= */
+
+.palette-icon .palette-body {
+    transform-origin: 256px 256px;
+    transition: transform 0.45s cubic-bezier(0.34, 1.56, 0.64, 1);
+    will-change: transform;
+}
+
+.palette-icon .paint-dot {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.portfolio-card.desain:hover .palette-icon .paint-dot,
+.portfolio-card.desain:focus-visible .palette-icon .paint-dot {
+    opacity: 1;
+}
+
+.palette-icon .paint-stroke {
+    stroke-dasharray: 185;
+    stroke-dashoffset: 185;
+    transition: stroke-dashoffset 0.45s cubic-bezier(0.22, 1, 0.36, 1) 0.12s;
+}
+
+.palette-icon .paint-brush {
+    transform-origin: 450px 50px;
+    transform: translate(35px, -35px) rotate(18deg) scale(0.85);
+    opacity: 0;
+    transition:
+        transform 0.45s cubic-bezier(0.34, 1.56, 0.64, 1),
+        opacity 0.25s ease;
+    will-change: transform, opacity;
+}
+
+/* Hover & Keyboard Focus State */
+.portfolio-card.desain:hover .palette-icon .palette-body,
+.portfolio-card.desain:focus-visible .palette-icon .palette-body {
+    transform: translate(-10px, 8px) rotate(-10deg);
+}
+
+.portfolio-card.desain:hover .palette-icon .paint-brush,
+.portfolio-card.desain:focus-visible .palette-icon .paint-brush {
+    transform: translate(0, 0) rotate(-6deg) scale(1);
+    opacity: 1;
+}
+
+.portfolio-card.desain:hover .palette-icon .paint-dot,
+.portfolio-card.desain:focus-visible .palette-icon .paint-dot {
+    transform: scale(1);
+    opacity: 1;
+}
+
+.portfolio-card.desain:hover .palette-icon .dot-1 { transition-delay: 0.05s; }
+.portfolio-card.desain:hover .palette-icon .dot-2 { transition-delay: 0.11s; }
+.portfolio-card.desain:hover .palette-icon .dot-3 { transition-delay: 0.17s; }
+.portfolio-card.desain:hover .palette-icon .dot-4 { transition-delay: 0.23s; }
+
+.portfolio-card.desain:hover .palette-icon .paint-stroke,
+.portfolio-card.desain:focus-visible .palette-icon .paint-stroke {
+    stroke-dashoffset: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .palette-icon .palette-body,
+    .palette-icon .paint-dot,
+    .palette-icon .paint-stroke,
+    .palette-icon .paint-brush {
+        transition: none;
+    }
+}
+
+/* =================================
+   ROCKET LAUNCH & THRUSTER FLAME
+   ================================= */
+
+.rocket-icon .rocket-ship {
+    transition: transform 0.45s cubic-bezier(0.34, 1.56, 0.64, 1);
+    will-change: transform;
+}
+
+.rocket-icon .rocket-thruster {
+    transform-origin: 132px 360px;
+    transform: scale(0);
+    opacity: 0;
+    transition:
+        transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1),
+        opacity 0.25s ease;
+    will-change: transform, opacity;
+}
+
+.portfolio-card.projek:hover .rocket-icon .rocket-ship,
+.portfolio-card.projek:focus-visible .rocket-icon .rocket-ship {
+    transform: translate(22px, -22px);
+}
+
+.portfolio-card.projek:hover .rocket-icon .rocket-thruster,
+.portfolio-card.projek:focus-visible .rocket-icon .rocket-thruster {
+    opacity: 1;
+    animation: thruster-flicker 0.28s ease-in-out infinite alternate;
+}
+
+@keyframes thruster-flicker {
+    0% {
+        transform: scale(0.92);
+    }
+    100% {
+        transform: scale(1.16);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .rocket-icon .rocket-ship,
+    .rocket-icon .rocket-thruster {
+        transition: none;
+        animation: none;
+    }
+}

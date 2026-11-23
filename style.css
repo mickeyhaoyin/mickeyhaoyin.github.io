@@ -1,487 +1,780 @@
-/*Homepage */
+/* Homepage Styles — Modern Web Guidance Optimized */
 
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap');
+:root {
+    --bg: #030712;
+    --accent: #38bdf8;
+    --accent-secondary: #818cf8;
+}
 
-    :root {
-        --bg: #030712;
-        --accent: #38bdf8; 
+html {
+    background-color: var(--bg);
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+}
+
+body {
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background-color: var(--bg);
+    color: #f8fafc;
+    min-height: 100dvh;
+}
+
+/* Safe Area Insets for Modern Mobile Devices */
+.safe-top {
+    padding-top: max(1rem, env(safe-area-inset-top));
+}
+
+.safe-bottom {
+    padding-bottom: max(2.5rem, env(safe-area-inset-bottom));
+}
+
+/* =====================================
+   M.RICHIE — CINEMATIC INTRO LOADER
+   (Durasi & Transisi tetap 0.7s)
+   ===================================== */
+
+#intro-loader {
+    position: fixed;
+    inset: 0;
+    z-index: 999999;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+    background: var(--bg);
+
+    opacity: 1;
+    visibility: visible;
+    will-change: opacity, visibility;
+    transition:
+        opacity 0.7s ease,
+        visibility 0.7s ease;
+}
+
+#intro-loader.intro-hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.intro-glow {
+    position: absolute;
+    width: 360px;
+    height: 360px;
+
+    background: radial-gradient(
+        circle,
+        rgba(56, 189, 248, 0.15) 0%,
+        rgba(129, 140, 248, 0.07) 40%,
+        transparent 70%
+    );
+
+    filter: blur(25px);
+    will-change: transform, opacity;
+    animation: intro-glow-pulse 3s ease-in-out infinite;
+    pointer-events: none;
+}
+
+.intro-content {
+    position: relative;
+    z-index: 2;
+
+    width: min(320px, 85vw);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    animation: intro-content-in 1s ease both;
+}
+
+.intro-logo-wrap {
+    width: 150px;
+    height: 150px;
+
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 24px;
+}
+
+.intro-ring {
+    position: absolute;
+    inset: 8px;
+
+    border: 1px solid rgba(56, 189, 248, 0.15);
+    border-top: 2px solid var(--accent);
+    border-right: 1px solid var(--accent-secondary);
+
+    border-radius: 50%;
+    will-change: transform;
+    animation: intro-spin 3s linear infinite;
+}
+
+.intro-ring-inner {
+    position: absolute;
+    inset: 18px;
+
+    border: 1px solid rgba(129, 140, 248, 0.18);
+    border-bottom: 2px solid var(--accent-secondary);
+
+    border-radius: 50%;
+    will-change: transform;
+    animation: intro-spin-reverse 5s linear infinite;
+}
+
+.intro-logo {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 39px;
+    font-weight: 800;
+    letter-spacing: -4px;
+
+    color: #f8fafc;
+    text-shadow: 0 0 30px rgba(56, 189, 248, 0.12);
+}
+
+.intro-logo span {
+    background: linear-gradient(
+        135deg,
+        var(--accent) 0%,
+        var(--accent-secondary) 100%
+    );
+
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.intro-brand {
+    margin: 0;
+
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 25px;
+    font-weight: 800;
+    letter-spacing: 0.16em;
+
+    color: #f8fafc;
+}
+
+.intro-subtitle {
+    margin-top: 10px;
+
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 0.42em;
+
+    color: #64748b;
+    text-align: center;
+}
+
+.intro-progress {
+    width: 150px;
+    height: 2px;
+
+    margin-top: 32px;
+    overflow: hidden;
+
+    background: rgba(255, 255, 255, 0.09);
+    border-radius: 10px;
+}
+
+#intro-progress-fill {
+    width: 0%;
+    height: 100%;
+
+    background: linear-gradient(
+        90deg,
+        var(--accent),
+        var(--accent-secondary)
+    );
+
+    box-shadow: 0 0 12px rgba(56, 189, 248, 0.65);
+    transition: width 0.12s linear;
+}
+
+.intro-progress-info {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+
+    margin-top: 12px;
+
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 8px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+}
+
+#intro-status {
+    color: #64748b;
+}
+
+#intro-percent {
+    color: var(--accent);
+    font-variant-numeric: tabular-nums;
+}
+
+.intro-footer {
+    position: absolute;
+    bottom: max(32px, env(safe-area-inset-bottom));
+
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 8px;
+    font-weight: 700;
+    letter-spacing: 0.4em;
+
+    color: #334155;
+}
+
+@keyframes intro-spin {
+    to { transform: rotate(360deg); }
+}
+
+@keyframes intro-spin-reverse {
+    to { transform: rotate(-360deg); }
+}
+
+@keyframes intro-glow-pulse {
+    0%, 100% {
+        transform: scale(0.9);
+        opacity: 0.65;
     }
 
-    body {
-        font-family: 'Plus Jakarta Sans', sans-serif;
-        background-color: var(--bg);
-        color: #f8fafc;
-        scroll-behavior: smooth;
-    }
-    
-    /* =====================================
-    M.RICHIE — CINEMATIC INTRO LOADER
-    ===================================== */
-
-    #intro-loader {
-        position: fixed;
-        inset: 0;
-        z-index: 999999;
-
-        display: flex;
-        align-items: center;
-        justify-content: center;
-
-        overflow: hidden;
-        background: #030712;
-
+    50% {
+        transform: scale(1.15);
         opacity: 1;
-        visibility: visible;
-        transition:
-            opacity 0.7s ease,
-            visibility 0.7s ease;
     }
+}
 
-    #intro-loader.intro-hidden {
+@keyframes intro-content-in {
+    from {
         opacity: 0;
-        visibility: hidden;
-        pointer-events: none;
+        transform: translateY(12px);
     }
 
-    /* Background Glow */
-    .intro-glow {
-        position: absolute;
-        width: 360px;
-        height: 360px;
-
-        background: radial-gradient(
-            circle,
-            rgba(56, 189, 248, 0.15) 0%,
-            rgba(129, 140, 248, 0.07) 40%,
-            transparent 70%
-        );
-
-        filter: blur(25px);
-        animation: intro-glow-pulse 3s ease-in-out infinite;
-        pointer-events: none;
+    to {
+        opacity: 1;
+        transform: translateY(0);
     }
+}
 
-    /* Main Content */
-    .intro-content {
-        position: relative;
-        z-index: 2;
-
-        width: min(320px, 85vw);
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-
-        animation: intro-content-in 1s ease both;
-    }
-
-    /* Logo Circle */
+@media (max-width: 480px) {
     .intro-logo-wrap {
-        width: 150px;
-        height: 150px;
-
-        position: relative;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-
-        margin-bottom: 24px;
+        width: 135px;
+        height: 135px;
     }
 
-    /* Outer Animated Ring */
-    .intro-ring {
-        position: absolute;
-        inset: 8px;
-
-        border: 1px solid rgba(56, 189, 248, 0.15);
-        border-top: 2px solid #38bdf8;
-        border-right: 1px solid #818cf8;
-
-        border-radius: 50%;
-        animation: intro-spin 3s linear infinite;
-    }
-
-    /* Inner Ring */
-    .intro-ring-inner {
-        position: absolute;
-        inset: 18px;
-
-        border: 1px solid rgba(129, 140, 248, 0.18);
-        border-bottom: 2px solid #818cf8;
-
-        border-radius: 50%;
-        animation: intro-spin-reverse 5s linear infinite;
-    }
-
-    /* Logo Text */
-    .intro-logo {
-        font-family: 'Plus Jakarta Sans', sans-serif;
-        font-size: 39px;
-        font-weight: 800;
-        letter-spacing: -4px;
-
-        color: #f8fafc;
-        text-shadow: 0 0 30px rgba(56, 189, 248, 0.12);
-    }
-
-    .intro-logo span {
-        background: linear-gradient(
-            135deg,
-            #38bdf8 0%,
-            #818cf8 100%
-        );
-
-        -webkit-background-clip: text;
-        background-clip: text;
-        -webkit-text-fill-color: transparent;
-    }
-
-    /* Brand Name */
     .intro-brand {
-        margin: 0;
-
-        font-family: 'Plus Jakarta Sans', sans-serif;
-        font-size: 25px;
-        font-weight: 800;
-        letter-spacing: 0.16em;
-
-        color: #f8fafc;
+        font-size: 22px;
     }
 
-    .intro-subtitle {
-        margin-top: 10px;
-
-        font-size: 9px;
-        font-weight: 700;
-        letter-spacing: 0.42em;
-
-        color: #64748b;
-        text-align: center;
-    }
-
-    /* Progress Track */
-    .intro-progress {
-        width: 150px;
-        height: 2px;
-
-        margin-top: 32px;
-        overflow: hidden;
-
-        background: rgba(255, 255, 255, 0.09);
-        border-radius: 10px;
-    }
-
-    #intro-progress-fill {
-        width: 0%;
-        height: 100%;
-
-        background: linear-gradient(
-            90deg,
-            #38bdf8,
-            #818cf8
-        );
-
-        box-shadow: 0 0 12px rgba(56, 189, 248, 0.65);
-        transition: width 0.12s linear;
-    }
-
-    /* Status + Percentage */
-    .intro-progress-info {
-        width: 100%;
-        display: flex;
-        justify-content: space-between;
-        gap: 12px;
-
-        margin-top: 12px;
-
-        font-family: 'Plus Jakarta Sans', sans-serif;
-        font-size: 8px;
-        font-weight: 700;
-        letter-spacing: 0.08em;
-    }
-
-    #intro-status {
-        color: #64748b;
-    }
-
-    #intro-percent {
-        color: #38bdf8;
-        font-variant-numeric: tabular-nums;
-    }
-
-    /* Bottom Label */
     .intro-footer {
-        position: absolute;
-        bottom: 32px;
-
-        font-family: 'Plus Jakarta Sans', sans-serif;
-        font-size: 8px;
-        font-weight: 700;
-        letter-spacing: 0.4em;
-
-        color: #334155;
+        bottom: max(24px, env(safe-area-inset-bottom));
+        font-size: 7px;
     }
+}
 
-    /* Animations */
-    @keyframes intro-spin {
-        to { transform: rotate(360deg); }
+@media (prefers-reduced-motion: reduce) {
+    .intro-ring,
+    .intro-ring-inner,
+    .intro-glow,
+    .intro-content {
+        animation: none;
     }
+}
 
-    @keyframes intro-spin-reverse {
-        to { transform: rotate(-360deg); }
+
+/* =================================
+   M.RICHIE — PAGE TRANSITION
+   (Durasi tetap 0.8s)
+   ================================= */
+
+#page-transition {
+    position: fixed;
+    inset: 0;
+    z-index: 99999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+
+    background: var(--bg);
+    transform: translateY(-101%);
+    will-change: transform;
+    transition: transform 0.8s cubic-bezier(0.77, 0, 0.175, 1);
+    pointer-events: none;
+}
+
+#page-transition.is-entering {
+    transform: translateY(0);
+    pointer-events: all;
+}
+
+html.page-loading #page-transition {
+    transform: translateY(0);
+}
+
+.transition-glow {
+    position: absolute;
+    width: 320px;
+    height: 320px;
+    border-radius: 50%;
+
+    background: radial-gradient(
+        circle,
+        rgba(56, 189, 248, 0.16) 0%,
+        rgba(129, 140, 248, 0.08) 40%,
+        transparent 70%
+    );
+
+    filter: blur(35px);
+    animation: transition-pulse 2s ease-in-out infinite;
+}
+
+.transition-content {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    padding: 24px;
+    animation: transition-content-in 0.7s ease both;
+}
+
+.transition-logo {
+    margin: 0;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: 800;
+    letter-spacing: -0.07em;
+    color: #f8fafc;
+}
+
+.transition-logo span {
+    background: linear-gradient(
+        135deg,
+        var(--accent) 0%,
+        var(--accent-secondary) 100%
+    );
+
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.transition-label {
+    margin-top: 12px;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 0.45em;
+    color: #64748b;
+}
+
+.transition-loader {
+    width: 150px;
+    height: 2px;
+    margin: 30px auto 0;
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.transition-loader-bar {
+    width: 40%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        var(--accent),
+        var(--accent-secondary)
+    );
+
+    will-change: transform;
+    animation: transition-progress 1.2s ease-in-out infinite;
+}
+
+@keyframes transition-pulse {
+    0%, 100% {
+        transform: scale(0.85);
+        opacity: 0.6;
     }
-
-    @keyframes intro-glow-pulse {
-        0%, 100% {
-            transform: scale(0.9);
-            opacity: 0.65;
-        }
-
-        50% {
-            transform: scale(1.15);
-            opacity: 1;
-        }
+    50% {
+        transform: scale(1.15);
+        opacity: 1;
     }
+}
 
-    @keyframes intro-content-in {
-        from {
-            opacity: 0;
-            transform: translateY(12px);
-        }
-
-        to {
-            opacity: 1;
-            transform: translateY(0);
-        }
+@keyframes transition-content-in {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
     }
-
-    /* Mobile */
-    @media (max-width: 480px) {
-        .intro-logo-wrap {
-            width: 135px;
-            height: 135px;
-        }
-
-        .intro-brand {
-            font-size: 22px;
-        }
-
-        .intro-footer {
-            bottom: 24px;
-            font-size: 7px;
-        }
+    to {
+        opacity: 1;
+        transform: translateY(0);
     }
+}
 
-    /* Accessibility */
-    @media (prefers-reduced-motion: reduce) {
-        .intro-ring,
-        .intro-ring-inner,
-        .intro-glow,
-        .intro-content {
-            animation: none;
-        }
+@keyframes transition-progress {
+    0% {
+        transform: translateX(-110%);
     }
+    100% {
+        transform: translateX(380%);
+    }
+}
 
-
-    /* =================================
-    M.RICHIE — PAGE TRANSITION
-    ================================= */
-
+@media (prefers-reduced-motion: reduce) {
     #page-transition {
-        position: fixed;
-        inset: 0;
-        z-index: 99999;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        overflow: hidden;
+        transition-duration: 0.15s;
+    }
 
-        background: #030712;
-        transform: translateY(-101%);
-        transition: transform 0.8s cubic-bezier(0.77, 0, 0.175, 1);
+    .transition-glow,
+    .transition-content,
+    .transition-loader-bar {
+        animation: none;
+    }
+}
+
+
+/* =================================
+   CONTACT 3D FLIP CARD (DESKTOP)
+   ================================= */
+
+.contact-surface {
+    background: linear-gradient(145deg, rgba(15, 23, 42, 0.72) 0%, rgba(7, 12, 26, 0.88) 100%);
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    box-shadow: 0 24px 60px -15px rgba(0, 0, 0, 0.65);
+    transition: border-color 0.3s ease;
+}
+
+@media (hover: hover) {
+    .contact-surface:hover {
+        border-color: rgba(56, 189, 248, 0.45);
+    }
+}
+
+@media (min-width: 768px) {
+    .contact-flip-scene {
+        perspective: 1800px;
+    }
+
+    .contact-flip-inner {
+        display: grid;
+        grid-template-columns: 1fr;
+        align-items: stretch;
+        width: 100%;
+        transform-style: preserve-3d;
+        transform-origin: center center;
+        transition: transform 0.85s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    .contact-flip-inner.is-flipped {
+        transform: rotateY(180deg);
+    }
+
+    .contact-face {
+        grid-area: 1 / 1;
+        width: 100%;
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+    }
+
+    .contact-front {
+        transform: rotateY(0deg);
+        z-index: 2;
+    }
+
+    .contact-back {
+        transform: rotateY(180deg);
+        z-index: 1;
+    }
+
+    .contact-flip-inner.is-flipped .contact-front {
         pointer-events: none;
     }
 
-    /* Tutup layar saat pindah halaman */
-    #page-transition.is-entering {
-        transform: translateY(0);
-        pointer-events: all;
+    .contact-flip-inner.is-flipped .contact-back {
+        pointer-events: auto;
+        z-index: 3;
     }
+}
 
-    /* Tutup layar sementara halaman baru dimuat */
-    html.page-loading #page-transition {
-        transform: translateY(0);
+@media (prefers-reduced-motion: reduce) {
+    .contact-flip-inner {
+        transition-duration: 0.15s;
     }
+}
 
-    /* Cahaya biru di belakang logo */
-    .transition-glow {
-        position: absolute;
-        width: 320px;
-        height: 320px;
-        border-radius: 50%;
+/* =================================
+   UTILITIES & COMPONENTS
+   ================================= */
 
-        background: radial-gradient(
-            circle,
-            rgba(56, 189, 248, 0.16) 0%,
-            rgba(129, 140, 248, 0.08) 40%,
-            transparent 70%
-        );
+.glass-card {
+    background: rgba(255, 255, 255, 0.02);
+    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: border-color 0.3s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.3s ease, padding 0.3s ease;
+}
 
-        filter: blur(35px);
-        animation: transition-pulse 2s ease-in-out infinite;
-    }
-
-    /* Konten logo */
-    .transition-content {
-        position: relative;
-        z-index: 1;
-        text-align: center;
-        padding: 24px;
-        animation: transition-content-in 0.7s ease both;
-    }
-
-    .transition-logo {
-        margin: 0;
-        font-family: 'Plus Jakarta Sans', sans-serif;
-        font-size: clamp(2rem, 5vw, 3.5rem);
-        font-weight: 800;
-        letter-spacing: -0.07em;
-        color: #f8fafc;
-    }
-
-    .transition-logo span {
-        background: linear-gradient(
-            135deg,
-            #38bdf8 0%,
-            #818cf8 100%
-        );
-
-        -webkit-background-clip: text;
-        background-clip: text;
-        -webkit-text-fill-color: transparent;
-    }
-
-    .transition-label {
-        margin-top: 12px;
-        font-size: 9px;
-        font-weight: 700;
-        letter-spacing: 0.45em;
-        color: #64748b;
-    }
-
-    /* Garis loading */
-    .transition-loader {
-        width: 150px;
-        height: 2px;
-        margin: 30px auto 0;
-        overflow: hidden;
-        background: rgba(255, 255, 255, 0.08);
-    }
-
-    .transition-loader-bar {
-        width: 40%;
-        height: 100%;
-        background: linear-gradient(
-            90deg,
-            #38bdf8,
-            #818cf8
-        );
-
-        animation: transition-progress 1.2s ease-in-out infinite;
-    }
-
-    /* Animasi cahaya */
-    @keyframes transition-pulse {
-        0%, 100% {
-            transform: scale(0.85);
-            opacity: 0.6;
-        }
-        50% {
-            transform: scale(1.15);
-            opacity: 1;
-        }
-    }
-
-    /* Logo masuk */
-    @keyframes transition-content-in {
-        from {
-            opacity: 0;
-            transform: translateY(15px);
-        }
-        to {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    }
-
-    /* Progress bergerak */
-    @keyframes transition-progress {
-        0% {
-            transform: translateX(-110%);
-        }
-        100% {
-            transform: translateX(380%);
-        }
-    }
-
-    /* Hormati preferensi reduce motion */
-    @media (prefers-reduced-motion: reduce) {
-        #page-transition {
-            transition-duration: 0.15s;
-        }
-
-        .transition-glow,
-        .transition-content,
-        .transition-loader-bar {
-            animation: none;
-        }
-    }
-
-    .glass-card {
-        background: rgba(255, 255, 255, 0.02);
-        backdrop-filter: blur(12px);
-        border: 1px solid rgba(255, 255, 255, 0.05);
-        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    }
+@media (hover: hover) {
     .glass-card:hover {
         border-color: var(--accent);
     }
+}
 
-    .gradient-text {
-        background: linear-gradient(135deg, #38bdf8 0%, #818cf8 100%);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-    }
+.gradient-text {
+    display: inline-block;
+    padding-right: 0.16em;
+    margin-right: -0.16em;
+    background: linear-gradient(135deg, var(--accent) 0%, var(--accent-secondary) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
 
-    .full-section {
-        min-height: 100vh;
-        width: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding: 4rem 2rem;
-        position: relative;
-    }
+.timeline-border {
+    border-left: 2px solid rgba(56, 189, 248, 0.2);
+}
 
-    .timeline-border {
-        border-left: 2px solid rgba(56, 189, 248, 0.2);
-    }
+.nav-link {
+    position: relative;
+}
 
-    .nav-link {
-        position: relative;
-    }
+.nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -4px;
+    left: 0;
+    background: var(--accent);
+    transition: width 0.3s ease;
+}
 
-    .nav-link::after {
-        content: ''; position: absolute;
-        width: 0; height: 2px;
-        bottom: -4px; left: 0;
-        background: var(--accent);
-        transition: width 0.3s;
-    }
+.nav-link:hover::after,
+.nav-link:focus-visible::after {
+    width: 100%;
+}
 
-    .nav-link:hover::after {
-        width: 100%;
-    }
+/* Touch optimization */
+a, button {
+    touch-action: manipulation;
+}
 
-    .portfolio-item.hidden {
-        display: none;
+/* =================================
+   CLAPPERBOARD OPEN ANIMATION
+   ================================= */
+
+.clapper-icon .clapper-top {
+    /* Titik engsel di sudut kiri bawah bilah atas clapperboard */
+    transform-origin: 28px 160px;
+    transition: transform 0.45s cubic-bezier(0.34, 1.56, 0.64, 1);
+    will-change: transform;
+}
+
+.portfolio-card.video:hover .clapper-icon .clapper-top,
+.portfolio-card.video:focus-visible .clapper-icon .clapper-top {
+    transform: rotate(-26deg);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .clapper-icon .clapper-top {
+        transition: none;
     }
+}
+
+/* =================================
+   CAMERA IRIS SHUTTER ROTATION
+   ================================= */
+
+.camera-icon .iris-wheel {
+    transform-origin: 256px 288px;
+    will-change: transform;
+}
+
+.camera-icon .iris-blade {
+    /* Titik engsel masing-masing bilah di tepi ring lensa */
+    transform-origin: 256px 194px;
+    /* Posisi istirahat: bilah terbuka lebar di pinggir ring lensa */
+    transform: rotate(-42deg);
+    will-change: transform;
+}
+
+.portfolio-card.foto:hover .camera-icon .iris-wheel,
+.portfolio-card.foto:focus-visible .camera-icon .iris-wheel {
+    animation: iris-wheel-spin 0.75s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.portfolio-card.foto:hover .camera-icon .iris-blade,
+.portfolio-card.foto:focus-visible .camera-icon .iris-blade {
+    animation: iris-blade-close 0.75s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+/* Ring diafragma ikut berputar saat menutup & membuka */
+@keyframes iris-wheel-spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    48% {
+        transform: rotate(65deg);
+    }
+    56% {
+        transform: rotate(65deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+/* 6 Bilah berayun masuk menutup lubang segi enam di tengah lalu membuka lagi */
+@keyframes iris-blade-close {
+    0% {
+        transform: rotate(-42deg);
+    }
+    48% {
+        transform: rotate(22deg);
+    }
+    56% {
+        transform: rotate(22deg);
+    }
+    100% {
+        transform: rotate(-42deg);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .portfolio-card.foto:hover .camera-icon .iris-wheel,
+    .portfolio-card.foto:focus-visible .camera-icon .iris-wheel,
+    .portfolio-card.foto:hover .camera-icon .iris-blade,
+    .portfolio-card.foto:focus-visible .camera-icon .iris-blade {
+        animation: none;
+    }
+}
+
+/* =================================
+   DESIGN PALETTE & PAINTBRUSH ANIMATION
+   ================================= */
+
+.palette-icon .palette-body {
+    transform-origin: 256px 256px;
+    transition: transform 0.45s cubic-bezier(0.34, 1.56, 0.64, 1);
+    will-change: transform;
+}
+
+.palette-icon .paint-dot {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.portfolio-card.desain:hover .palette-icon .paint-dot,
+.portfolio-card.desain:focus-visible .palette-icon .paint-dot {
+    opacity: 1;
+}
+
+.palette-icon .paint-stroke {
+    stroke-dasharray: 185;
+    stroke-dashoffset: 185;
+    transition: stroke-dashoffset 0.45s cubic-bezier(0.22, 1, 0.36, 1) 0.12s;
+}
+
+.palette-icon .paint-brush {
+    transform-origin: 450px 50px;
+    transform: translate(35px, -35px) rotate(18deg) scale(0.85);
+    opacity: 0;
+    transition:
+        transform 0.45s cubic-bezier(0.34, 1.56, 0.64, 1),
+        opacity 0.25s ease;
+    will-change: transform, opacity;
+}
+
+/* Hover & Keyboard Focus State */
+.portfolio-card.desain:hover .palette-icon .palette-body,
+.portfolio-card.desain:focus-visible .palette-icon .palette-body {
+    transform: translate(-10px, 8px) rotate(-10deg);
+}
+
+.portfolio-card.desain:hover .palette-icon .paint-brush,
+.portfolio-card.desain:focus-visible .palette-icon .paint-brush {
+    transform: translate(0, 0) rotate(-6deg) scale(1);
+    opacity: 1;
+}
+
+.portfolio-card.desain:hover .palette-icon .paint-dot,
+.portfolio-card.desain:focus-visible .palette-icon .paint-dot {
+    transform: scale(1);
+    opacity: 1;
+}
+
+.portfolio-card.desain:hover .palette-icon .dot-1 { transition-delay: 0.05s; }
+.portfolio-card.desain:hover .palette-icon .dot-2 { transition-delay: 0.11s; }
+.portfolio-card.desain:hover .palette-icon .dot-3 { transition-delay: 0.17s; }
+.portfolio-card.desain:hover .palette-icon .dot-4 { transition-delay: 0.23s; }
+
+.portfolio-card.desain:hover .palette-icon .paint-stroke,
+.portfolio-card.desain:focus-visible .palette-icon .paint-stroke {
+    stroke-dashoffset: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .palette-icon .palette-body,
+    .palette-icon .paint-dot,
+    .palette-icon .paint-stroke,
+    .palette-icon .paint-brush {
+        transition: none;
+    }
+}
+
+/* =================================
+   ROCKET LAUNCH & THRUSTER FLAME
+   ================================= */
+
+.rocket-icon .rocket-ship {
+    transition: transform 0.45s cubic-bezier(0.34, 1.56, 0.64, 1);
+    will-change: transform;
+}
+
+.rocket-icon .rocket-thruster {
+    transform-origin: 132px 360px;
+    transform: scale(0);
+    opacity: 0;
+    transition:
+        transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1),
+        opacity 0.25s ease;
+    will-change: transform, opacity;
+}
+
+.portfolio-card.projek:hover .rocket-icon .rocket-ship,
+.portfolio-card.projek:focus-visible .rocket-icon .rocket-ship {
+    transform: translate(22px, -22px);
+}
+
+.portfolio-card.projek:hover .rocket-icon .rocket-thruster,
+.portfolio-card.projek:focus-visible .rocket-icon .rocket-thruster {
+    opacity: 1;
+    animation: thruster-flicker 0.28s ease-in-out infinite alternate;
+}
+
+@keyframes thruster-flicker {
+    0% {
+        transform: scale(0.92);
+    }
+    100% {
+        transform: scale(1.16);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .rocket-icon .rocket-ship,
+    .rocket-icon .rocket-thruster {
+        transition: none;
+        animation: none;
+    }
+}
