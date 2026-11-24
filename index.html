@@ -62,8 +62,8 @@
 
     <!-- NAVBAR -->
     <header>
-        <nav class="fixed top-0 left-0 w-full z-50 py-4 px-6 md:py-6 md:px-12 flex justify-between items-center transition-all duration-300 safe-top" id="navbar" aria-label="Main Navigation">
-            <a href="#home" class="text-xl md:text-2xl font-extrabold tracking-tighter relative z-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-400 rounded">
+        <nav class="fixed top-0 left-0 w-full z-50 py-3.5 px-4 sm:px-6 md:py-6 md:px-12 flex justify-between items-center transition-all duration-300 safe-top" id="navbar" aria-label="Main Navigation">
+            <a href="#home" class="text-lg sm:text-xl md:text-2xl font-extrabold tracking-tighter relative z-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-400 rounded">
                 M.<span class="gradient-text">RICHIE</span>
             </a>
             
@@ -76,7 +76,7 @@
             </div>
 
             <!-- Hamburger Button (Mobile Only) -->
-            <button id="hamburger-btn" type="button" aria-label="Toggle Menu" aria-expanded="false" aria-controls="mobile-menu" class="block md:hidden text-2xl text-white p-2 -mr-2 focus:outline-none focus-visible:ring-2 focus-visible:ring-sky-400 rounded-lg relative z-50 transition-transform active:scale-95">
+            <button id="hamburger-btn" type="button" aria-label="Toggle Menu" aria-expanded="false" aria-controls="mobile-menu" class="flex items-center justify-center md:hidden w-10 h-10 text-xl text-white -mr-2 focus:outline-none focus-visible:ring-2 focus-visible:ring-sky-400 rounded-lg relative z-50 transition-transform active:scale-95">
                 <i class="fa-solid fa-bars" aria-hidden="true"></i>
             </button>
         </nav>
@@ -84,37 +84,37 @@
 
     <!-- MOBILE MENU OVERLAY -->
     <div id="mobile-menu" aria-hidden="true" class="fixed inset-0 bg-[#030712]/95 backdrop-blur-lg z-40 flex flex-col items-center justify-center opacity-0 pointer-events-none transition-opacity duration-300">
-        <div class="flex flex-col items-center gap-8 text-lg font-bold uppercase tracking-widest">
-            <a href="#home" class="mobile-link hover:text-sky-400 transition-colors py-1">Home</a>
-            <a href="#about" class="mobile-link hover:text-sky-400 transition-colors py-1">About</a>
-            <a href="#experience" class="mobile-link hover:text-sky-400 transition-colors py-1">Experience</a>
-            <a href="#portfolio" class="mobile-link hover:text-sky-400 transition-colors py-1">Portfolio</a>
-            <a href="#contact" class="mobile-link hover:text-sky-400 transition-colors py-1">Contact</a>
+        <div class="flex flex-col items-center gap-7 text-base font-bold uppercase tracking-[0.25em]">
+            <a href="#home" class="mobile-link hover:text-sky-400 transition-colors py-1.5">Home</a>
+            <a href="#about" class="mobile-link hover:text-sky-400 transition-colors py-1.5">About</a>
+            <a href="#experience" class="mobile-link hover:text-sky-400 transition-colors py-1.5">Experience</a>
+            <a href="#portfolio" class="mobile-link hover:text-sky-400 transition-colors py-1.5">Portfolio</a>
+            <a href="#contact" class="mobile-link hover:text-sky-400 transition-colors py-1.5">Contact</a>
         </div>
     </div>
 
-    <main>
+    <main class="overflow-x-hidden">
         <!-- HERO SECTION -->
-        <section id="home" class="relative min-h-[100svh] h-[100dvh] w-full flex flex-col justify-center overflow-hidden px-6 md:px-16">
-            <div class="relative w-full max-w-6xl mx-auto h-full flex flex-col md:flex-row items-center pt-20 md:pt-0">
+        <section id="home" class="relative min-h-[100svh] md:h-[100dvh] w-full flex flex-col justify-center overflow-hidden px-4 sm:px-6 md:px-16">
+            <div class="relative w-full max-w-6xl mx-auto flex-1 flex flex-col md:flex-row items-center justify-between md:justify-center pt-16 pb-10 md:py-0 gap-4 md:gap-0">
                 
                 <!-- 1. GAMBAR HERO -->
-                <div class="relative z-10 w-full md:w-1/2 h-[48%] sm:h-[50%] md:h-full flex items-end justify-center md:justify-start opacity-85 md:opacity-100 pointer-events-none select-none" data-aos="fade-right" data-aos-duration="1200">
+                <div class="relative z-10 w-full md:w-1/2 h-[38svh] sm:h-[44svh] md:h-full flex items-end justify-center md:justify-start opacity-90 md:opacity-100 pointer-events-none select-none" data-aos="fade-up" data-aos-duration="1000">
                     <img src="assets/hero-me.png" alt="Mickey Richie" fetchpriority="high" decoding="async" class="w-full h-full object-contain object-bottom md:object-left-bottom" />
                 </div>
 
                 <!-- 2. TEKS HERO -->
-                <div class="relative z-30 w-full md:w-1/2 flex flex-col justify-start md:justify-center text-center md:text-left h-[52%] sm:h-[50%] md:h-full md:pl-10 lg:pl-16 pt-4 md:pt-0" data-aos="fade-left" data-aos-delay="300" data-aos-duration="1000">
-                    <span class="text-sky-400 font-bold tracking-[0.15em] md:tracking-[0.3em] text-[11px] md:text-sm uppercase mb-3 block">
+                <div class="relative z-30 w-full md:w-1/2 flex flex-col justify-center text-center md:text-left md:h-full md:pl-10 lg:pl-16" data-aos="fade-up" data-aos-delay="200" data-aos-duration="900">
+                    <span class="text-sky-400 font-bold tracking-[0.16em] md:tracking-[0.3em] text-[10px] sm:text-xs md:text-sm uppercase mb-2 md:mb-3 block">
                         Professional Content Creator
                     </span>
 
-                    <h1 class="text-5xl md:text-7xl lg:text-8xl font-extrabold mb-3 md:mb-4 tracking-tight leading-[1.1]">
+                    <h1 class="hero-name font-extrabold mb-3 md:mb-4 tracking-tight leading-[1.08]">
                         Mickey <br class="hidden md:block" />
                         <span class="gradient-text">Richie</span>
                     </h1>
 
-                    <p class="text-gray-300 md:text-gray-400 text-xs sm:text-sm md:text-lg max-w-md mx-auto md:mx-0 leading-relaxed">
+                    <p class="text-gray-300 md:text-gray-400 text-xs sm:text-sm md:text-lg max-w-sm sm:max-w-md mx-auto md:mx-0 leading-relaxed">
                         Made Ideas Into High <span class="text-white border-b-2 border-sky-500">Visual Experiences.</span> 
                         Collaborated with AI + Human Society, turning impossible to <span class="text-white border-b-2 border-sky-500">possible.</span>
                     </p>
@@ -123,148 +123,147 @@
             </div>
 
             <!-- GRADIENT OVERLAY -->
-            <div class="absolute bottom-0 left-0 w-full h-[40%] md:h-[30%] bg-gradient-to-t from-[#030712] via-[#030712]/80 to-transparent z-20 pointer-events-none"></div>
+            <div class="absolute bottom-0 left-0 w-full h-[24%] md:h-[30%] bg-gradient-to-t from-[#030712] via-[#030712]/75 to-transparent z-20 pointer-events-none"></div>
         </section>
 
         <!-- ABOUT SECTION -->
-        <section id="about" class="py-20 md:py-32 px-6 md:px-24 max-w-7xl mx-auto">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20">
-                <div data-aos="fade-right">
-                    <h2 class="text-3xl md:text-4xl font-extrabold mb-6 md:mb-8 italic">01. <span class="gradient-text">Background</span></h2>
-                    <p class="text-gray-400 leading-relaxed text-sm md:text-base mb-6 text-left">
-                        Lulusan multimedia dengan spesialisasi <span class="text-white border-b border-sky-500">desain grafis, video editing, web design & development dan produksi konten digital.</span> Memiliki pengalaman langsung di industri gaming, F&amp;B, properti, dan media sosial. Terampil dalam menjalankan konsep kreatif dari tahap pra-produksi hingga pasca-produksi.
+        <section id="about" class="py-14 sm:py-20 md:py-32 px-4 sm:px-6 md:px-24 max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-20">
+                <div data-aos="fade-up">
+                    <h2 class="text-2xl sm:text-3xl md:text-4xl font-extrabold mb-5 md:mb-8 italic">01. <span class="gradient-text">Background</span></h2>
+                    <p class="text-gray-400 leading-relaxed text-xs sm:text-sm md:text-base mb-4 md:mb-6 text-left">
+                        Lulusan multimedia dengan spesialisasi <span class="text-white border-b border-sky-500">desain grafis, video editing, web design &amp; development dan produksi konten digital.</span> Memiliki pengalaman langsung di industri gaming, F&amp;B, properti, dan media sosial. Terampil dalam menjalankan konsep kreatif dari tahap pra-produksi hingga pasca-produksi.
                     </p>
-                    <p class="text-gray-400 leading-relaxed text-sm md:text-base mb-8 text-left">
+                    <p class="text-gray-400 leading-relaxed text-xs sm:text-sm md:text-base mb-6 md:mb-8 text-left">
                         Memiliki kemampuan <span class="text-white border-b border-sky-500">komunikasi dan kerja sama tim yang baik,</span> serta leadership yang kuat. Mampu beradaptasi dengan baik dalam pekerjaan yang menuntut tenaga maupun kemampuan berpikir analitis.
                     </p>
-                    <div class="grid grid-cols-2 gap-4">
-                        <div class="glass-card p-4 md:p-5 rounded-xl text-center">
-                            <i class="fa-solid fa-video text-sky-400 mb-2 text-xl md:text-2xl" aria-hidden="true"></i>
-                            <h3 class="font-bold text-xs md:text-sm text-white uppercase tracking-wide">Video Production</h3>
+                    <div class="grid grid-cols-2 gap-3 sm:gap-4">
+                        <div class="glass-card p-3.5 sm:p-4 md:p-5 rounded-xl text-center">
+                            <i class="fa-solid fa-video text-sky-400 mb-2 text-lg sm:text-xl md:text-2xl" aria-hidden="true"></i>
+                            <h3 class="font-bold text-[11px] sm:text-xs md:text-sm text-white uppercase tracking-wide">Video Production</h3>
                         </div>
-                        <div class="glass-card p-4 md:p-5 rounded-xl text-center">
-                            <i class="fa-solid fa-bezier-curve text-sky-400 mb-2 text-xl md:text-2xl" aria-hidden="true"></i>
-                            <h3 class="font-bold text-xs md:text-sm text-white uppercase tracking-wide">Visual Branding</h3>
+                        <div class="glass-card p-3.5 sm:p-4 md:p-5 rounded-xl text-center">
+                            <i class="fa-solid fa-bezier-curve text-sky-400 mb-2 text-lg sm:text-xl md:text-2xl" aria-hidden="true"></i>
+                            <h3 class="font-bold text-[11px] sm:text-xs md:text-sm text-white uppercase tracking-wide">Visual Branding</h3>
                         </div>
                     </div>
                 </div>
 
-                <div class="space-y-6 md:space-y-8" data-aos="fade-left">
-                    <h2 class="text-2xl md:text-3xl font-bold mb-4 md:mb-6 italic text-gray-400">Education</h2>
-                    <div class="glass-card p-5 md:p-6 rounded-2xl">
-                        <span class="text-sky-400 text-xs font-bold uppercase">2021 - 2024</span>
-                        <h3 class="text-base md:text-lg font-bold mt-1">SMK Kristen Kanaan, Jakarta</h3>
-                        <p class="text-sm text-gray-400 mt-1">Multimedia Major</p>
+                <div class="space-y-4 sm:space-y-6 md:space-y-8" data-aos="fade-up" data-aos-delay="100">
+                    <h2 class="text-xl sm:text-2xl md:text-3xl font-bold mb-3 md:mb-6 italic text-gray-400">Education</h2>
+                    <div class="glass-card p-4 sm:p-5 md:p-6 rounded-2xl">
+                        <span class="text-sky-400 text-[11px] sm:text-xs font-bold uppercase">2021 - 2024</span>
+                        <h3 class="text-sm sm:text-base md:text-lg font-bold mt-1">SMK Kristen Kanaan, Jakarta</h3>
+                        <p class="text-xs sm:text-sm text-gray-400 mt-1">Multimedia Major</p>
                     </div>
-                    <div class="glass-card p-5 md:p-6 rounded-2xl border-l-4 border-sky-500">
-                        <span class="text-sky-400 text-xs font-bold uppercase">Professional Course</span>
-                        <h3 class="text-base md:text-lg font-bold mt-1">ESDA 3D Learning</h3>
-                        <p class="text-sm text-gray-400 mt-1">3D Modeling &amp; Animation</p>
+                    <div class="glass-card p-4 sm:p-5 md:p-6 rounded-2xl border-l-4 border-sky-500">
+                        <span class="text-sky-400 text-[11px] sm:text-xs font-bold uppercase">Professional Course</span>
+                        <h3 class="text-sm sm:text-base md:text-lg font-bold mt-1">ESDA 3D Learning</h3>
+                        <p class="text-xs sm:text-sm text-gray-400 mt-1">3D Modeling &amp; Animation</p>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- EXPERIENCE SECTION -->
-        <section id="experience" class="py-20 md:py-32 px-6 md:px-24 bg-[#050a18]">
-            <div class="max-w-4xl mx-auto text-center mb-12 md:mb-20" data-aos="fade-up">
-                <h2 class="text-3xl md:text-4xl font-extrabold italic mb-3">02. <span class="gradient-text">Experience</span></h2>
-                <p class="text-gray-500 uppercase tracking-widest text-xs">Full Career History</p>
+        <section id="experience" class="py-14 sm:py-20 md:py-32 px-4 sm:px-6 md:px-24 bg-[#050a18]">
+            <div class="max-w-4xl mx-auto text-center mb-10 md:mb-20" data-aos="fade-up">
+                <h2 class="text-2xl sm:text-3xl md:text-4xl font-extrabold italic mb-2 md:mb-3">02. <span class="gradient-text">Experience</span></h2>
+                <p class="text-gray-500 uppercase tracking-widest text-[10px] sm:text-xs">Full Career History</p>
             </div>
 
-            <div class="max-w-4xl mx-auto timeline-border ml-4 md:ml-auto">
+            <div class="max-w-4xl mx-auto timeline-border ml-2 sm:ml-4 md:ml-auto">
                 
-                <div class="relative pl-8 md:pl-10 mb-12 md:mb-16" data-aos="fade-up">
-                    <div class="absolute -left-[7px] top-1 w-4 h-4 rounded-full bg-gray-700 border-2 md:border-4 border-gray-900"></div>
+                <div class="relative pl-6 sm:pl-8 md:pl-10 mb-10 md:mb-16" data-aos="fade-up">
+                    <div class="absolute -left-[7px] top-1 w-3.5 h-3.5 md:w-4 md:h-4 rounded-full bg-gray-700 border-2 md:border-4 border-gray-900"></div>
                     <div class="flex flex-col md:flex-row md:justify-between items-start mb-1 md:mb-2">
-                        <h3 class="text-lg md:text-xl font-bold text-white uppercase leading-snug">Admin Marketing &amp; Content Creator</h3>
-                        <span class="text-sky-500/70 text-xs md:text-sm font-black mt-1 md:mt-0">JUN 2026 - SEP 2026</span>
+                        <h3 class="text-base sm:text-lg md:text-xl font-bold text-white uppercase leading-snug">Admin Marketing &amp; Content Creator</h3>
+                        <span class="text-sky-500/70 text-[11px] sm:text-xs md:text-sm font-black mt-0.5 md:mt-0">JUN 2026 - SEP 2026</span>
                     </div>
-                    <p class="text-sky-400 text-xs md:text-sm font-bold mb-3 md:mb-4">KAG Group</p>
-                    <ul class="text-gray-400 text-sm space-y-2 list-none text-left">
-                        <li class="flex items-start"><i class="fa-solid fa-check text-sky-500 mr-3 mt-1 text-[10px]" aria-hidden="true"></i><span>Mengelola aktivitas marketing untuk PT. Kenran Logistic Solution &amp; Lion Parcel PCU.</span></li>
-                        <li class="flex items-start"><i class="fa-solid fa-check text-sky-500 mr-3 mt-1 text-[10px]" aria-hidden="true"></i><span>Membangun dan mengelola Instagram, TikTok, dan Facebook dari nol.</span></li>
-                        <li class="flex items-start"><i class="fa-solid fa-check text-sky-500 mr-3 mt-1 text-[10px]" aria-hidden="true"></i><span>Menangani administrasi pengiriman logistik (proses order, follow-up client).</span></li>
-                        <li class="flex items-start"><i class="fa-solid fa-check text-sky-500 mr-3 mt-1 text-[10px]" aria-hidden="true"></i><span>Mengembangkan website PT. Kenran Logistic Solution end-to-end.</span></li>
+                    <p class="text-sky-400 text-xs md:text-sm font-bold mb-2.5 md:mb-4">KAG Group</p>
+                    <ul class="text-gray-400 text-xs sm:text-sm space-y-2 list-none text-left">
+                        <li class="flex items-start"><i class="fa-solid fa-check text-sky-500 mr-2.5 sm:mr-3 mt-1 text-[10px] shrink-0" aria-hidden="true"></i><span>Mengelola aktivitas marketing untuk PT. Kenran Logistic Solution &amp; Lion Parcel PCU.</span></li>
+                        <li class="flex items-start"><i class="fa-solid fa-check text-sky-500 mr-2.5 sm:mr-3 mt-1 text-[10px] shrink-0" aria-hidden="true"></i><span>Membangun dan mengelola Instagram, TikTok, dan Facebook dari nol.</span></li>
+                        <li class="flex items-start"><i class="fa-solid fa-check text-sky-500 mr-2.5 sm:mr-3 mt-1 text-[10px] shrink-0" aria-hidden="true"></i><span>Menangani administrasi pengiriman logistik (proses order, follow-up client).</span></li>
+                        <li class="flex items-start"><i class="fa-solid fa-check text-sky-500 mr-2.5 sm:mr-3 mt-1 text-[10px] shrink-0" aria-hidden="true"></i><span>Mengembangkan website PT. Kenran Logistic Solution end-to-end.</span></li>
                     </ul>
                 </div>
 
-                <div class="relative pl-8 md:pl-10 mb-12 md:mb-16" data-aos="fade-up">
-                    <div class="absolute -left-[7px] top-1 w-4 h-4 rounded-full bg-gray-700 border-2 md:border-4 border-gray-900"></div>
+                <div class="relative pl-6 sm:pl-8 md:pl-10 mb-10 md:mb-16" data-aos="fade-up">
+                    <div class="absolute -left-[7px] top-1 w-3.5 h-3.5 md:w-4 md:h-4 rounded-full bg-gray-700 border-2 md:border-4 border-gray-900"></div>
                     <div class="flex flex-col md:flex-row md:justify-between items-start mb-1 md:mb-2">
-                        <h3 class="text-lg md:text-xl font-bold text-white uppercase leading-snug">Head of Marketing &amp; Admin Content</h3>
-                        <span class="text-sky-500/70 text-xs md:text-sm font-black mt-1 md:mt-0">MAR 2026 - JUN 2026</span>
+                        <h3 class="text-base sm:text-lg md:text-xl font-bold text-white uppercase leading-snug">Head of Marketing &amp; Admin Content</h3>
+                        <span class="text-sky-500/70 text-[11px] sm:text-xs md:text-sm font-black mt-0.5 md:mt-0">MAR 2026 - JUN 2026</span>
                     </div>
-                    <p class="text-sky-400 text-xs md:text-sm font-bold mb-3 md:mb-4">PT. Pesona Anugerah Sukses</p>
-                    <ul class="text-gray-400 text-sm space-y-2 list-none text-left">
-                        <li class="flex items-start"><i class="fa-solid fa-check text-sky-500 mr-3 mt-1 text-[10px]" aria-hidden="true"></i><span>Membuat dan mengelola konten media sosial Instagram.</span></li>
-                        <li class="flex items-start"><i class="fa-solid fa-check text-sky-500 mr-3 mt-1 text-[10px]" aria-hidden="true"></i><span>Mendesain materi promosi seperti banner, flyer, dan brosur.</span></li>
-                        <li class="flex items-start"><i class="fa-solid fa-check text-sky-500 mr-3 mt-1 text-[10px]" aria-hidden="true"></i><span>Mendukung kegiatan operasional perusahaan (event &amp; backup gudang).</span></li>
+                    <p class="text-sky-400 text-xs md:text-sm font-bold mb-2.5 md:mb-4">PT. Pesona Anugerah Sukses</p>
+                    <ul class="text-gray-400 text-xs sm:text-sm space-y-2 list-none text-left">
+                        <li class="flex items-start"><i class="fa-solid fa-check text-sky-500 mr-2.5 sm:mr-3 mt-1 text-[10px] shrink-0" aria-hidden="true"></i><span>Membuat dan mengelola konten media sosial Instagram.</span></li>
+                        <li class="flex items-start"><i class="fa-solid fa-check text-sky-500 mr-2.5 sm:mr-3 mt-1 text-[10px] shrink-0" aria-hidden="true"></i><span>Mendesain materi promosi seperti banner, flyer, dan brosur.</span></li>
+                        <li class="flex items-start"><i class="fa-solid fa-check text-sky-500 mr-2.5 sm:mr-3 mt-1 text-[10px] shrink-0" aria-hidden="true"></i><span>Mendukung kegiatan operasional perusahaan (event &amp; backup gudang).</span></li>
                     </ul>
                 </div>
 
-                <div class="relative pl-8 md:pl-10 mb-12 md:mb-16" data-aos="fade-up">
-                    <div class="absolute -left-[7px] top-1 w-4 h-4 rounded-full bg-gray-700 border-2 md:border-4 border-gray-900"></div>
+                <div class="relative pl-6 sm:pl-8 md:pl-10 mb-10 md:mb-16" data-aos="fade-up">
+                    <div class="absolute -left-[7px] top-1 w-3.5 h-3.5 md:w-4 md:h-4 rounded-full bg-gray-700 border-2 md:border-4 border-gray-900"></div>
                     <div class="flex flex-col md:flex-row md:justify-between items-start mb-1 md:mb-2">
-                        <h3 class="text-lg md:text-xl font-bold text-white uppercase leading-snug">Content Creator &amp; Graphic Designer</h3>
-                        <span class="text-sky-500/70 text-xs md:text-sm font-black mt-1 md:mt-0">SEP 2025 - NOV 2025</span>
+                        <h3 class="text-base sm:text-lg md:text-xl font-bold text-white uppercase leading-snug">Content Creator &amp; Graphic Designer</h3>
+                        <span class="text-sky-500/70 text-[11px] sm:text-xs md:text-sm font-black mt-0.5 md:mt-0">SEP 2025 - NOV 2025</span>
                     </div>
-                    <p class="text-sky-400 text-xs md:text-sm font-bold mb-3 md:mb-4">PT. Bingchun Food Management</p>
-                    <ul class="text-gray-400 text-sm space-y-2 list-none text-left">
-                        <li class="flex items-start"><i class="fa-solid fa-check text-sky-500 mr-3 mt-1 text-[10px]" aria-hidden="true"></i><span>Mendesain flyer, banner, dan visual promosi kampanye F&amp;B.</span></li>
-                        <li class="flex items-start"><i class="fa-solid fa-check text-sky-500 mr-3 mt-1 text-[10px]" aria-hidden="true"></i><span>Memproduksi video iklan TikTok untuk promosi outlet.</span></li>
+                    <p class="text-sky-400 text-xs md:text-sm font-bold mb-2.5 md:mb-4">PT. Bingchun Food Management</p>
+                    <ul class="text-gray-400 text-xs sm:text-sm space-y-2 list-none text-left">
+                        <li class="flex items-start"><i class="fa-solid fa-check text-sky-500 mr-2.5 sm:mr-3 mt-1 text-[10px] shrink-0" aria-hidden="true"></i><span>Mendesain flyer, banner, dan visual promosi kampanye F&amp;B.</span></li>
+                        <li class="flex items-start"><i class="fa-solid fa-check text-sky-500 mr-2.5 sm:mr-3 mt-1 text-[10px] shrink-0" aria-hidden="true"></i><span>Memproduksi video iklan TikTok untuk promosi outlet.</span></li>
                     </ul>
                 </div>
 
-                <div class="relative pl-8 md:pl-10 mb-12 md:mb-16" data-aos="fade-up">
-                    <div class="absolute -left-[7px] top-1 w-4 h-4 rounded-full bg-gray-700 border-2 md:border-4 border-gray-900"></div>
+                <div class="relative pl-6 sm:pl-8 md:pl-10 mb-10 md:mb-16" data-aos="fade-up">
+                    <div class="absolute -left-[7px] top-1 w-3.5 h-3.5 md:w-4 md:h-4 rounded-full bg-gray-700 border-2 md:border-4 border-gray-900"></div>
                     <div class="flex flex-col md:flex-row md:justify-between items-start mb-1 md:mb-2">
-                        <h3 class="text-lg md:text-xl font-bold text-white uppercase leading-snug">Head Video Editor &amp; Graphic Designer</h3>
-                        <span class="text-sky-500/70 text-xs md:text-sm font-black mt-1 md:mt-0">APR 2025 - AUG 2025</span>
+                        <h3 class="text-base sm:text-lg md:text-xl font-bold text-white uppercase leading-snug">Head Video Editor &amp; Graphic Designer</h3>
+                        <span class="text-sky-500/70 text-[11px] sm:text-xs md:text-sm font-black mt-0.5 md:mt-0">APR 2025 - AUG 2025</span>
                     </div>
-                    <p class="text-sky-400 text-xs md:text-sm font-bold mb-3 md:mb-4">PT. Lentera Diri Indonesia (Intern)</p>
-                    <ul class="text-gray-400 text-sm space-y-2 list-none text-left">
-                        <li class="flex items-start"><i class="fa-solid fa-check text-sky-500 mr-3 mt-1 text-[10px]" aria-hidden="true"></i><span>Memimpin tim editing video kampanye edukasi kesehatan mental.</span></li>
-                        <li class="flex items-start"><i class="fa-solid fa-check text-sky-500 mr-3 mt-1 text-[10px]" aria-hidden="true"></i><span>Membangun dan mengembangkan sosial media perusahaan.</span></li>
+                    <p class="text-sky-400 text-xs md:text-sm font-bold mb-2.5 md:mb-4">PT. Lentera Diri Indonesia (Intern)</p>
+                    <ul class="text-gray-400 text-xs sm:text-sm space-y-2 list-none text-left">
+                        <li class="flex items-start"><i class="fa-solid fa-check text-sky-500 mr-2.5 sm:mr-3 mt-1 text-[10px] shrink-0" aria-hidden="true"></i><span>Memimpin tim editing video kampanye edukasi kesehatan mental.</span></li>
+                        <li class="flex items-start"><i class="fa-solid fa-check text-sky-500 mr-2.5 sm:mr-3 mt-1 text-[10px] shrink-0" aria-hidden="true"></i><span>Membangun dan mengembangkan sosial media perusahaan.</span></li>
                     </ul>
                 </div>
 
-                <div class="relative pl-8 md:pl-10 mb-4" data-aos="fade-up">
-                    <div class="absolute -left-[7px] top-1 w-4 h-4 rounded-full bg-gray-700 border-2 md:border-4 border-gray-900"></div>
+                <div class="relative pl-6 sm:pl-8 md:pl-10 mb-2" data-aos="fade-up">
+                    <div class="absolute -left-[7px] top-1 w-3.5 h-3.5 md:w-4 md:h-4 rounded-full bg-gray-700 border-2 md:border-4 border-gray-900"></div>
                     <div class="flex flex-col md:flex-row md:justify-between items-start mb-1 md:mb-2">
-                        <h3 class="text-lg md:text-xl font-bold text-white uppercase leading-snug">Graphic Designer &amp; Video Editor</h3>
-                        <span class="text-sky-500/70 text-xs md:text-sm font-black mt-1 md:mt-0">MAY 2025 - AUG 2025</span>
+                        <h3 class="text-base sm:text-lg md:text-xl font-bold text-white uppercase leading-snug">Graphic Designer &amp; Video Editor</h3>
+                        <span class="text-sky-500/70 text-[11px] sm:text-xs md:text-sm font-black mt-0.5 md:mt-0">JAN 2025 - JUN 2025</span>
                     </div>
-                    <p class="text-sky-400 text-xs md:text-sm font-bold mb-3 md:mb-4">CV. Lentera Anak Bangsa (Intern)</p>
-                    <ul class="text-gray-400 text-sm space-y-2 list-none text-left">
-                        <li class="flex items-start"><i class="fa-solid fa-check text-sky-500 mr-3 mt-1 text-[10px]" aria-hidden="true"></i><span>Mengedit video berita viral short-form untuk media sosial.</span></li>
-                        <li class="flex items-start"><i class="fa-solid fa-check text-sky-500 mr-3 mt-1 text-[10px]" aria-hidden="true"></i><span>Mengedit konten podcast (TikTok, YouTube, Instagram).</span></li>
+                    <p class="text-sky-400 text-xs md:text-sm font-bold mb-2.5 md:mb-4">CV. Lentera Anak Bangsa (Intern)</p>
+                    <ul class="text-gray-400 text-xs sm:text-sm space-y-2 list-none text-left">
+                        <li class="flex items-start"><i class="fa-solid fa-check text-sky-500 mr-2.5 sm:mr-3 mt-1 text-[10px] shrink-0" aria-hidden="true"></i><span>Mengedit video berita viral short-form untuk media sosial.</span></li>
+                        <li class="flex items-start"><i class="fa-solid fa-check text-sky-500 mr-2.5 sm:mr-3 mt-1 text-[10px] shrink-0" aria-hidden="true"></i><span>Mengedit konten podcast (TikTok, YouTube, Instagram).</span></li>
                     </ul>
                 </div>
             </div>
         </section>
 
         <!-- PORTFOLIO SECTION -->
-        <section id="portfolio" class="py-20 md:py-32 px-6 md:px-24">
-            <div class="text-center mb-10 md:mb-16" data-aos="fade-up">
-                <h2 class="text-3xl md:text-4xl font-extrabold italic mb-3">03. <span class="gradient-text">Portfolio</span></h2>
-                <p class="text-gray-500 uppercase tracking-widest text-xs">Full Portfolio</p>
+        <section id="portfolio" class="py-14 sm:py-20 md:py-32 px-4 sm:px-6 md:px-24 max-w-7xl mx-auto">
+            <div class="text-center mb-8 md:mb-16" data-aos="fade-up">
+                <h2 class="text-2xl sm:text-3xl md:text-4xl font-extrabold italic mb-2 md:mb-3">03. <span class="gradient-text">Portfolio</span></h2>
+                <p class="text-gray-500 uppercase tracking-widest text-[10px] sm:text-xs">Full Portfolio</p>
             </div>
 
-            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-8" id="portfolio-grid">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3.5 sm:gap-6 md:gap-8" id="portfolio-grid">
                 <a href="portfolio/video" class="portfolio-card video block focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-400 rounded-2xl md:rounded-3xl">
                     <div class="glass-card rounded-2xl md:rounded-3xl overflow-hidden group p-5 sm:p-8 md:p-10 flex sm:flex-col items-center sm:justify-center gap-4 sm:gap-0 text-left sm:text-center h-full">
                         <svg class="clapper-icon w-6 h-6 sm:w-12 sm:h-12 text-sky-400 sm:mb-5 shrink-0 overflow-visible" viewBox="0 0 512 512" fill="currentColor" aria-hidden="true">
-                            <!-- Bagian Atas Clapperboard (Ngebuka saat hover) -->
                             <g class="clapper-top">
                                 <path d="M448 32H361.9l-1 1-127 127h92.1l1-1L453.8 32.3c-1.9-.2-3.8-.3-5.8-.3zm64 128V96c0-15.1-5.3-29.1-14-40l-104 104H512zM294.1 32H201.9l-1 1L73.9 160h92.1l1-1 127-127zM64 32C28.7 32 0 60.7 0 96v64H6.1l1-1 127-127H64z"/>
                             </g>
-                            <!-- Badan Bawah Clapperboard -->
                             <path d="M0 192V416c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V192H0z"/>
                         </svg>
                         <h3 class="font-bold text-sm md:text-base">Video Showcase</h3>
                     </div>
                 </a>
+
                 <a href="portfolio/desain" class="portfolio-card desain block focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-400 rounded-2xl md:rounded-3xl">
                     <div class="glass-card rounded-2xl md:rounded-3xl overflow-hidden group p-5 sm:p-8 md:p-10 flex sm:flex-col items-center sm:justify-center gap-4 sm:gap-0 text-left sm:text-center h-full">
                         <svg class="palette-icon w-6 h-6 sm:w-12 sm:h-12 text-sky-400 sm:mb-5 shrink-0 overflow-visible" viewBox="0 0 512 512" fill="currentColor" aria-hidden="true">
@@ -275,22 +274,14 @@
                                     <stop offset="100%" stop-color="#f472b6" />
                                 </linearGradient>
                             </defs>
-
-                            <!-- Badan Palet Cat -->
                             <g class="palette-body">
                                 <path fill-rule="evenodd" clip-rule="evenodd" d="M512 256c0 .9 0 1.8 0 2.7c-.4 36.5-33.6 61.3-70.1 61.3H344c-26.5 0-48 21.5-48 48c0 3.4 .4 6.7 1 9.9c2.1 10.2 6.5 20 10.8 29.9c6.1 13.8 12.1 27.5 12.1 42c0 31.8-21.6 60.7-53.4 62c-3.5 .1-7 .2-10.6 .2C114.6 512 0 397.4 0 256S114.6 0 256 0S512 114.6 512 256zM128 288a32 32 0 1 0 -64 0 32 32 0 1 0 64 0zm0-96a32 32 0 1 0 0-64 32 32 0 1 0 0 64zm192-32a32 32 0 1 0 -64 0 32 32 0 1 0 64 0zm32 64a32 32 0 1 0 0-64 32 32 0 1 0 0 64z"/>
-
-                                <!-- 4 Cat Warna-Warni memakai geometri lubang asli palet (100% presisi) -->
                                 <path class="paint-dot dot-1" d="M128 288a32 32 0 1 0 -64 0 32 32 0 1 0 64 0z" fill="#f43f5e" />
                                 <path class="paint-dot dot-2" d="M128 192a32 32 0 1 0 0-64 32 32 0 1 0 0 64z" fill="#facc15" />
                                 <path class="paint-dot dot-3" d="M320 160a32 32 0 1 0 -64 0 32 32 0 1 0 64 0z" fill="#34d399" />
                                 <path class="paint-dot dot-4" d="M352 224a32 32 0 1 0 0-64 32 32 0 1 0 0 64z" fill="#a855f7" />
-
-                                <!-- Sapuan Cat Melengkung di Area Bawah Palet -->
                                 <path class="paint-stroke" d="M145 385 Q200 350 250 395" fill="none" stroke="url(#paint-stroke-grad)" stroke-width="20" stroke-linecap="round" />
                             </g>
-
-                            <!-- Kuas Lukis yang Mengayun Masuk saat Di-hover -->
                             <g class="paint-brush">
                                 <path d="M472 24 C486 38, 486 58, 470 74 L352 192 L320 160 L438 42 C454 26, 462 14, 472 24 Z" fill="#e2e8f0" />
                                 <path d="M352 192 L320 160 L300 180 L332 212 Z" fill="#94a3b8" />
@@ -300,6 +291,7 @@
                         <h3 class="font-bold text-sm md:text-base">Design Works</h3>
                     </div>
                 </a>
+
                 <a href="portfolio/foto" class="portfolio-card foto block focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-400 rounded-2xl md:rounded-3xl">
                     <div class="glass-card rounded-2xl md:rounded-3xl overflow-hidden group p-5 sm:p-8 md:p-10 flex sm:flex-col items-center sm:justify-center gap-4 sm:gap-0 text-left sm:text-center h-full">
                         <svg class="camera-icon w-6 h-6 sm:w-12 sm:h-12 text-sky-400 sm:mb-5 shrink-0" viewBox="0 0 512 512" fill="currentColor" aria-hidden="true">
@@ -308,54 +300,31 @@
                                     <circle cx="256" cy="288" r="94" />
                                 </clipPath>
                             </defs>
-
-                            <!-- Badan Kamera & Lubang Lensa -->
                             <path fill-rule="evenodd" clip-rule="evenodd" d="M149.1 64.8L138.7 96H64C28.7 96 0 124.7 0 160V416c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V160c0-35.3-28.7-64-64-64H373.3L362.9 64.8C356.4 45.2 338.1 32 317.4 32H194.6c-20.7 0-39 13.2-45.5 32.8zM256 192a96 96 0 1 1 0 192 96 96 0 1 1 0-192z"/>
-
-                            <!-- Diafragma / Iris 6 Bilah di Dalam Lensa -->
                             <g clip-path="url(#camera-iris-clip)">
-                                <!-- Ring Optik Dalam -->
                                 <circle cx="256" cy="288" r="54" fill="none" stroke="currentColor" stroke-width="14" opacity="0.45" />
-
-                                <!-- Group Iris Berputar + 6 Bilah Diafragma -->
                                 <g class="iris-wheel">
-                                    <g transform="rotate(0 256 288)">
-                                        <path class="iris-blade" d="M256 178 L368 178 L335 288 Z" stroke="#030712" stroke-width="5" stroke-linejoin="round" />
-                                    </g>
-                                    <g transform="rotate(60 256 288)">
-                                        <path class="iris-blade" d="M256 178 L368 178 L335 288 Z" stroke="#030712" stroke-width="5" stroke-linejoin="round" />
-                                    </g>
-                                    <g transform="rotate(120 256 288)">
-                                        <path class="iris-blade" d="M256 178 L368 178 L335 288 Z" stroke="#030712" stroke-width="5" stroke-linejoin="round" />
-                                    </g>
-                                    <g transform="rotate(180 256 288)">
-                                        <path class="iris-blade" d="M256 178 L368 178 L335 288 Z" stroke="#030712" stroke-width="5" stroke-linejoin="round" />
-                                    </g>
-                                    <g transform="rotate(240 256 288)">
-                                        <path class="iris-blade" d="M256 178 L368 178 L335 288 Z" stroke="#030712" stroke-width="5" stroke-linejoin="round" />
-                                    </g>
-                                    <g transform="rotate(300 256 288)">
-                                        <path class="iris-blade" d="M256 178 L368 178 L335 288 Z" stroke="#030712" stroke-width="5" stroke-linejoin="round" />
-                                    </g>
+                                    <g transform="rotate(0 256 288)"><path class="iris-blade" d="M256 178 L368 178 L335 288 Z" stroke="#030712" stroke-width="5" stroke-linejoin="round" /></g>
+                                    <g transform="rotate(60 256 288)"><path class="iris-blade" d="M256 178 L368 178 L335 288 Z" stroke="#030712" stroke-width="5" stroke-linejoin="round" /></g>
+                                    <g transform="rotate(120 256 288)"><path class="iris-blade" d="M256 178 L368 178 L335 288 Z" stroke="#030712" stroke-width="5" stroke-linejoin="round" /></g>
+                                    <g transform="rotate(180 256 288)"><path class="iris-blade" d="M256 178 L368 178 L335 288 Z" stroke="#030712" stroke-width="5" stroke-linejoin="round" /></g>
+                                    <g transform="rotate(240 256 288)"><path class="iris-blade" d="M256 178 L368 178 L335 288 Z" stroke="#030712" stroke-width="5" stroke-linejoin="round" /></g>
+                                    <g transform="rotate(300 256 288)"><path class="iris-blade" d="M256 178 L368 178 L335 288 Z" stroke="#030712" stroke-width="5" stroke-linejoin="round" /></g>
                                 </g>
                             </g>
                         </svg>
                         <h3 class="font-bold text-sm md:text-base">Photography</h3>
                     </div>
                 </a>
+
                 <a href="portfolio/projek" class="portfolio-card projek block focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-400 rounded-2xl md:rounded-3xl">
                     <div class="glass-card rounded-2xl md:rounded-3xl overflow-hidden group p-5 sm:p-8 md:p-10 flex sm:flex-col items-center sm:justify-center gap-4 sm:gap-0 text-left sm:text-center h-full">
                         <svg class="rocket-icon w-6 h-6 sm:w-12 sm:h-12 text-sky-400 sm:mb-5 shrink-0 overflow-visible" viewBox="0 0 512 512" fill="currentColor" aria-hidden="true">
                             <g class="rocket-ship">
-                                <!-- Api Thruster di Nosel Bawah Kiri (Warna Senada Tema Biru Langit) -->
                                 <g class="rocket-thruster">
-                                    <!-- Lidah Api Luar -->
                                     <path class="thruster-outer" d="M108 336 C68 356, 36 396, 16 476 C96 456, 136 424, 156 384 Z" opacity="0.78" />
-                                    <!-- Inti Api Dalam Lebih Terang -->
                                     <path class="thruster-core" d="M116 352 C88 368, 66 394, 52 442 C100 428, 126 406, 142 378 Z" fill="#e0f2fe" />
                                 </g>
-
-                                <!-- Badan Utama Roket (Geometri Identik Font Awesome Rocket) -->
                                 <path d="M156.6 384.9L125.7 354c-8.5-8.5-11.5-20.8-7.7-32.2c3-8.9 7-20.5 11.8-33.8L24 288c-8.6 0-16.6-4.6-20.9-12.1s-4.2-16.7 .2-24.1l52.5-88.5c13-21.9 36.5-35.3 61.9-35.3l82.3 0c2.4-4 4.8-7.7 7.2-11.3C289.1-4.1 411.1-8.1 483.9 5.3c11.6 2.1 20.6 11.2 22.8 22.8c13.4 72.9 9.3 194.8-111.4 276.7c-3.5 2.4-7.3 4.8-11.3 7.2v82.3c0 25.4-13.4 49-35.3 61.9l-88.5 52.5c-7.4 4.4-16.6 4.5-24.1 .2s-12.1-12.2-12.1-20.9V380.8c-14.1 4.9-26.4 8.9-35.7 11.9c-11.2 3.6-23.4 .5-31.8-7.8zM384 168a40 40 0 1 0 0-80 40 40 0 1 0 0 80z"/>
                             </g>
                         </svg>
@@ -366,15 +335,15 @@
         </section>
 
         <!-- CONTACT SECTION (Desktop: 3D Flip Card Terkunci | Mobile: Pop-up Modal) -->
-        <section id="contact" class="py-20 md:py-32 px-6">
-            <div class="max-w-5xl mx-auto contact-flip-scene" data-aos="flip-up">
+        <section id="contact" class="py-14 sm:py-20 md:py-32 px-4 sm:px-6">
+            <div class="max-w-5xl mx-auto contact-flip-scene" data-aos="fade-up">
                 <div id="contact-flip-card" class="contact-flip-inner">
                     
                     <!-- FRONT FACE -->
-                    <div class="contact-face contact-front contact-surface rounded-3xl md:rounded-[3rem] p-10 md:p-20 text-center relative overflow-hidden flex flex-col items-center justify-center">
-                        <h2 class="text-4xl md:text-5xl font-black mb-6">Ready to <br><span class="gradient-text">Collaborate?</span></h2>
-                        <div class="flex justify-center mt-8">
-                            <button id="contact-trigger-btn" type="button" aria-expanded="false" class="bg-white text-black px-8 py-4 md:px-10 md:py-4 rounded-full font-black text-xs md:text-sm uppercase hover:scale-105 active:scale-95 transition-transform inline-flex items-center gap-2 cursor-pointer">
+                    <div class="contact-face contact-front contact-surface rounded-3xl md:rounded-[3rem] py-12 px-6 sm:p-14 md:p-20 text-center relative overflow-hidden flex flex-col items-center justify-center">
+                        <h2 class="text-3xl sm:text-4xl md:text-5xl font-black mb-4 md:mb-6 leading-tight">Ready to <br><span class="gradient-text">Collaborate?</span></h2>
+                        <div class="flex justify-center mt-4 md:mt-8">
+                            <button id="contact-trigger-btn" type="button" aria-expanded="false" class="bg-white text-black px-7 py-3.5 sm:px-8 sm:py-4 md:px-10 md:py-4 rounded-full font-black text-xs md:text-sm uppercase hover:scale-105 active:scale-95 transition-transform inline-flex items-center gap-2 cursor-pointer">
                                 <span>Contact Me</span>
                             </button>
                         </div>
@@ -464,53 +433,50 @@
     </main>
 
     <!-- MOBILE CONTACT POP-UP MODAL (Mobile Only: 4 Sub-Cards Vertical) -->
-    <div id="mobile-contact-modal" role="dialog" aria-modal="true" aria-labelledby="mobile-contact-title" aria-hidden="true" class="fixed inset-0 z-[10000] md:hidden flex items-center justify-center p-5 opacity-0 pointer-events-none transition-opacity duration-300">
-        <!-- Backdrop -->
+    <div id="mobile-contact-modal" role="dialog" aria-modal="true" aria-labelledby="mobile-contact-title" aria-hidden="true" class="fixed inset-0 z-[10000] md:hidden flex items-center justify-center p-4 opacity-0 pointer-events-none transition-opacity duration-300">
         <div id="mobile-contact-backdrop" class="absolute inset-0 bg-[#030712]/85 backdrop-blur-md"></div>
 
-        <!-- Modal Card Container -->
-        <div id="mobile-contact-panel" class="relative z-10 w-full max-w-sm bg-[#090f1f] border border-white/10 rounded-3xl p-6 shadow-2xl transform scale-95 translate-y-4 transition-all duration-300">
-            <div class="flex items-center justify-between mb-5">
+        <div id="mobile-contact-panel" class="relative z-10 w-full max-w-sm bg-[#090f1f] border border-white/10 rounded-3xl p-5 shadow-2xl transform scale-95 translate-y-4 transition-all duration-300">
+            <div class="flex items-center justify-between mb-4">
                 <div>
                     <span class="text-sky-400 text-[10px] font-bold uppercase tracking-[0.25em] block">Direct Channels</span>
-                    <h3 id="mobile-contact-title" class="text-xl font-extrabold text-white mt-0.5">Get In Touch</h3>
+                    <h3 id="mobile-contact-title" class="text-lg font-extrabold text-white mt-0.5">Get In Touch</h3>
                 </div>
                 <button id="mobile-contact-close" type="button" aria-label="Close contact popup" class="w-9 h-9 rounded-full bg-white/5 hover:bg-white/10 text-gray-300 flex items-center justify-center transition active:scale-90">
                     <i class="fa-solid fa-xmark" aria-hidden="true"></i>
                 </button>
             </div>
 
-            <!-- 4 Sub-Cards Stacked Vertically -->
-            <div class="flex flex-col gap-3">
+            <div class="flex flex-col gap-2.5">
                 <!-- 1. WhatsApp -->
-                <div class="rounded-2xl p-3.5 border border-white/10 bg-white/[0.02] flex items-center justify-between gap-3">
-                    <div class="flex items-center gap-3 min-w-0">
-                        <div class="w-10 h-10 shrink-0 rounded-xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center text-lg">
+                <div class="rounded-2xl p-3 border border-white/10 bg-white/[0.02] flex items-center justify-between gap-2.5">
+                    <div class="flex items-center gap-2.5 min-w-0">
+                        <div class="w-9 h-9 shrink-0 rounded-xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center text-base">
                             <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
                         </div>
                         <div class="min-w-0">
-                            <h4 class="font-bold text-sm text-white">WhatsApp</h4>
+                            <h4 class="font-bold text-xs sm:text-sm text-white">WhatsApp</h4>
                             <p class="text-[11px] text-gray-400 truncate">+62 857-7679-8680</p>
                         </div>
                     </div>
-                    <a href="https://wa.me/6285776798680" target="_blank" rel="noopener noreferrer" class="shrink-0 py-2 px-4 rounded-xl bg-emerald-500/15 active:bg-emerald-500 text-emerald-300 active:text-slate-950 font-bold text-xs transition-colors">
+                    <a href="https://wa.me/6285776798680" target="_blank" rel="noopener noreferrer" class="shrink-0 py-2 px-3.5 rounded-xl bg-emerald-500/15 active:bg-emerald-500 text-emerald-300 active:text-slate-950 font-bold text-xs transition-colors">
                         Chat
                     </a>
                 </div>
 
                 <!-- 2. Email (Direct Gmail + Salin) -->
-                <div class="rounded-2xl p-3.5 border border-white/10 bg-white/[0.02] flex items-center justify-between gap-2">
-                    <div class="flex items-center gap-3 min-w-0">
-                        <div class="w-10 h-10 shrink-0 rounded-xl bg-sky-500/10 text-sky-400 flex items-center justify-center text-lg">
+                <div class="rounded-2xl p-3 border border-white/10 bg-white/[0.02] flex items-center justify-between gap-2">
+                    <div class="flex items-center gap-2.5 min-w-0">
+                        <div class="w-9 h-9 shrink-0 rounded-xl bg-sky-500/10 text-sky-400 flex items-center justify-center text-base">
                             <i class="fa-solid fa-envelope" aria-hidden="true"></i>
                         </div>
                         <div class="min-w-0">
-                            <h4 class="font-bold text-sm text-white">Email</h4>
+                            <h4 class="font-bold text-xs sm:text-sm text-white">Email</h4>
                             <p class="text-[11px] text-gray-400 truncate">mickey.haoyin168@gmail.com</p>
                         </div>
                     </div>
                     <div class="flex items-center gap-1.5 shrink-0">
-                        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=mickey.haoyin168@gmail.com" target="_blank" rel="noopener noreferrer" class="py-2 px-3 rounded-xl bg-sky-500/15 active:bg-sky-500 text-sky-300 active:text-slate-950 font-bold text-xs transition-colors">
+                        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=mickey.haoyin168@gmail.com" target="_blank" rel="noopener noreferrer" class="py-2 px-2.5 rounded-xl bg-sky-500/15 active:bg-sky-500 text-sky-300 active:text-slate-950 font-bold text-xs transition-colors">
                             Gmail
                         </a>
                         <button type="button" data-copy-email="mickey.haoyin168@gmail.com" aria-label="Salin email" class="copy-email-btn py-2 px-2.5 rounded-xl bg-white/5 active:bg-white/15 text-gray-300 text-xs font-bold transition-colors">
@@ -520,33 +486,33 @@
                 </div>
 
                 <!-- 3. LinkedIn -->
-                <div class="rounded-2xl p-3.5 border border-white/10 bg-white/[0.02] flex items-center justify-between gap-3">
-                    <div class="flex items-center gap-3 min-w-0">
-                        <div class="w-10 h-10 shrink-0 rounded-xl bg-blue-500/10 text-blue-400 flex items-center justify-center text-lg">
+                <div class="rounded-2xl p-3 border border-white/10 bg-white/[0.02] flex items-center justify-between gap-2.5">
+                    <div class="flex items-center gap-2.5 min-w-0">
+                        <div class="w-9 h-9 shrink-0 rounded-xl bg-blue-500/10 text-blue-400 flex items-center justify-center text-base">
                             <i class="fa-brands fa-linkedin-in" aria-hidden="true"></i>
                         </div>
                         <div class="min-w-0">
-                            <h4 class="font-bold text-sm text-white">LinkedIn</h4>
+                            <h4 class="font-bold text-xs sm:text-sm text-white">LinkedIn</h4>
                             <p class="text-[11px] text-gray-400 truncate">Mickey Richie</p>
                         </div>
                     </div>
-                    <a href="https://www.linkedin.com/in/mickey-richie-890707291/?originalSubdomain=id" target="_blank" rel="noopener noreferrer" class="shrink-0 py-2 px-4 rounded-xl bg-blue-500/15 active:bg-blue-500 text-blue-300 active:text-slate-950 font-bold text-xs transition-colors">
+                    <a href="https://www.linkedin.com/in/mickey-richie-890707291/?originalSubdomain=id" target="_blank" rel="noopener noreferrer" class="shrink-0 py-2 px-3.5 rounded-xl bg-blue-500/15 active:bg-blue-500 text-blue-300 active:text-slate-950 font-bold text-xs transition-colors">
                         Open
                     </a>
                 </div>
 
                 <!-- 4. Instagram -->
-                <div class="rounded-2xl p-3.5 border border-white/10 bg-white/[0.02] flex items-center justify-between gap-3">
-                    <div class="flex items-center gap-3 min-w-0">
-                        <div class="w-10 h-10 shrink-0 rounded-xl bg-pink-500/10 text-pink-400 flex items-center justify-center text-lg">
+                <div class="rounded-2xl p-3 border border-white/10 bg-white/[0.02] flex items-center justify-between gap-2.5">
+                    <div class="flex items-center gap-2.5 min-w-0">
+                        <div class="w-9 h-9 shrink-0 rounded-xl bg-pink-500/10 text-pink-400 flex items-center justify-center text-base">
                             <i class="fa-brands fa-instagram" aria-hidden="true"></i>
                         </div>
                         <div class="min-w-0">
-                            <h4 class="font-bold text-sm text-white">Instagram</h4>
+                            <h4 class="font-bold text-xs sm:text-sm text-white">Instagram</h4>
                             <p class="text-[11px] text-gray-400 truncate">@mickey.richie_</p>
                         </div>
                     </div>
-                    <a href="https://www.instagram.com/mickey.richie_?igsh=MXQwc2pwZ2V4c2xpMw==" target="_blank" rel="noopener noreferrer" class="shrink-0 py-2 px-4 rounded-xl bg-pink-500/15 active:bg-pink-500 text-pink-300 active:text-slate-950 font-bold text-xs transition-colors">
+                    <a href="https://www.instagram.com/mickey.richie_?igsh=MXQwc2pwZ2V4c2xpMw==" target="_blank" rel="noopener noreferrer" class="shrink-0 py-2 px-3.5 rounded-xl bg-pink-500/15 active:bg-pink-500 text-pink-300 active:text-slate-950 font-bold text-xs transition-colors">
                         Follow
                     </a>
                 </div>
@@ -563,14 +529,8 @@
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             if (window.AOS) {
-                AOS.init({ once: true, duration: 800 });
+                AOS.init({ once: true, duration: 800, disable: 'mobile' });
             }
-
-            // Ganti nomor WA di satu tempat (format internasional tanpa +)
-            const WHATSAPP_NUMBER = '628XXXXXXXXXX';
-            document.querySelectorAll('[data-wa-link]').forEach(el => {
-                el.href = `https://wa.me/${WHATSAPP_NUMBER}`;
-            });
 
             // Passive Scroll Handler for Navbar
             const nav = document.getElementById('navbar');
@@ -618,32 +578,6 @@
 
             mobileLinks.forEach(link => {
                 link.addEventListener('click', () => setMenuState(false));
-            });
-
-            // Portfolio Filter
-            const filterBtns = document.querySelectorAll('.filter-btn');
-            const portfolioCards = document.querySelectorAll('.portfolio-card');
-
-            filterBtns.forEach(btn => {
-                btn.addEventListener('click', () => {
-                    const category = btn.dataset.filter;
-
-                    filterBtns.forEach(b => {
-                        b.classList.remove('active', 'bg-sky-500', 'text-slate-950');
-                        b.setAttribute('aria-pressed', 'false');
-                    });
-
-                    btn.classList.add('active', 'bg-sky-500', 'text-slate-950');
-                    btn.setAttribute('aria-pressed', 'true');
-
-                    portfolioCards.forEach(card => {
-                        if (category === 'all' || card.classList.contains(category)) {
-                            card.classList.remove('hidden');
-                        } else {
-                            card.classList.add('hidden');
-                        }
-                    });
-                });
             });
 
             // ==========================================================
@@ -702,7 +636,6 @@
             if (mobileCloseBtn) mobileCloseBtn.addEventListener('click', closeMobileContact);
             if (mobileBackdrop) mobileBackdrop.addEventListener('click', closeMobileContact);
 
-            // Reset state saat resize melewati breakpoint 768px agar tidak nyangkut
             desktopMediaQuery.addEventListener('change', (e) => {
                 if (e.matches) {
                     closeMobileContact();
@@ -711,7 +644,6 @@
                 }
             });
 
-            // Escape key closes mobile menu, mobile modal, or flips desktop card back
             document.addEventListener('keydown', (e) => {
                 if (e.key === 'Escape') {
                     if (hamburgerBtn.getAttribute('aria-expanded') === 'true') {
@@ -735,7 +667,6 @@
                     try {
                         await navigator.clipboard.writeText(email);
                     } catch {
-                        // Fallback untuk browser lama
                         const tempInput = document.createElement('input');
                         tempInput.value = email;
                         document.body.appendChild(tempInput);
@@ -770,7 +701,7 @@
 
             document.addEventListener('click', (event) => {
                 const link = event.target.closest('a');
-                if (!link || link.target === '_blank' || link.hasAttribute('download') || event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
+                if (!link || link.target === '_blank' || link.hasAttribute('download') || event.ctrlKey || event.metaKey || event.shiftKey || event.altKey || event.button !== 0) return;
                 
                 const url = new URL(link.href, window.location.href);
                 if (url.origin !== window.location.origin || (url.pathname === window.location.pathname && url.search === window.location.search && url.hash)) return;
