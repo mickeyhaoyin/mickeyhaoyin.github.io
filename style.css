@@ -34,6 +34,10 @@ body {
     padding-bottom: max(2.5rem, env(safe-area-inset-bottom));
 }
 
+.hero-name {
+    font-size: clamp(2.5rem, 11vw, 5.75rem);
+}
+
 /* =====================================
    M.RICHIE — CINEMATIC INTRO LOADER
    (Durasi & Transisi tetap 0.7s)
@@ -133,16 +137,24 @@ body {
 }
 
 .intro-logo {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 0.2em;
     font-family: 'Plus Jakarta Sans', sans-serif;
-    font-size: 39px;
+    font-size: 38px;
     font-weight: 800;
-    letter-spacing: -4px;
+    letter-spacing: -0.05em;
+    line-height: 1.15;
 
     color: #f8fafc;
     text-shadow: 0 0 30px rgba(56, 189, 248, 0.12);
 }
 
 .intro-logo span {
+    display: inline-block;
+    padding-right: 0.14em;
+    margin-right: -0.14em;
     background: linear-gradient(
         135deg,
         var(--accent) 0%,
